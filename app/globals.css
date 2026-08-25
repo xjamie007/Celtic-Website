@@ -1,0 +1,960 @@
+@import "tailwindcss";
+
+/* ═══════════════════════════════════════════════════════════════════════════
+   EBENE 1 — TRIKOT
+   Die einzige Stelle im gesamten Projekt mit Hex-Werten.
+   Abgeleitet aus einer Farbanalyse des Errea-Wettkampftrikots (weissabge-
+   glichen, aufgehellt — die Fotos entstanden in Innenraumlicht).
+   Sobald der Verein offizielle Pantone-/HEX-Werte liefert: nur hier tauschen.
+   Kein Hex-Wert gehoert irgendwo sonst hin. Der Lint-Check erzwingt das.
+   ═══════════════════════════════════════════════════════════════════════════ */
+:root {
+  --celtic-blue: #2f3c9e;
+  --celtic-blue-deep: #171f6b;
+  --celtic-ink: #090e42;
+  --celtic-magenta: #d82f6a;
+  --celtic-magenta-lt: #e53271;
+  /*
+    Zwei grundabhaengige Varianten, ohne die §8 nicht einzuhalten ist.
+    Trikotblau und Magenta liegen fast gleich hell: als Text erreicht Magenta
+    auf Trikotblau 2.0:1 und selbst stark aufgehellt nur 3.6:1. Auf Papier
+    fehlen dem reinen Magenta 0.17 zu den 4.5, die AA fuer Fliesstext
+    verlangt. Beide Varianten behalten den Farbton und aendern nur die
+    Helligkeit — Magenta bleibt Magenta.
+  */
+  --celtic-magenta-bright: #e46d97;
+  --celtic-magenta-deep: #ce2d68;
+  --celtic-gold: #ffda26;
+  --celtic-paper: #f7f7fa;
+  --celtic-white: #ffffff;
+  /* Der Zwischenton des Trikotverlaufs. Steht als eigenes Token, weil ihn
+     ausser dem Verlauf auch das Trikot-SVG auf /sponsoren braucht — und
+     SVG-Gradienten koennen keinen CSS-Verlauf wiederverwenden, nur seine
+     Farben. */
+  --celtic-blend: #a8305c;
+
+  /* Der Signature-Verlauf. 115 Grad ist der Winkel vom Trikot — die
+     Handschrift der Seite. Nie horizontal, nie vertikal. */
+  --celtic-gradient: linear-gradient(
+    115deg,
+    var(--celtic-blue) 0%,
+    var(--celtic-blue) 45%,
+    var(--celtic-blend) 78%,
+    var(--celtic-magenta) 100%
+  );
+}
+
+/* ═══════════════════════════════════════════════════════════════════════════
+   EBENE 2 — ROLLEN
+   Komponenten benutzen ausschliesslich diese Tokens. Sie tragen die Bedeutung
+   im Namen, nicht in einer Konvention: Es gibt kein Token namens "Gold", nur
+   eines namens "Landesrekord". Damit ueberlebt die Farbregel aus §3 auch den
+   Entwickler, der in zwei Jahren eine neue Karte baut.
+   ═══════════════════════════════════════════════════════════════════════════ */
+@theme inline {
+  /* Flaechen */
+  --color-page: var(--celtic-paper);
+  --color-deep: var(--celtic-blue-deep);
+  --color-ink: var(--celtic-ink);
+  --color-blue: var(--celtic-blue);
+  --color-white: var(--celtic-white);
+
+  /* Schrift auf Flaechen */
+  --color-ink-text: var(--celtic-ink);
+  --color-page-text: var(--celtic-paper);
+  --color-muted-on-ink: color-mix(in oklab, var(--celtic-white) 62%, transparent);
+  --color-muted-on-page: color-mix(in oklab, var(--celtic-ink) 64%, transparent);
+  --color-hairline-on-ink: color-mix(in oklab, var(--celtic-white) 16%, transparent);
+  --color-hairline-on-page: color-mix(in oklab, var(--celtic-ink) 12%, transparent);
+
+  /* Die Bahn (§5).
+     Der Belag liegt auf blue-deep und nicht auf Trikotblau. §3 weist
+     blue-deep ausdruecklich den dunklen Flaechen zu, und §5 verlangt einen
+     blauen Grund — beides ist erfuellt. Auf Trikotblau waere die aktive
+     Distanzmarkierung in Magenta bei 2.2:1 gelandet und damit unlesbar. */
+  --color-lane-channel: var(--celtic-blue-deep);
+  --color-lane-line: var(--celtic-white);
+  --color-lane-marker: var(--celtic-magenta);
+
+  /* Rekord-Semantik (§10). Gelb existiert nur als Landesrekord. */
+  --color-rec-national: var(--celtic-gold);
+  --color-rec-espoirs: var(--celtic-white);
+  /* Der NEI-Marker besteht aus Text und einem Punkt. Der Text braucht 4.5:1
+     und bekommt die helle Variante, der Punkt ist Grafik und darf bei den
+     3:1 des reinen Magenta bleiben. */
+  --color-rec-new: var(--celtic-magenta-bright);
+  --color-rec-new-dot: var(--celtic-magenta);
+
+  /* Bewegung, Position, Fortschritt, "neu" — Magenta ist Akzent, nie Flaeche.
+     motion-accent ist fuer Flaechen und Linien gedacht (AA verlangt dort
+     3:1); fuer Text gibt es die beiden grundabhaengigen Tokens darunter. */
+  --color-motion-accent: var(--celtic-magenta);
+  --color-motion-accent-lt: var(--celtic-magenta-lt);
+  --color-accent-on-page: var(--celtic-magenta-deep);
+  --color-accent-on-dark: var(--celtic-magenta-bright);
+  --color-focus-ring: var(--celtic-magenta);
+
+  /* ── Typografie (§4) ───────────────────────────────────────────────────── */
+  --font-display: var(--font-archivo), var(--font-archivo-ext), "Archivo",
+    "Helvetica Neue", Arial, sans-serif;
+  --font-body: var(--font-instrument), var(--font-instrument-ext),
+    "Instrument Sans", system-ui, -apple-system, "Segoe UI", sans-serif;
+  --font-data: var(--font-jetbrains), var(--font-jetbrains-ext),
+    "JetBrains Mono", ui-monospace, "SF Mono", Menlo, monospace;
+
+  --text-data-xs: 0.6875rem; /* 11px — Bahn-Marker, Badges */
+  --text-data-xs--line-height: 1;
+  --text-data-xs--letter-spacing: 0.08em;
+  --text-ui-sm: 0.875rem;
+  --text-ui-sm--line-height: 1.5;
+  --text-ui: 1rem;
+  --text-ui--line-height: 1.6;
+  --text-ui-lg: 1.125rem;
+  --text-ui-lg--line-height: 1.6;
+  --text-body-lg: 1.3125rem; /* 21px — Lead */
+  --text-body-lg--line-height: 1.5;
+  --text-h3: clamp(1.5rem, 3vw, 1.75rem);
+  --text-h3--line-height: 1.15;
+  --text-h3--letter-spacing: -0.02em;
+  --text-h2: clamp(2rem, 5vw, 2.5rem);
+  --text-h2--line-height: 1.05;
+  --text-h2--letter-spacing: -0.03em;
+  --text-h1: clamp(2.5rem, 8vw, 4rem);
+  --text-h1--line-height: 1;
+  --text-h1--letter-spacing: -0.03em;
+  --text-display: clamp(4rem, 18vw, 6rem);
+  --text-display--line-height: 0.86;
+  --text-display--letter-spacing: -0.03em;
+  /* Eigene Stufe nur fuer die Wortmarke im Hero (§6: formatfuellend).
+     Sie folgt nicht der Skala, sondern dem Format — und zwar in cqi, nicht
+     in vw: das Viewport weiss nichts von der Rinne der Bahn und nichts vom
+     Innenabstand, der Container schon. Mit vw lief der Schriftzug bei 360px
+     um 15px ueber den Rand und stiess auf dem Desktop an die rechte Kante.
+     "CELTIC" misst bei wdth 125 gemessene 4.426em; 22cqi fuellen damit rund
+     97% der Textbreite — formatfuellend, mit Luft von einem Haar. */
+  --text-hero: clamp(3rem, 22cqi, 17rem);
+  --text-hero--line-height: 0.82;
+  --text-hero--letter-spacing: -0.035em;
+
+  /* Layout: die Bahn belegt links eine feste Rinne, Inhalt weicht ihr aus.
+     96px Rinne = 72px Bahnbelag + 24px Luft bis zum Text. */
+  --spacing-lane: 6rem;
+}
+
+/* ═══════════════════════════════════════════════════════════════════════════
+   BASIS
+   ═══════════════════════════════════════════════════════════════════════════ */
+@layer base {
+  :root {
+    /* Der Bahnbelag (§5): der Tartan reicht vom Rand bis 72px, die weisse
+       Markierung liegt darauf bei 32px. Ein schmaler Streifen ginge auch —
+       aber die Distanzmarkierungen aus §5 (START, 100, 200) brauchen Belag,
+       auf dem sie stehen koennen, und ein durchgehender Belag verhindert,
+       dass neben dunklen Sektionen ein heller Rest der Seitenfarbe stehen
+       bleibt. */
+    --lane-channel-width: 4.5rem; /* 72px */
+    /* Punkt und Marken laufen nicht bis an die Viewportkante: START und ZIEL
+       wuerden sonst am Rand halbiert. Der Belag bleibt durchgehend, nur die
+       bewegte Schicht haelt Abstand. */
+    --lane-inset: 2.5rem;
+    --lane-line-offset: 2rem; /* 32px vom Rand bis Linienmitte */
+    --lane-line-width: 3px;
+    --header-height: 4.5rem;
+  }
+
+  html {
+    scroll-behavior: smooth;
+    /* Sprungmarken der Bahn duerfen nicht unter der Sticky-Nav landen */
+    scroll-padding-top: calc(var(--header-height) + 1.5rem);
+    -webkit-text-size-adjust: 100%;
+  }
+
+  body {
+    background-color: var(--color-page);
+    color: var(--color-ink-text);
+    font-family: var(--font-body);
+    font-size: var(--text-ui);
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+  }
+
+  /* Alle Daten laufen tabellarisch. Bei 4'05"58 ist das keine Feinheit,
+     sondern der Unterschied zwischen lesbar und nicht lesbar. */
+  .font-data,
+  [class*="font-data"] {
+    font-variant-numeric: tabular-nums;
+    letter-spacing: 0;
+  }
+
+  h1, h2, h3, h4 {
+    font-family: var(--font-display);
+    font-weight: 800;
+    text-wrap: balance;
+  }
+
+  /* Sichtbarer Tastaturfokus, ueberall, 2px Magenta mit 2px Abstand (§8) */
+  :focus-visible {
+    outline: 2px solid var(--color-focus-ring);
+    outline-offset: 2px;
+    border-radius: 2px;
+  }
+  :focus:not(:focus-visible) {
+    outline: none;
+  }
+
+  ::selection {
+    background-color: var(--color-motion-accent);
+    color: var(--color-white);
+  }
+
+  /* §8 Qualitaetsboden: jede Bewegung faellt auf Opazitaet zurueck. */
+  @media (prefers-reduced-motion: reduce) {
+    html {
+      scroll-behavior: auto;
+    }
+    *,
+    *::before,
+    *::after {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+      scroll-behavior: auto !important;
+    }
+  }
+}
+
+/* ═══════════════════════════════════════════════════════════════════════════
+   HILFSKLASSEN
+   ═══════════════════════════════════════════════════════════════════════════ */
+@utility gradient-surface {
+  background-image: var(--celtic-gradient);
+}
+
+/* Verlaufsschrift — der Hero-Wischer (§6) laesst die Wortmarke so zurueck */
+@utility gradient-text {
+  background-image: var(--celtic-gradient);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+/* Die Width-Achse traegt Hierarchie: je groesser der Grad, desto breiter der
+   Schnitt — wie Stadionbeschriftung, die auf Distanz lesbar bleiben muss. */
+@utility wdth-* {
+  font-stretch: --value(integer) %;
+}
+
+/* ═══════════════════════════════════════════════════════════════════════════
+   D'ZILGERAD (§7)
+   Der Lauf der Banden ist eine reine CSS-Animation auf transform. Damit
+   laeuft er im Compositor, blockiert nie den Main Thread und kostet die
+   Startseite kein Kilobyte JavaScript.
+   ═══════════════════════════════════════════════════════════════════════════ */
+@layer components {
+  .zilgerad-track {
+    animation: zilgerad-run var(--zilgerad-duration, 30s) linear infinite;
+    will-change: transform;
+  }
+
+  /* Hover auf eine Bande haelt das ganze Band an — genau dann, wenn jemand
+     hinschaut. focus-within macht dasselbe fuer die Tastatur. */
+  .zilgerad-band:hover .zilgerad-track,
+  .zilgerad-band:focus-within .zilgerad-track {
+    animation-play-state: paused;
+  }
+
+  @keyframes zilgerad-run {
+    from {
+      transform: translate3d(0, 0, 0);
+    }
+    to {
+      transform: translate3d(-50%, 0, 0);
+    }
+  }
+
+  /* §7: prefers-reduced-motion bekommt ein statisches Raster statt Marquee. */
+  @media (prefers-reduced-motion: reduce) {
+    .zilgerad-track {
+      width: 100%;
+      flex-wrap: wrap;
+      justify-content: center;
+      animation: none;
+    }
+    .zilgerad-clone {
+      display: none;
+    }
+  }
+}
+
+/* ═══════════════════════════════════════════════════════════════════════════
+   NAVIGATION — Ton
+   Die Leiste liegt auf der Startsaeit ueber einem hellen Hero und sonst auf
+   eigenem, dunklem Grund. Statt jede Zeile in der Komponente doppelt zu
+   fuehren, entscheidet ein Attribut, und alle Kinder folgen.
+   ═══════════════════════════════════════════════════════════════════════════ */
+@layer components {
+  .site-header {
+    --nav-fg: var(--color-white);
+    --nav-fg-muted: var(--color-muted-on-ink);
+    --nav-accent: var(--color-accent-on-dark);
+  }
+
+  /* Ueber dem hellen Hero braucht auch der Akzent die dunkle Variante. Ohne
+     das stand die aktive Sprache in der hellen Magenta-Fassung auf Papier —
+     2.8:1, und damit unter AA. Der Ton der Leiste entscheidet, nicht die
+     Komponente. */
+  .site-header[data-tone="light"] {
+    --nav-fg: var(--color-ink-text);
+    --nav-fg-muted: var(--color-muted-on-page);
+    --nav-accent: var(--color-accent-on-page);
+  }
+}
+
+/* ═══════════════════════════════════════════════════════════════════════════
+   DÉI BUNN (§5) — Punkt und Trail
+   Position und Traillaenge kommen als Custom Properties --lane-p,
+   --lane-trail-behind und --lane-trail-ahead aus der Lane-Komponente. Ab hier
+   rechnet nur noch CSS. Bewegt wird ausschliesslich transform: das laeuft im
+   Compositor, ohne Layout und ohne den Main Thread zu blockieren.
+
+   Der Traeger ist genau so gross wie die Bahn. translate um p mal 100% der
+   eigenen Groesse entspricht damit p mal Bahnlaenge — ohne dass irgendwo eine
+   Pixelhoehe gemessen werden muesste.
+   ═══════════════════════════════════════════════════════════════════════════ */
+@layer components {
+  /* Die Laufbahn der bewegten Schicht. Unter lg die Leiste am oberen Rand,
+     ab lg die Senkrechte links. Beide Schichten — Punkt und Marken — nutzen
+     dieselbe Geometrie, damit der Punkt eine Marke genau dann erreicht, wenn
+     die Sektion oben steht. Zwei getrennte Rechnungen faenden hier nie
+     zusammen, und genau das faellt auf. */
+  .lane-rail {
+    position: absolute;
+    top: 0;
+    right: var(--lane-inset);
+    left: var(--lane-inset);
+    height: 0.375rem;
+  }
+
+  @media (width >= 64rem) {
+    .lane-rail {
+      top: var(--lane-inset);
+      right: 0;
+      bottom: var(--lane-inset);
+      left: 0;
+      height: auto;
+    }
+  }
+
+  .lane-carrier-v {
+    transform: translate3d(0, calc(var(--lane-p, 0) * 100%), 0);
+    will-change: transform;
+  }
+
+  .lane-carrier-h {
+    transform: translate3d(calc(var(--lane-p, 0) * 100%), 0, 0);
+    will-change: transform;
+  }
+
+  .lane-dot {
+    position: absolute;
+    border-radius: 9999px;
+    background-color: var(--color-lane-marker);
+  }
+
+  .lane-dot-v {
+    top: 0;
+    left: var(--lane-line-offset);
+    width: 9px;
+    height: 9px;
+    transform: translate(-50%, -50%);
+  }
+
+  .lane-dot-h {
+    top: 50%;
+    left: 0;
+    width: 7px;
+    height: 7px;
+    transform: translate(-50%, -50%);
+  }
+
+  /* Der Trail haengt immer hinter dem Punkt, nie vor ihm: beim Runterscrollen
+     nach oben, beim Hochscrollen nach unten. Die Farbrampe laeuft vom
+     Trikotblau ins Magenta, damit die Handschrift auch hier steht — der
+     115-Grad-Winkel selbst waere in einer 3px breiten Saeule nicht lesbar und
+     bleibt den Flaechen vorbehalten. */
+  .lane-trail {
+    position: absolute;
+    pointer-events: none;
+  }
+
+  .lane-trail-behind-v,
+  .lane-trail-ahead-v {
+    left: var(--lane-line-offset);
+    width: var(--lane-line-width);
+    height: 120px;
+  }
+
+  .lane-trail-behind-v {
+    top: 0;
+    transform: translate(-50%, -100%) scaleY(var(--lane-trail-behind, 0));
+    transform-origin: bottom center;
+    background-image: linear-gradient(
+      to bottom,
+      transparent 0%,
+      var(--celtic-blue) 40%,
+      var(--celtic-magenta) 100%
+    );
+  }
+
+  .lane-trail-ahead-v {
+    top: 0;
+    transform: translate(-50%, 0) scaleY(var(--lane-trail-ahead, 0));
+    transform-origin: top center;
+    background-image: linear-gradient(
+      to top,
+      transparent 0%,
+      var(--celtic-blue) 40%,
+      var(--celtic-magenta) 100%
+    );
+  }
+
+  .lane-trail-behind-h,
+  .lane-trail-ahead-h {
+    top: 50%;
+    width: 120px;
+    height: 2px;
+  }
+
+  .lane-trail-behind-h {
+    left: 0;
+    transform: translate(-100%, -50%) scaleX(var(--lane-trail-behind, 0));
+    transform-origin: right center;
+    background-image: linear-gradient(
+      to right,
+      transparent 0%,
+      var(--celtic-blue) 40%,
+      var(--celtic-magenta) 100%
+    );
+  }
+
+  .lane-trail-ahead-h {
+    left: 0;
+    transform: translate(0, -50%) scaleX(var(--lane-trail-ahead, 0));
+    transform-origin: left center;
+    background-image: linear-gradient(
+      to left,
+      transparent 0%,
+      var(--celtic-blue) 40%,
+      var(--celtic-magenta) 100%
+    );
+  }
+
+  /* Die Distanzmarkierungen stehen laengs der Bahn, nicht quer dazu. Das ist
+     nicht Stilwille: quer gesetzt braeuchte START rund 38px und liefe damit
+     aus dem 72px-Belag heraus auf den hellen Seitengrund, wo weisse Schrift
+     verschwindet. Laengs gesetzt passt die Beschriftung in den Belag — und so
+     steht sie auf einer echten Bahn auch. */
+  .lane-marker-label {
+    writing-mode: vertical-rl;
+    text-orientation: mixed;
+  }
+
+  /* §5: bei reduzierter Bewegung springt der Punkt, und der Trail entfaellt. */
+  @media (prefers-reduced-motion: reduce) {
+    .lane-trail {
+      display: none;
+    }
+    .lane-carrier-v,
+    .lane-carrier-h {
+      will-change: auto;
+    }
+  }
+}
+
+/* ═══════════════════════════════════════════════════════════════════════════
+   HERO (§6)
+   Die Wortmarke oeffnet sich ueber die Width-Achse von 100 auf 125 — wie ein
+   Laeufer, der aus der Kurve auf die Zielgerade kommt. Gleichzeitig faehrt
+   der Trikotverlauf als Wischer hindurch und laesst sie als Verlaufs-Text
+   zurueck.
+
+   Der Wischer ist eine Maske mit demselben 115-Grad-Verlauf wie das Trikot,
+   nicht ein clip-path mit gerechneten Ecken. Damit stimmt der Winkel bei
+   jedem Seitenverhaeltnis exakt, statt bei jedem Viewport neu zu kippen.
+
+   Alles laeuft in CSS. Der Hero ist die erste Sekunde der Seite; er soll
+   nicht auf JavaScript warten muessen.
+   ═══════════════════════════════════════════════════════════════════════════ */
+@property --hero-wipe {
+  syntax: "<percentage>";
+  inherits: false;
+  initial-value: 110%;
+}
+
+@property --reveal-edge {
+  syntax: "<percentage>";
+  inherits: false;
+  initial-value: 110%;
+}
+
+@layer components {
+  .hero-word {
+    font-stretch: 125%;
+    animation: hero-open 900ms cubic-bezier(0.16, 1, 0.3, 1) both;
+  }
+
+  @keyframes hero-open {
+    from {
+      font-stretch: 100%;
+    }
+    to {
+      font-stretch: 125%;
+    }
+  }
+
+  /* black ist hier keine Gestaltungsfarbe, sondern der Alphakanal der Maske —
+     deshalb steht sie ausnahmsweise nicht als Token in Ebene 1. */
+  .hero-wipe {
+    mask-image: linear-gradient(
+      115deg,
+      black 0 var(--hero-wipe),
+      transparent var(--hero-wipe)
+    );
+    animation: hero-wipe 900ms cubic-bezier(0.16, 1, 0.3, 1) both;
+  }
+
+  @keyframes hero-wipe {
+    from {
+      --hero-wipe: -10%;
+    }
+    to {
+      --hero-wipe: 110%;
+    }
+  }
+
+  /* §6: erst danach, mit 200ms Verzoegerung. */
+  .hero-after {
+    animation: hero-after 500ms cubic-bezier(0.16, 1, 0.3, 1) 1100ms both;
+  }
+
+  @keyframes hero-after {
+    from {
+      opacity: 0;
+      transform: translate3d(0, 12px, 0);
+    }
+    to {
+      opacity: 1;
+      transform: none;
+    }
+  }
+
+  /* ── Sektionswechsel (§8) ─────────────────────────────────────────────
+     Kein generisches Fade-up: eine Verlaufskante in 115 Grad faehrt durch
+     die Sektion und gibt den Inhalt frei. Dieselbe Maskentechnik wie im
+     Hero, damit der Winkel ueberall derselbe ist.
+
+     Nach dem Durchlauf faellt die Maske weg. Eine dauerhaft maskierte
+     Sektion behielte ihre Compositing-Ebene fuer den Rest der Sitzung — und
+     davon haette die Seite nichts als Kosten beim Scrollen. */
+  /* Der Ausgangszustand wird von JavaScript gesetzt, nicht von CSS.
+     Stuende die Maske im Stylesheet, waere der Inhalt bei abgeschaltetem
+     JavaScript, in einem Crawler oder bei einem Fehler in der Komponente
+     dauerhaft unsichtbar. Eine Animation darf nie die Bedingung dafuer sein,
+     dass Text ueberhaupt existiert. */
+  .reveal-armed {
+    mask-image: linear-gradient(
+      115deg,
+      black 0 var(--reveal-edge),
+      transparent var(--reveal-edge)
+    );
+    --reveal-edge: -5%;
+  }
+
+  .reveal-in {
+    mask-image: linear-gradient(
+      115deg,
+      black 0 var(--reveal-edge),
+      transparent var(--reveal-edge)
+    );
+    animation: reveal-edge 900ms cubic-bezier(0.16, 1, 0.3, 1) both;
+  }
+
+  .reveal-done {
+    mask-image: none;
+    animation: none;
+  }
+
+  @keyframes reveal-edge {
+    from {
+      --reveal-edge: -5%;
+    }
+    to {
+      --reveal-edge: 115%;
+    }
+  }
+
+  /* Elemente in der Sektion steigen 24px auf, gestaffelt mit 40ms.
+     Sichtbar ist der Standard; versteckt wird erst, wenn JavaScript die
+     Sektion scharf gestellt hat. */
+  .rise {
+    transition:
+      opacity 500ms cubic-bezier(0.16, 1, 0.3, 1),
+      transform 500ms cubic-bezier(0.16, 1, 0.3, 1);
+    transition-delay: calc(var(--i, 0) * 40ms);
+  }
+
+  .reveal-armed .rise {
+    opacity: 0;
+    transform: translate3d(0, 24px, 0);
+  }
+
+  /* §8: Bei reduzierter Bewegung bleibt nur Opazitaet — keine Maske, kein
+     Versatz. Die globale Regel kuerzt zusaetzlich alle Dauern. */
+  @media (prefers-reduced-motion: reduce) {
+    .reveal-armed,
+    .reveal-in {
+      mask-image: none;
+      animation: none;
+    }
+    .reveal-armed .rise {
+      opacity: 1;
+      transform: none;
+    }
+    .rise {
+      transition-delay: 0ms;
+    }
+  }
+}
+
+/* ═══════════════════════════════════════════════════════════════════════════
+   REKORDZEILEN (§8, §10)
+   Hover: eine 2px-Magenta-Linie wischt in 300ms von links nach rechts durch
+   die Zeile — der Zielstrich. Der Name wird eine Gewichtsstufe schwerer, die
+   Zeile hebt sich minimal. Kein Farbwechsel des Hintergrunds.
+
+   Das Gewicht darf die Spaltenbreiten nicht verschieben: die Tabelle laeuft
+   auf einem festen ch-Raster, damit die Kommastellen ueber alle Zeilen und
+   alle Tabs hinweg an derselben Stelle stehen. Bei 4'05"58 ist das kein
+   Detail, sondern Lesbarkeit.
+   ═══════════════════════════════════════════════════════════════════════════ */
+@layer components {
+  .record-row {
+    position: relative;
+    transition: transform 300ms cubic-bezier(0.16, 1, 0.3, 1);
+  }
+
+  .record-row::after {
+    content: "";
+    position: absolute;
+    inset-inline: 0;
+    bottom: 0;
+    height: 2px;
+    background-color: var(--color-motion-accent);
+    transform: scaleX(0);
+    transform-origin: left center;
+    transition: transform 300ms cubic-bezier(0.16, 1, 0.3, 1);
+  }
+
+  .record-row:hover::after,
+  .record-row:focus-within::after {
+    transform: scaleX(1);
+  }
+
+  .record-row:hover,
+  .record-row:focus-within {
+    transform: translate3d(0, -1px, 0);
+  }
+
+  .record-row:hover .record-name,
+  .record-row:focus-within .record-name {
+    font-weight: 700;
+  }
+
+  .record-pulse {
+    animation: record-pulse 2s ease-in-out infinite;
+  }
+
+  @keyframes record-pulse {
+    0%,
+    100% {
+      opacity: 1;
+      transform: scale(1);
+    }
+    50% {
+      opacity: 0.45;
+      transform: scale(0.7);
+    }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .record-row:hover,
+    .record-row:focus-within {
+      transform: none;
+    }
+    .record-pulse {
+      animation: none;
+    }
+  }
+}
+
+/* ═══════════════════════════════════════════════════════════════════════════
+   REKORDTABELLE — das Zeichenraster (§4, §10)
+   Spaltenbreiten in ch statt in fr. Damit steht das Komma von 4'05"58 nicht
+   nur innerhalb einer Tabelle untereinander, sondern ueber alle sieben Tabs
+   hinweg an derselben Stelle — beim Umschalten springt nichts.
+   ═══════════════════════════════════════════════════════════════════════════ */
+@layer components {
+  .record-table th {
+    padding-block: 0.75rem;
+    font-family: var(--font-data);
+    font-size: var(--text-data-xs);
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--color-muted-on-ink);
+    font-weight: 400;
+  }
+
+  .record-table td {
+    padding-block: 0.875rem;
+    font-family: var(--font-data);
+    font-variant-numeric: tabular-nums;
+    font-size: var(--text-ui-sm);
+    color: var(--color-page-text);
+    vertical-align: baseline;
+  }
+
+  .record-col-performance {
+    text-align: right;
+    padding-inline-end: 1.5rem;
+  }
+
+  .record-col-year {
+    text-align: right;
+  }
+
+  .record-col-category {
+    color: var(--color-muted-on-ink);
+  }
+
+  /* Unter sm bricht die Zeile auf zwei Zeilen um: Disziplin und Leistung
+     oben, Name, Kategorie und Jahr darunter. Ein 51ch breites Raster passt
+     bei 360px nicht, und eine seitlich scrollende Rekordtabelle waere auf dem
+     Handy unbenutzbar — dort wird sie am haeufigsten gelesen. */
+  @media (width < 40rem) {
+    .record-table,
+    .record-table tbody,
+    .record-table tr,
+    .record-table td {
+      display: block;
+      width: 100%;
+    }
+    .record-table thead {
+      display: none;
+    }
+    .record-table tr {
+      display: grid;
+      grid-template-columns: 1fr auto;
+      gap: 0 1rem;
+      padding-block: 0.75rem;
+    }
+    .record-table td {
+      padding-block: 0.125rem;
+    }
+    /* Zwei Zeilen statt fuenf Spalten: oben Disziplin und Leistung, darunter
+       Name und Jahr. Die Kategorie faellt weg — sie ist die einzige Angabe,
+       die auf dem Handy keinen Platz wert ist, und sie steht im Filter.
+       Die Selektoren brauchen die Tabellenklasse davor: sonst gewinnt
+       ".record-table td { display: block }" ueber die Spaltenregeln. */
+    .record-table .record-col-discipline {
+      grid-area: 1 / 1;
+      color: var(--color-muted-on-ink);
+    }
+    .record-table .record-col-performance {
+      grid-area: 1 / 2;
+      text-align: right;
+      padding-inline-end: 0;
+      font-size: var(--text-ui-lg);
+    }
+    .record-table .record-col-name {
+      grid-area: 2 / 1;
+    }
+    .record-table .record-col-category {
+      display: none;
+    }
+    .record-table .record-col-year {
+      grid-area: 2 / 2;
+      align-self: end;
+    }
+  }
+
+  @media (width >= 40rem) {
+    .record-col-discipline {
+      width: 14ch;
+    }
+    .record-col-performance {
+      width: 12ch;
+    }
+    .record-col-name {
+      width: auto;
+    }
+    .record-col-category {
+      width: 7ch;
+    }
+    .record-col-year {
+      width: 14ch;
+    }
+  }
+}
+
+/* ═══════════════════════════════════════════════════════════════════════════
+   TRAINER- UND VORSTANDSKARTEN (§8)
+   Hover: die Karte kippt zur Mausposition, hoechstens 4 Grad, und am unteren
+   Rand laeuft eine Verlaufskante ein. Gerechnet wird hier; die Komponente
+   setzt nur zwei Zahlen.
+   ═══════════════════════════════════════════════════════════════════════════ */
+@layer components {
+  .person-card {
+    perspective: 1000px;
+  }
+
+  .person-card-inner {
+    /* Die Werte kommen aus der Komponente und sind bereits auf -4..4 begrenzt,
+       weil dort mit 8 multipliziert und von der Mitte aus gemessen wird. */
+    transform: rotateX(calc(var(--tilt-x, 0) * 1deg))
+      rotateY(calc(var(--tilt-y, 0) * 1deg));
+    transition: transform 300ms cubic-bezier(0.16, 1, 0.3, 1);
+    transform-style: preserve-3d;
+    will-change: transform;
+  }
+
+  .person-card-edge {
+    position: absolute;
+    inset-inline: 0;
+    bottom: 0;
+    height: 3px;
+    transform: scaleX(0);
+    transform-origin: left center;
+    transition: transform 400ms cubic-bezier(0.16, 1, 0.3, 1);
+  }
+
+  .person-card:hover .person-card-edge,
+  .person-card:focus-within .person-card-edge {
+    transform: scaleX(1);
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .person-card-inner {
+      transform: none;
+      will-change: auto;
+    }
+  }
+}
+
+/* ═══════════════════════════════════════════════════════════════════════════
+   KALENDER (§9)
+   Eigene Veranstaltungen des Vereins heben sich ab, ohne aus der Chronologie
+   zu fallen: eine Magenta-Kante an der Zeitleiste statt einer eigenen Liste.
+   ═══════════════════════════════════════════════════════════════════════════ */
+@layer components {
+  .calendar-own {
+    position: relative;
+  }
+
+  .calendar-own::before {
+    content: "";
+    position: absolute;
+    inset-block: 0;
+    left: -1rem;
+    width: 2px;
+    background-color: var(--color-motion-accent);
+  }
+}
+
+/* ═══════════════════════════════════════════════════════════════════════════
+   VEREINSFOTOS (§9)
+   Ein Duotone-Overlay im Trikotblau bindet Bilder aus zwanzig Jahren und
+   zehn Kameras zu einer Bildsprache zusammen. Beim Hover geht es weg — dann
+   sieht man das Bild, wie es aufgenommen wurde.
+   ═══════════════════════════════════════════════════════════════════════════ */
+@layer components {
+  .club-photo-tone {
+    position: absolute;
+    inset: 0;
+    background-color: var(--celtic-blue);
+    mix-blend-mode: multiply;
+    opacity: 0.12;
+    transition: opacity 400ms cubic-bezier(0.16, 1, 0.3, 1);
+    pointer-events: none;
+  }
+
+  .club-photo:hover .club-photo-tone,
+  .club-photo:focus-within .club-photo-tone {
+    opacity: 0;
+  }
+}
+
+/* ═══════════════════════════════════════════════════════════════════════════
+   SEKTIONSABSTAND (§1)
+   Mindestens 128px auf dem Desktop, 80px auf Mobil. Die Regel steht als
+   Utility und nicht in jeder Komponente einzeln — sonst hat sie nach drei
+   neuen Seiten wieder fünf verschiedene Werte.
+   ═══════════════════════════════════════════════════════════════════════════ */
+@utility section-space {
+  padding-block: 5rem;
+}
+
+@media (width >= 64rem) {
+  .section-space {
+    padding-block: 8rem;
+  }
+}
+
+@utility section-space-top {
+  padding-top: 5rem;
+}
+
+@media (width >= 64rem) {
+  .section-space-top {
+    padding-top: 8rem;
+  }
+}
+
+/* ═══════════════════════════════════════════════════════════════════════════
+   TAB-LEISTE (§8)
+   Bei mehr Tabs als Platz wird waagerecht gescrollt, nicht in zwei Zeilen
+   umgebrochen. Die weiche Randabblendung sagt, dass es weitergeht — ohne
+   einen Pfeil, der Platz kostet und auf dem Handy niemand trifft.
+   ═══════════════════════════════════════════════════════════════════════════ */
+@layer components {
+  .tab-scroll > [role="tablist"] {
+    scrollbar-width: none;
+    -webkit-mask-image: linear-gradient(
+      to right,
+      transparent 0,
+      black 1.5rem,
+      black calc(100% - 1.5rem),
+      transparent 100%
+    );
+    mask-image: linear-gradient(
+      to right,
+      transparent 0,
+      black 1.5rem,
+      black calc(100% - 1.5rem),
+      transparent 100%
+    );
+  }
+
+  .tab-scroll > [role="tablist"]::-webkit-scrollbar {
+    display: none;
+  }
+
+  /* Ohne Ueberlauf keine Abblendung: sonst wirken die Raender beschnitten,
+     obwohl nichts verborgen ist. */
+  @media (width >= 64rem) {
+    .tab-scroll > [role="tablist"] {
+      mask-image: none;
+      -webkit-mask-image: none;
+    }
+  }
+}

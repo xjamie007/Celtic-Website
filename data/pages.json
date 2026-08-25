@@ -1,0 +1,764 @@
+{
+ "source": "celtic.lu (altes CMS)",
+ "importedAt": "2026-08-22",
+ "pages": {
+  "club": {
+   "slug": "club",
+   "source": "https://www.celtic.lu/online/www/websiteCeltic/celticContent/47/FRE/index.html",
+   "blocks": [
+    {
+     "type": "heading",
+     "text": "Allgemeng Informatiounen fir nei Memberen"
+    },
+    {
+     "type": "paragraph",
+     "text": "D’Liichtathletik as d’Olympesch Sportaart Nr. 1. Si bidd jiddwerengem déi Epreuve déi him passt. Sprint, wäit lafen, sprangen oder werfen. Fir jiddereen as eppes derbäi."
+    },
+    {
+     "type": "paragraph",
+     "text": "Mir am CELTIC fannen et wichteg dass ee Freed derbäi huet. An dat as och dat éischt, wat mir wëlle vermëttelen: Freed un der Liichtathletik mat hire ville Méiglechkeeten."
+    },
+    {
+     "type": "paragraph",
+     "text": "Net jiddereen kënnt an de CELTIC mat deem selwechten Zil. Et mëcht ee Sport fir gesond ze bleiwen, fir sech mat aneren ze vergläichen, well et Spaass mëcht, awer och well een éiergäizeg ass an ee wëll Champion gin. Liichtathletik ass objektiv. Do as keen Arbitter mat Tomaten op den Aen oder deen eppes géint een huet. De Chrono an d’Zentimeterband ieren sech nët. D’Plaz am Klassement huet een sech éierlech verdingt."
+    },
+    {
+     "type": "paragraph",
+     "text": "Eng Liichtathletikcarrière ass e Laangzäitprojet. Et gëtt een net vun haut op mar Weltmeeschter. Meeschtens net."
+    },
+    {
+     "type": "paragraph",
+     "text": "D’CELTIC Trainer Team huet d’Missioun fir all d’Athleten optimal ze betreien a Fonctioun vun hirem Kënnen an hiren Ambitiounen. D’Trainingsphilosophie vum CELTIC fousst op engem kontinuéierlechen Opbau, Schrëtt fir Schrëtt, ouni Etappen z’iwwersprangen, bei deem Technik, Souplesse, Vitesse a Koordinatioun d’Basis sin fir d’Entwécklung zum selbststännegen a selbstbewossten Athlet."
+    },
+    {
+     "type": "paragraph",
+     "text": "Op dëse Säiten fannt dir e puer Informatiounen iwwert de Club, den Training an d’Competitiounen."
+    },
+    {
+     "type": "paragraph",
+     "text": "Vill Freed beim Liesen."
+    }
+   ]
+  },
+  "club/training": {
+   "slug": "club/training",
+   "source": "https://www.celtic.lu/online/www/websiteCeltic/celticContent/47/48/FRE/index.html",
+   "blocks": [
+    {
+     "type": "paragraph",
+     "text": "Et gin am Celtic verschidden Trainingsgruppen"
+    },
+    {
+     "type": "list",
+     "items": [
+      "CELTIC Liichtathletikschoul",
+      "CELTIC Créateur d’athlètes",
+      "CELTIC Powerhouse of athletics",
+      "CELTIC Liichtathletik fir Jiddereen"
+     ]
+    },
+    {
+     "type": "paragraph",
+     "text": "D’Andeelung an déi verschidden Gruppen ass prinzipiell ofhängeg vum Alter vun de Sportler. Mir kucken och op hir Entwecklung. D’Iwwergäng tëschent de Gruppen sin fléissend no Ofsprooch vum Coordinateur sportif mat den Traineren an dem Athlet. Fir flott Joeren an der Liichtathletik ze verbrengen, muss een net onbedengt all des Trainingsgruppen duerchlaf hun. Quereinsteiger gin an d’Gruppen integréiert."
+    },
+    {
+     "type": "heading",
+     "text": "CELTIC Liichtathletikschoul"
+    },
+    {
+     "type": "paragraph",
+     "text": "Fir Kanner vun 5 Joer un bis 11 Joer, d.h. aus den Kategorien Ludiques (U8), Benjamins (U10) an Débutants (U12)"
+    },
+    {
+     "type": "paragraph",
+     "text": "Déi jonck Sportler kréien eng adaptéiert Préparatioun fir all Sportarten an Disziplinnen déi am Celtic praktizéiert gin: Liichtathletik, Triathlon, Duathlon. D’Übungen, d’Geräter an d’Spiller sin hirem Alter ugepasst. Si léieren esou d’Grondbegrëffer vun de verschiddenen Haaptdisziplinnen d.h. Sprint, Laf, Sprong, Worf."
+    },
+    {
+     "type": "paragraph",
+     "text": "Dat wichtegst awer as Freed a Spaass zesummen mat de Celtic Kollegen"
+    },
+    {
+     "type": "paragraph",
+     "text": "Trainer : Aline Kiesch U10 Josée Schäfer U10 - Elisabeth Hoffmann U12 - Mieke Koster U12 - Anne Siebenaler U12 - Jang Winandy U12"
+    },
+    {
+     "type": "heading",
+     "text": "CELTIC Créateur d’athlètes"
+    },
+    {
+     "type": "paragraph",
+     "text": "Fir Kanner teschend 12 Joer a 14 Joer, d.h. aus den Kategorien Scolaires (U14) a Minimes (U16)."
+    },
+    {
+     "type": "paragraph",
+     "text": "D’Zil ass zesummen mam Athlet seng Disziplin ze fannen an hien dohin z’orientéieren. D’Minimes maachen hir éischt Erfahrungen bei Meeschterschaften. All Joer kommen do CELTIC Athleten op de Podium, mee dat ass net dat Wichtegst. Eng Liichtathletikcarrière ass ee Laangzäitprojet an deemno gëtt Schrëtt fir Schrëtt, ouni Etappen z‘iwwersprangen, den Athlet zu senger Epreuve higefouert fir no a no de perfekten Geste ze léieren."
+    },
+    {
+     "type": "paragraph",
+     "text": "Trainer : Sebastiaan Van den Heuvel, Kenny-Neal Wolmering, Stefan Kornelis, Romain Possing"
+    },
+    {
+     "type": "heading",
+     "text": "CELTIC Powerhouse of athletics"
+    },
+    {
+     "type": "paragraph",
+     "text": "Vun der Kategorie Cadets bis un d’Enn vun der Carrière. Hei gëtt op déi Joeren virdrunn opgebaut, mam Zil der idealer Kombinatioun vun Esthetik an Efficacitéit esou no wéi méiglech ze kommen."
+    },
+    {
+     "type": "paragraph",
+     "text": "Trainer : Stefan Kornelis, Jo Brandenburger, Mirko Gregor, Kenny-Neal Wolmering, Oliier Lessire, Bob Bertemes"
+    },
+    {
+     "type": "heading",
+     "text": "CELTIC Liichtathletik fir Jiddereen"
+    },
+    {
+     "type": "paragraph",
+     "text": "Jiddereen, gëtt op Wonsch an no Méiglechkeet vum CELTIC Trainerteam beroden."
+    },
+    {
+     "type": "heading",
+     "text": "TRAININGSPLAZEN"
+    },
+    {
+     "type": "paragraph",
+     "text": "Plan"
+    },
+    {
+     "type": "list",
+     "items": [
+      "Centre Sportif, rue Jos Merten, Diekirch.",
+      "Sportshal Lycée Classique Diekirch, Neit Gebei.",
+      "Sportshal Primaireschoul, Place de l’Ecole"
+     ]
+    },
+    {
+     "type": "heading",
+     "text": "TRAININGSZAÏTEN"
+    },
+    {
+     "type": "paragraph",
+     "text": "Sportshal Primaire Schoul (3) Centre Sportif (1)"
+    },
+    {
+     "type": "paragraph",
+     "text": "Mir maachen keng Vakanz. Den Training fällt just aus wann een offiziellen Feierdag ass an deemno d’Hal zou ass. Dat gët annoncéiert."
+    },
+    {
+     "type": "heading",
+     "text": "STAGEN"
+    },
+    {
+     "type": "paragraph",
+     "text": "De CELTIC organiséiert zwee Stagen : De Stage fir Athleten vun der Kategorie Minimes un an der Ouschtervakanz zu Palafrugell an La Fosca op der Costa Brava (ESP). De Stage fir Débutants a Scolaires ass meeschtens an der Päischtvakanz."
+    }
+   ]
+  },
+  "club/trainer": {
+   "slug": "club/trainer",
+   "source": "https://www.celtic.lu/online/www/websiteCeltic/celticContent/47/57/FRE/index.html",
+   "blocks": [
+    {
+     "type": "heading",
+     "text": "Liichtathletik"
+    },
+    {
+     "type": "heading",
+     "text": "Bob BERTEMES"
+    },
+    {
+     "type": "paragraph",
+     "text": "Brevet \"LUXQF3\""
+    },
+    {
+     "type": "heading",
+     "text": "Jo BRANDENBURGER"
+    },
+    {
+     "type": "paragraph",
+     "text": "Mëttel a Langstréckeleefer beim Celtic vun 1982-1989. Duathlet an den 90er Joeren mat 3 Partizipatiounen op de Duathlonweltmeeschterschaften zu Zofingen(CH). Weiderhi selwer aktiv als Langstréckeleefer. Brevet \"LUXQF5\" (A-Schäin)"
+    },
+    {
+     "type": "heading",
+     "text": "Mirko GREGOR"
+    },
+    {
+     "type": "paragraph",
+     "text": "Mittelstreckler, Mehrkämpfer, mehrfacher Rheinland-Jugendmeister und Teilnahme an Deutschen Jugendmeisterschaften (Mehrkampf, Weitsprung), Auswahlathlet des Landesverbandes Rheinland. Heute aktiv als Läufer. Brevet \"LUXQF3\" (C-Schäin)"
+    },
+    {
+     "type": "heading",
+     "text": "Elisabeth HOFFMANN"
+    },
+    {
+     "type": "paragraph",
+     "text": "Vu Kand un Sportbegeeschtert, bis zum Studium Leeschtungssportlerin, ugefangen mat Turnen, iwert Basket an Tennis bis zur Liichtathletik, zenter 2001 erëm als Laangstreckeleeferin aktiv (10km, Semi an Marathon). Brevet \"LUXQF3\" (C-Schäin)"
+    },
+    {
+     "type": "heading",
+     "text": "Aline KIESCH"
+    },
+    {
+     "type": "paragraph",
+     "text": "Turnmonitrice, Brevet \"LUXQF3\" (C-Schäin)"
+    },
+    {
+     "type": "heading",
+     "text": "Stefan KORNELIS"
+    },
+    {
+     "type": "paragraph",
+     "text": "Am Celtic zënter 1992, verschidden Titelen an de Jugendkategorien (Mëttelstrecken a Cross), Landesmeeschter 800m (indoor), duerno Langstreckenleefer an zënter 2016 Du- an Triathlet (Landesmeeschter Triathlon Sprintdistanz), Brevet \"LUXQF3\" (C-Schäin)"
+    },
+    {
+     "type": "heading",
+     "text": "Mieke KOSTER"
+    },
+    {
+     "type": "paragraph",
+     "text": "Brevet \"LUXQF3\" (C-Schäin)"
+    },
+    {
+     "type": "heading",
+     "text": "Olivier LESSIRE"
+    },
+    {
+     "type": "paragraph",
+     "text": "Brevet ADEPS (Courses) Brevet ADEPS (Sauts)"
+    },
+    {
+     "type": "heading",
+     "text": "Romain POSSING"
+    },
+    {
+     "type": "paragraph",
+     "text": "Brevet \"LUXQF3\" (C-Schäin)"
+    },
+    {
+     "type": "heading",
+     "text": "Josée SCHAEFER"
+    },
+    {
+     "type": "paragraph",
+     "text": "Brevet \"LUXQF1\" (initiateur d’athlétisme)"
+    },
+    {
+     "type": "heading",
+     "text": "Anne SIEBENALER"
+    },
+    {
+     "type": "paragraph",
+     "text": "Student Sportwissenschaften Brevet \"LUXQF4\" (B-Schäin)"
+    },
+    {
+     "type": "heading",
+     "text": "Sebastiaan VAN DEN HEUVEL"
+    },
+    {
+     "type": "paragraph",
+     "text": "Brevet \"LUXQF3\" (C-Schäin)"
+    },
+    {
+     "type": "heading",
+     "text": "Jang WINANDY"
+    },
+    {
+     "type": "heading",
+     "text": "Kenny-Neal WOLMERING"
+    },
+    {
+     "type": "paragraph",
+     "text": "Student Sportwissenschaften Brevet \"LUXQF4\" (B-Schäin)"
+    },
+    {
+     "type": "heading",
+     "text": "Triathlon"
+    },
+    {
+     "type": "heading",
+     "text": "Steve FELLER"
+    },
+    {
+     "type": "heading",
+     "text": "Tom HEMMEN"
+    },
+    {
+     "type": "paragraph",
+     "text": "Brevet \"LUXQF3\" (C-Schäin)"
+    },
+    {
+     "type": "heading",
+     "text": "Max SCHROEDER"
+    },
+    {
+     "type": "heading",
+     "text": "Jean-Marc WAGNER"
+    }
+   ]
+  },
+  "club/comite": {
+   "slug": "club/comite",
+   "source": "https://www.celtic.lu/online/www/websiteCeltic/celticContent/47/511/FRE/index.html",
+   "blocks": [
+    {
+     "type": "heading",
+     "text": "Président"
+    },
+    {
+     "type": "paragraph",
+     "text": "Marc FUNCK"
+    },
+    {
+     "type": "heading",
+     "text": "Vice-président"
+    },
+    {
+     "type": "paragraph",
+     "text": "Joel WEIS"
+    },
+    {
+     "type": "heading",
+     "text": "Secrétaire Général"
+    },
+    {
+     "type": "paragraph",
+     "text": "Monique REISER"
+    },
+    {
+     "type": "heading",
+     "text": "Secrétaire Général Adjoint"
+    },
+    {
+     "type": "paragraph",
+     "text": "Elisabeth HOFFMANN"
+    },
+    {
+     "type": "heading",
+     "text": "Trésorier"
+    },
+    {
+     "type": "paragraph",
+     "text": "Annie JUCHEMES Luc SCHELLER"
+    },
+    {
+     "type": "heading",
+     "text": "Membres"
+    },
+    {
+     "type": "paragraph",
+     "text": "Steve ANGELSBERG Jeff MATHAY Anne REISER Aline SAUBER Michel USELDINGER"
+    },
+    {
+     "type": "heading",
+     "text": "Coordinateur sportif"
+    },
+    {
+     "type": "paragraph",
+     "text": "Joel WEIS"
+    },
+    {
+     "type": "heading",
+     "text": "Responsable Licences"
+    },
+    {
+     "type": "paragraph",
+     "text": "Monique REISER"
+    },
+    {
+     "type": "heading",
+     "text": "Représentants des athlètes"
+    },
+    {
+     "type": "paragraph",
+     "text": "Lara ANGELSBERG Jamie LEY"
+    }
+   ]
+  },
+  "club/stadion": {
+   "slug": "club/stadion",
+   "source": "https://www.celtic.lu/online/www/websiteCeltic/celticContent/47/515/FRE/index.html",
+   "blocks": [
+    {
+     "type": "heading",
+     "text": "Stade Municipal Diekirch rue Merten L - 9257 DIEKIRCH"
+    }
+   ]
+  },
+  "club/trainingscamp": {
+   "slug": "club/trainingscamp",
+   "source": "https://www.celtic.lu/online/www/websiteCeltic/celticContent/47/207/210/FRE/index.html",
+   "blocks": [
+    {
+     "type": "heading",
+     "text": "Palamos/Palafrugell 26. Abrëll bis den 04. Abrëll 2026"
+    },
+    {
+     "type": "paragraph",
+     "text": "- Départ zu Dikrech, Doneschdes Owes, de 26. März 2026 (19:30 Auer)"
+    },
+    {
+     "type": "paragraph",
+     "text": "- Départ–retour zu La Fosca Freides, den 03. Abrëll 2026 am Hotel Ancora"
+    },
+    {
+     "type": "paragraph",
+     "text": "- Mir sin also zréck, Samsdes, den 04. Abrëll 2026 Moies ca. 10:00 Auer"
+    },
+    {
+     "type": "paragraph",
+     "text": "Mir hunn also 8 Trainingsdeeg zur Verfügung."
+    }
+   ]
+  },
+  "club/kontakt": {
+   "slug": "club/kontakt",
+   "source": "https://www.celtic.lu/online/www/websiteCeltic/celticContent/47/516/FRE/index.html",
+   "blocks": []
+  },
+  "zenter-1968": {
+   "slug": "zenter-1968",
+   "source": "https://www.celtic.lu/online/www/websiteCeltic/celticContent/598/659/FRE/index.html",
+   "blocks": [
+    {
+     "type": "heading",
+     "text": "Liichtathletik zu Dikrich virum Celtic"
+    },
+    {
+     "type": "paragraph",
+     "text": "Liichtathletikaktivitéiten zu Dikrich gëtt et net réicht zënter datt den CELTIC besteet. Schon de 16.Juli 1916 gouf zu Dikrich een neie Rekord am Speerwerfen opgestallt, deemols mat 42,48 Meter, an 1943 huet de Josy Barthel zu Dikrich seng éischt 1500 Meter gewonnen."
+    },
+    {
+     "type": "paragraph",
+     "text": "De Celtic war och net deen éischte Liichtathletikveräin hei zu Dikrich. An den 30iger Jore gouf et eng Liichtathletiksektioun bei de Young-Boys, wou besonnesch de Paul Hammer ee vun deene Beschten am Land war. Méi spéit gouf et da während enger Rei vu Joren den ACD, den Athletic-Club Dikrich."
+    },
+    {
+     "type": "heading",
+     "text": "Ee laangen Ulaf"
+    },
+    {
+     "type": "paragraph",
+     "text": "De Start vum heitige Liichtathletikveräin gouf ët am Fong geholl 2 mol. An den Ufanks 60ziger Joren hat dee verstuerwene Sportsfrënd Jos Medernach d’Iddi an den Dram zu Dikrich ee Liichtathletikveräin an d’Sportswelt ze setzen. Als engagéierten Dirigent am Basketballclub, hat hien erreecht, datt deen deemolige Basketballclub BBCD seng Strukturen geännert huet, fir vun do un als Veräin mat méi Sportsektiounen ze funktionnéieren an dat ënnert deem neien Numm Cercle Sportif Standard Diekirch."
+    },
+    {
+     "type": "paragraph",
+     "text": "Wann och d’Ausgangssportsektioun, de Basket, voll fonktionnéiert huet, dann hat awer di geplangte Liichtathletiksektioun déck Problemer fir op d’Been ze kommen. Fir als Liichtathletikveräin an d’FLA, Fédération Luxembourgeoise d’Athlétisme, opgeholl ze ginn, huet ee mussen 10 Lizenze vun aktive Liichtathlete viirleeën. Dee Quorum huet de Jos awer réicht Joere méi spéit erreecht wéi massiv Hëllef vu bausse komm ass. An dat goung esou."
+    },
+    {
+     "type": "paragraph",
+     "text": "Nodeems de Léi Moureaud 1964 bei de Landesmeeschterschaften am Cross vun der LASEL hei zu Dikrich bei den Non-Licencés de Championstitel kritt hat, ware sämtlich Spëtzeveräiner hannert him heer fir hien als Member an hire Veräin ze kréien. Hien huet dunn eng Lizenz bei der Fola Esch ënnerschriwen. Dem Léi seng Begeeschterung fir d’Liichtathletik a säin Trainertalent hunn du bewierkt, datt bis 1968 nach 14 aner Dikricher eng Lizenz an der Fola haten a regelméisseg a mat vill Erfolleg déi rout a wäiss Folasfaarwe verdeedigt hunn. Mä de Léi hung vill ze vill u sengem Dikrich fir datt dat nach sollt Joere sou weider goen: ëmmer fir eng „aner“ Uertschaft/Veräin ze lafen."
+    }
+   ]
+  },
+  "zenter-1968/grennung": {
+   "slug": "zenter-1968/grennung",
+   "source": "https://www.celtic.lu/online/www/websiteCeltic/celticContent/598/661/FRE/index.html",
+   "blocks": [
+    {
+     "type": "heading",
+     "text": "1. Etapp : 18.10. 1968 an 27.11.1969"
+    },
+    {
+     "type": "paragraph",
+     "text": "1968 goufen dann de Jos an de Léi, déi 2 fréier Noperen aus der rue des Artisans sich eens : encouragéiert vun eisem Olympiasieger Josy Barthel konnt de Léi ënnert der Presidentschaft vum Erny Thiel, ee Comité op d’Bee setzen an du mat senge 14 Kollegen den Transfert maachen . Dunn hat de Jos säi Quorum an Dikrich een neie Liichtathletikveräin, als Sektioun vum CS Standard. An der Grënnungsversammlung, déi den 18. Oktober 1968 am Cinemassall vum Kolléisch war, ass dee folgende Comité ugetrueden: Erny Thiel (President) Jean-Pierre Kraemer (Vice-President) Dr Raymond Meyers (Conseiller médical), Léi Moureaud (Sekretär), Will Lorang (Trésorier) Norbert Toussaint a Paul Werer (Memberen)."
+    },
+    {
+     "type": "paragraph",
+     "text": "Am Abrëll 1969 hunn d’Athleten, deemols nach eng reng Männersektioun, un deem éischte Meeting fir hiren neie Veräin deelgeholl. D’Begeeschterung war grouss. Dat éischt Joer konnt schon de Championstitel an der 3ter Divisoun gefeiert ginn an Enn 1969 goufe schon 80 Lizenze gezielt."
+    },
+    {
+     "type": "paragraph",
+     "text": "Mee an dem grousse Standard huet d’Häerz vun der Direktioun zevill eeseitig fir de Basket geschloen, deemno gouf beschloss sich selbstännig ze maachen."
+    },
+    {
+     "type": "heading",
+     "text": "2. Etapp: 27.11.1969, endlech"
+    },
+    {
+     "type": "paragraph",
+     "text": "An enger extraordinairer Generalversammlung huet de 27. November 1969 d’Liichtathletiksektioun sich vum CS Standard lassgeléist a sich als autonome Liichtathletikveräin ënner dem Numm Cercle Athlétique CELTIC DIEKIRCH konstituéiert a funktionnéiert zënter dem 5. November 1976 als Association sans but lucratif."
+    },
+    {
+     "type": "paragraph",
+     "text": "1970 goufen dann och di éischt Damme-Lizenzen ënnerschriwen. Ufank de 90zeger Joeren sin och nach den Duathlon an den Triathlon derbäikomm. Den Celtic ass och an der Triathlonfédératioun ageschriwen."
+    }
+   ]
+  },
+  "zenter-1968/trainingsmeiglechkeeten": {
+   "slug": "zenter-1968/trainingsmeiglechkeeten",
+   "source": "https://www.celtic.lu/online/www/websiteCeltic/celticContent/598/662/FRE/index.html",
+   "blocks": [
+    {
+     "type": "heading",
+     "text": "Entwecklung vun den Trainingsméiglechkeeten"
+    },
+    {
+     "type": "paragraph",
+     "text": "Trainéiert gouf am Ufank haaptsächlech op deem alen Hypodrom a wann et gereent huet ënnert dem Iwerdaach vun de Päerdsställ laanst d’Fielser Strooss."
+    },
+    {
+     "type": "paragraph",
+     "text": "Dank de gudde Relatioune mat der Arméi, huet sech dunn och d’Méiglechkeet erginn, fir op der Piste vun der Arméi um Härebierg ze trainéieren. E grousse Problem waren do awer op der enger Säit di militärisch Virschrëfte fir d’Benotze vun de Sportsinfrastrukturen, Hal a Piste, an op der aner Säit de Problem vum Transport vun Athlete an Trainingsmaterial op de Bierg. Di allermeest vun den Athlete ware Studenten an hate keen Auto; eng Bomm weit 7 Kilo, een Hummer och, een Diskus weit 2 Kilo an ee Speer ass 2 Meter laang."
+    },
+    {
+     "type": "paragraph",
+     "text": "Den 9. Juni 1984 war ee wichtige Dag fir den Celtic an d’Dikricher Sportswelt. Do gouf deen neie Stadion mat Lafpiste ageweit. Vun deem Dag un ass de Celtic Training Mëttwochs a Freides vun 18.00 bis 20.00 um Stadion an an der Sportshal niewendrunn. Déi 4 Stonnen pro Woch vun de Sportinfrastrukturen vun Dikrich profitéieren ze kënnen, war eng wesentlech Verbesserung fir den Training vum Celtic."
+    },
+    {
+     "type": "paragraph",
+     "text": "Zënter 2009 kritt de Celtic nach weider Trainingsinfrastrukturen duerch d’Gemeng, den LCD an d’Entente des Sociétés Sportives vun Dikrich wieder 4 Stonnen zur Verfügung gestallt. Niewend dem Stadion sin dat d’Sporthal vum LCD (Neit Gebei) an d’Sportshal vun der neier Primärschoul."
+    },
+    {
+     "type": "heading",
+     "text": "Evolutioun vum Trainerstaff"
+    },
+    {
+     "type": "paragraph",
+     "text": "Di éischt 20 Joer gouf de ganzen Training vun engem, resp. 2 Trainer gehalen, dem Léi an dem Tunn Moureaud. Haut sinn et der eng gutt Dosen."
+    },
+    {
+     "type": "paragraph",
+     "text": "Deemols gouf et 4 Alterskategorien, haut sinn et der 10, an dat souwuel bei de Meedercher/Dammen, wi och bei de Jongen/Hären. Deemols haten di jéngst Memberen 13/14 Joer, haut hun se 6 Joer."
+    }
+   ]
+  },
+  "zenter-1968/sportlech-entwecklung": {
+   "slug": "zenter-1968/sportlech-entwecklung",
+   "source": "https://www.celtic.lu/online/www/websiteCeltic/celticContent/598/663/FRE/index.html",
+   "blocks": [
+    {
+     "type": "heading",
+     "text": "Sportlech Entwecklung"
+    },
+    {
+     "type": "paragraph",
+     "text": "An all deene Joeren hunn d’Celtics-Athletinnen an Athleten u praktisch allen Organisatiounen, inklusiv Championaten, hei am Land op der Piste, op der Strooss a bei den Dua-an Triathlonen deelgeholl."
+    },
+    {
+     "type": "paragraph",
+     "text": "Wäit iwer 300 Championstitele individuell a par équipe bei den Dammen an Hären hun eis Athletinnen an Athleten erkämpft."
+    },
+    {
+     "type": "paragraph",
+     "text": "Deen éischte Landesrekord bei den Dammen ass d’Mady Petit-Scholtes iwer 400 m Hürde gelaf (07.06.1986). Den éischte Landesrekord vun engem Celtic-Athlet geet op e Kont vum Marc Goedert am Speerwerfen ( 25.04.1993 bei der Coupe d’Europe zu Dublin)."
+    },
+    {
+     "type": "paragraph",
+     "text": "2001 gouf d’Chantal Hayen zur beschte Lëtzebuerger Liichtathletin vum Joer gewielt. D’Chantal war och déi éischt Celtic Athletin bei enger Liichtathletik WM an déi éischt Celtic Athletin bei de Jeux de la Francophonie (2009). De Steve Thull war deen éischten Celtic Sportler dee sech fir eng WM qualifizéiert huet, dat war am Triathlon. Weider international präsent Celtic Sportler waren Kim Schartz, Jil Gloesener, Joanne Schartz, Jérôme Even, Jemp Ernzen, Dustin Rischard, Christian Molitor, Ben Bertemes."
+    },
+    {
+     "type": "paragraph",
+     "text": "Houfreg ass de CELTIC och op d’Gold- Sëlver- a Bronzemedaillen, déi seng Athleten Pascale Schmoetten, Chantal Hayen, Martine Mellina, Laurence Thill, Mady Petit, Claude Assel, Jens Petit a Paul Zens op de Spiller vun deene Klenge Länner kruten. D‘selwecht wéi op déi 2 Goldmedaille vum Danièle Lentz op der Weltmeesterschaft bei de Masters 2002 am Duathlon op der laanger Distanz an 2003 am Duathlon op der klassischer Distanz."
+    },
+    {
+     "type": "paragraph",
+     "text": "De CELTIC huet als Champion Lëtzebuerg op enger Coupe d‘Europe fir Clibb vertrueden:"
+    },
+    {
+     "type": "heading",
+     "text": "Dammen: European Champion Clubs Cup Cross-country"
+    },
+    {
+     "type": "paragraph",
+     "text": "1998 zu Lanciano /(ITA) 1999 zu Salamanca (ESP) 2000 zu Villamoura (POR) 2001 zu Bilbao (ESP) 2004 zu Lanciano (ITA) 2005 zu Mantova (ITA) 2006 zu Caceres (ESP) 2007 zu Istanbul (TUR) 2008 zu Albufeira (POR) 2009 zu Istanbul (TUR)"
+    },
+    {
+     "type": "heading",
+     "text": "European Champion Clubs Cup Juniorinnen Cross-country"
+    },
+    {
+     "type": "paragraph",
+     "text": "2008 zu Albufeira (POR) 2009 zu Istanbul (TUR)"
+    },
+    {
+     "type": "heading",
+     "text": "Dammen European Champion Clubs Cup Liichtathletik"
+    },
+    {
+     "type": "paragraph",
+     "text": "1989 zu Zürich / Schweiz"
+    },
+    {
+     "type": "heading",
+     "text": "Dammen Coupe d’Europe op der Strooss 15 Km"
+    },
+    {
+     "type": "paragraph",
+     "text": "1999 zu Braga / Portugal 2000 zu Moskau / Russland 2001 zu Salo / Italien"
+    },
+    {
+     "type": "heading",
+     "text": "Hären European Champion Clubs Cup Cross-country"
+    },
+    {
+     "type": "paragraph",
+     "text": "1982 zu Clusone / Italien 1983 zu Lyon / Frankräich 1985 zu Albufeira / Portugal 1989 zu Albufeira / Portugal 1990 zu Albufeira / Portugal 1991 zu Alicante / Spuenien 1992 zu Marignane / Frankräich 2001 zu Saint Junien / Frankräich 2004 zu Almeirim / Spuenien"
+    },
+    {
+     "type": "heading",
+     "text": "European Champion Clubs Cup Cross-country Junior"
+    },
+    {
+     "type": "paragraph",
+     "text": "2006 zu Caceres (ESP) 2008 zu Albufeira (POR)"
+    },
+    {
+     "type": "heading",
+     "text": "Hären Coupe d’Europe op der Strooss 15 Km"
+    },
+    {
+     "type": "paragraph",
+     "text": "1994 zu Verona / Italien 2002 zu Lissabon / Portugal"
+    }
+   ]
+  },
+  "zenter-1968/historique": {
+   "slug": "zenter-1968/historique",
+   "source": "https://www.celtic.lu/online/www/websiteCeltic/celticContent/598/665/727/FRE/index.html",
+   "blocks": [
+    {
+     "type": "heading",
+     "text": "Podium Siebenkampf 1990"
+    },
+    {
+     "type": "paragraph",
+     "text": "Podium vum internationalen Siebenkampf 1990 zu Dikrich 1. Anke Straschewski Bayer Leverkusen 6. Danièle Konter vu Gréivemaacher Lëtzëbuerger Championne 9. Sonja Leches Spora Vizechampionne."
+    }
+   ]
+  },
+  "beschtleeschtungen": {
+   "slug": "beschtleeschtungen",
+   "source": "https://www.celtic.lu/online/www/websiteCeltic/celticContent/387/545/747/FRE/index.html",
+   "blocks": [
+    {
+     "type": "heading",
+     "text": "Staffel-Beschtleeschtungen Damen"
+    }
+   ]
+  },
+  "celtics-best": {
+   "slug": "celtics-best",
+   "source": "https://www.celtic.lu/online/www/websiteCeltic/celticContent/388/389/FRE/index.html",
+   "blocks": [
+    {
+     "type": "heading",
+     "text": "100 m"
+    },
+    {
+     "type": "heading",
+     "text": "200 m"
+    },
+    {
+     "type": "heading",
+     "text": "400 m"
+    },
+    {
+     "type": "heading",
+     "text": "800 m"
+    },
+    {
+     "type": "heading",
+     "text": "1 000 m"
+    },
+    {
+     "type": "heading",
+     "text": "1 500 m"
+    },
+    {
+     "type": "heading",
+     "text": "3 000 m"
+    },
+    {
+     "type": "heading",
+     "text": "5 000 m"
+    },
+    {
+     "type": "heading",
+     "text": "10 000 m"
+    },
+    {
+     "type": "heading",
+     "text": "100 m Hecken 0,838 m"
+    },
+    {
+     "type": "heading",
+     "text": "400 m Hecken 0,762 m"
+    },
+    {
+     "type": "heading",
+     "text": "2 000 m Steeple"
+    },
+    {
+     "type": "heading",
+     "text": "3 000 m Steeple"
+    },
+    {
+     "type": "heading",
+     "text": "Weitsprong"
+    },
+    {
+     "type": "heading",
+     "text": "Dreisprong"
+    },
+    {
+     "type": "heading",
+     "text": "Hochsprung"
+    },
+    {
+     "type": "heading",
+     "text": "Stafhéichsprong"
+    },
+    {
+     "type": "heading",
+     "text": "Bomstoussen"
+    },
+    {
+     "type": "heading",
+     "text": "Diskus 1Kg"
+    },
+    {
+     "type": "heading",
+     "text": "Speer bis 31.12.1998"
+    },
+    {
+     "type": "heading",
+     "text": "Speer vun 01.01.1999 un"
+    },
+    {
+     "type": "heading",
+     "text": "Hummer"
+    }
+   ]
+  },
+  "jugend": {
+   "slug": "jugend",
+   "source": "https://www.celtic.lu/online/www/websiteCeltic/celticContent/519/677/FRE/index.html",
+   "blocks": [
+    {
+     "type": "heading",
+     "text": "Déi Jéngst dat sin d'Athletinnen an d'Athleten aus de Kategorien Ludiques (U8), Benjamins (U10), Débutants (U12) a Scolaires (U14)."
+    },
+    {
+     "type": "paragraph",
+     "text": "Fir d'Saision 2026 (gëlt ab 1.1.2026) sin d'Kategorien dei heiten: 2021 + 2020 + 2019: U8 Ludiques (U8) 2018 + 2017: U10 Benjamins (U10) 2016 + 2015: U12 Débutants (U12) 2014 + 2013: U14 Scolaires (U14)"
+    },
+    {
+     "type": "heading",
+     "text": "Trainer & Training & Allgemeng Infoen"
+    },
+    {
+     "type": "paragraph",
+     "text": "Trainer Aline Kiesch Josée Schaefer Stefan Kornelis Mieke Koster Elisabeth Hoffmann Anne Siebenaler Sebastiaan Van den Heuvel Jang Winandy Kenny-Neal Wolmering Romain Possing"
+    },
+    {
+     "type": "paragraph",
+     "text": "Training Mëttwoch: 18.00 bis 20.00 Auer, centre sportif + stade municipal, rue Joseph Merten Diekirch Freideg: 18.00 bis 20.00 Auer, centre sportif + stade municipal, rue Joseph Merten Diekirch Manifestatiounen a Compétitiounen Fir Ludiques a Benjamins get et den Kids Cup an am Wanter speziell Coursen am Kader fun den Cross Country Meetinger. Fir Débutants a Scolaires get et den Challenge Tageblatt an am Wanter d'Cross Country Meetinger."
+    },
+    {
+     "type": "paragraph",
+     "text": "Allgemeng Informatiounen iwwer d'Manifestatiounen, d'Aschreiwungen etc kréien d'Athleten bei hirem Trainer oder beim sportlech Responsablen vum Celtic, dem Joël Weis."
+    }
+   ]
+  }
+ }
+}

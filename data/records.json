@@ -1,0 +1,3477 @@
+{
+ "source": "celtic.lu (altes CMS)",
+ "importedAt": "2026-08-24",
+ "disciplines": [
+  {
+   "key": "50m",
+   "name": "50 m",
+   "order": 50,
+   "kind": "time"
+  },
+  {
+   "key": "75m",
+   "name": "75 m",
+   "order": 75,
+   "kind": "time"
+  },
+  {
+   "key": "80m",
+   "name": "80 m",
+   "order": 80,
+   "kind": "time"
+  },
+  {
+   "key": "60m",
+   "name": "60 m",
+   "order": 60,
+   "kind": "time"
+  },
+  {
+   "key": "100m",
+   "name": "100 m",
+   "order": 100,
+   "kind": "time"
+  },
+  {
+   "key": "150m",
+   "name": "150 m",
+   "order": 150,
+   "kind": "time"
+  },
+  {
+   "key": "200m",
+   "name": "200 m",
+   "order": 200,
+   "kind": "time"
+  },
+  {
+   "key": "300m",
+   "name": "300 m",
+   "order": 300,
+   "kind": "time"
+  },
+  {
+   "key": "400m",
+   "name": "400 m",
+   "order": 400,
+   "kind": "time"
+  },
+  {
+   "key": "500m",
+   "name": "500 m",
+   "order": 500,
+   "kind": "time"
+  },
+  {
+   "key": "600m",
+   "name": "600 m",
+   "order": 600,
+   "kind": "time"
+  },
+  {
+   "key": "800m",
+   "name": "800 m",
+   "order": 800,
+   "kind": "time"
+  },
+  {
+   "key": "1000m",
+   "name": "1000 m",
+   "order": 1000,
+   "kind": "time"
+  },
+  {
+   "key": "1500m",
+   "name": "1500 m",
+   "order": 1500,
+   "kind": "time"
+  },
+  {
+   "key": "1-mile",
+   "name": "1 Mile",
+   "order": 1610,
+   "kind": "time"
+  },
+  {
+   "key": "2000m",
+   "name": "2000 m",
+   "order": 2000,
+   "kind": "time"
+  },
+  {
+   "key": "3000m",
+   "name": "3000 m",
+   "order": 3000,
+   "kind": "time"
+  },
+  {
+   "key": "5000m",
+   "name": "5000 m",
+   "order": 5000,
+   "kind": "time"
+  },
+  {
+   "key": "10000m",
+   "name": "10 000 m",
+   "order": 10000,
+   "kind": "time"
+  },
+  {
+   "key": "20000m",
+   "name": "20 000 m",
+   "order": 20000,
+   "kind": "time"
+  },
+  {
+   "key": "1-stonn",
+   "name": "1 Stonn",
+   "order": 20500,
+   "kind": "distance"
+  },
+  {
+   "key": "50m-h",
+   "name": "50 m H",
+   "order": 20900,
+   "kind": "time"
+  },
+  {
+   "key": "60m-h",
+   "name": "60 m H",
+   "order": 21000,
+   "kind": "time"
+  },
+  {
+   "key": "80m-h",
+   "name": "80 m H",
+   "order": 21050,
+   "kind": "time"
+  },
+  {
+   "key": "100m-h",
+   "name": "100 m H",
+   "order": 21100,
+   "kind": "time"
+  },
+  {
+   "key": "110m-h",
+   "name": "110 m H",
+   "order": 21200,
+   "kind": "time"
+  },
+  {
+   "key": "300m-h",
+   "name": "300 m H",
+   "order": 21250,
+   "kind": "time"
+  },
+  {
+   "key": "400m-h",
+   "name": "400 m H",
+   "order": 21300,
+   "kind": "time"
+  },
+  {
+   "key": "2000m-st",
+   "name": "2000 m St.",
+   "order": 22000,
+   "kind": "time"
+  },
+  {
+   "key": "3000m-st",
+   "name": "3000 m St.",
+   "order": 22100,
+   "kind": "time"
+  },
+  {
+   "key": "10km-marche",
+   "name": "10 km Marche",
+   "order": 23000,
+   "kind": "time"
+  },
+  {
+   "key": "10km-strooss",
+   "name": "10 km Strooss",
+   "order": 24000,
+   "kind": "time"
+  },
+  {
+   "key": "halbmarathon",
+   "name": "Halbmarathon",
+   "order": 24100,
+   "kind": "time"
+  },
+  {
+   "key": "marathon",
+   "name": "Marathon",
+   "order": 24200,
+   "kind": "time"
+  },
+  {
+   "key": "hauteur",
+   "name": "Hauteur",
+   "order": 30000,
+   "kind": "distance"
+  },
+  {
+   "key": "perche",
+   "name": "Perche",
+   "order": 30100,
+   "kind": "distance"
+  },
+  {
+   "key": "longueur",
+   "name": "Longueur",
+   "order": 30200,
+   "kind": "distance"
+  },
+  {
+   "key": "triple",
+   "name": "Triple",
+   "order": 30300,
+   "kind": "distance"
+  },
+  {
+   "key": "poids",
+   "name": "Poids",
+   "order": 31000,
+   "kind": "distance"
+  },
+  {
+   "key": "poids-4kg",
+   "name": "Poids 4 kg",
+   "order": 31050,
+   "kind": "distance"
+  },
+  {
+   "key": "disque",
+   "name": "Disque",
+   "order": 31100,
+   "kind": "distance"
+  },
+  {
+   "key": "marteau",
+   "name": "Marteau",
+   "order": 31200,
+   "kind": "distance"
+  },
+  {
+   "key": "javelot",
+   "name": "Javelot",
+   "order": 31300,
+   "kind": "distance"
+  },
+  {
+   "key": "pentathlon",
+   "name": "Pentathlon",
+   "order": 40000,
+   "kind": "points"
+  },
+  {
+   "key": "heptathlon",
+   "name": "Heptathlon",
+   "order": 40100,
+   "kind": "points"
+  },
+  {
+   "key": "octathlon",
+   "name": "Achtkampf",
+   "order": 40150,
+   "kind": "points"
+  },
+  {
+   "key": "decathlon",
+   "name": "Décathlon",
+   "order": 40200,
+   "kind": "points"
+  },
+  {
+   "key": "ball",
+   "name": "Ballwurf",
+   "order": 31350,
+   "kind": "distance"
+  },
+  {
+   "key": "4x50m",
+   "name": "4 x 50 m",
+   "order": 49900,
+   "kind": "time"
+  },
+  {
+   "key": "4x75m",
+   "name": "4 x 75 m",
+   "order": 49950,
+   "kind": "time"
+  },
+  {
+   "key": "3x800m",
+   "name": "3 x 800 m",
+   "order": 50000,
+   "kind": "time"
+  },
+  {
+   "key": "3x1000m",
+   "name": "3 x 1000 m",
+   "order": 50100,
+   "kind": "time"
+  },
+  {
+   "key": "4x100m",
+   "name": "4 x 100 m",
+   "order": 50200,
+   "kind": "time"
+  },
+  {
+   "key": "4x200m",
+   "name": "4 x 200 m",
+   "order": 50300,
+   "kind": "time"
+  },
+  {
+   "key": "4x300m",
+   "name": "4 x 300 m",
+   "order": 50350,
+   "kind": "time"
+  },
+  {
+   "key": "4x400m",
+   "name": "4 x 400 m",
+   "order": 50400,
+   "kind": "time"
+  }
+ ],
+ "records": [
+  {
+   "id": "f-piste-100m-0",
+   "disciplineKey": "100m",
+   "surface": "piste",
+   "gender": "f",
+   "performanceRaw": "11\"94",
+   "performanceNumeric": 11.94,
+   "category": "U20",
+   "categoryRaw": "U20",
+   "year": 2015,
+   "yearRaw": "2015",
+   "date": null,
+   "isNationalRecord": false,
+   "isEspoirsBest": false,
+   "holders": [
+    {
+     "lastName": "JONES",
+     "firstName": "Laurence"
+    }
+   ]
+  },
+  {
+   "id": "f-piste-150m-1",
+   "disciplineKey": "150m",
+   "surface": "piste",
+   "gender": "f",
+   "performanceRaw": "19\"28",
+   "performanceNumeric": 19.28,
+   "category": "",
+   "categoryRaw": "",
+   "year": 2001,
+   "yearRaw": "2001",
+   "date": null,
+   "isNationalRecord": false,
+   "isEspoirsBest": false,
+   "holders": [
+    {
+     "lastName": "HAYEN",
+     "firstName": "Chantal"
+    }
+   ]
+  },
+  {
+   "id": "f-piste-200m-2",
+   "disciplineKey": "200m",
+   "surface": "piste",
+   "gender": "f",
+   "performanceRaw": "24\"58",
+   "performanceNumeric": 24.58,
+   "category": "U20",
+   "categoryRaw": "U20",
+   "year": 2015,
+   "yearRaw": "2015",
+   "date": null,
+   "isNationalRecord": false,
+   "isEspoirsBest": false,
+   "holders": [
+    {
+     "lastName": "JONES",
+     "firstName": "Laurence"
+    }
+   ]
+  },
+  {
+   "id": "f-piste-300m-3",
+   "disciplineKey": "300m",
+   "surface": "piste",
+   "gender": "f",
+   "performanceRaw": "40\"31",
+   "performanceNumeric": 40.31,
+   "category": "U20",
+   "categoryRaw": "U20",
+   "year": 2015,
+   "yearRaw": "2015",
+   "date": null,
+   "isNationalRecord": false,
+   "isEspoirsBest": false,
+   "holders": [
+    {
+     "lastName": "JONES",
+     "firstName": "Laurence"
+    }
+   ]
+  },
+  {
+   "id": "f-piste-400m-4",
+   "disciplineKey": "400m",
+   "surface": "piste",
+   "gender": "f",
+   "performanceRaw": "56\"99",
+   "performanceNumeric": 56.99,
+   "category": "U18",
+   "categoryRaw": "U18",
+   "year": 2024,
+   "yearRaw": "2024",
+   "date": null,
+   "isNationalRecord": false,
+   "isEspoirsBest": false,
+   "holders": [
+    {
+     "lastName": "CICCONE",
+     "firstName": "Julia"
+    }
+   ]
+  },
+  {
+   "id": "f-piste-500m-5",
+   "disciplineKey": "500m",
+   "surface": "piste",
+   "gender": "f",
+   "performanceRaw": "1'17\"89",
+   "performanceNumeric": 77.89,
+   "category": "Sen",
+   "categoryRaw": "Sen",
+   "year": 2015,
+   "yearRaw": "2015",
+   "date": null,
+   "isNationalRecord": false,
+   "isEspoirsBest": false,
+   "holders": [
+    {
+     "lastName": "HAYEN",
+     "firstName": "Chantal"
+    }
+   ]
+  },
+  {
+   "id": "f-piste-600m-6",
+   "disciplineKey": "600m",
+   "surface": "piste",
+   "gender": "f",
+   "performanceRaw": "1'36\"41",
+   "performanceNumeric": 96.41,
+   "category": "Sen",
+   "categoryRaw": "Sen",
+   "year": 2014,
+   "yearRaw": "2014",
+   "date": null,
+   "isNationalRecord": false,
+   "isEspoirsBest": false,
+   "holders": [
+    {
+     "lastName": "HAYEN",
+     "firstName": "Chantal"
+    }
+   ]
+  },
+  {
+   "id": "f-piste-800m-7",
+   "disciplineKey": "800m",
+   "surface": "piste",
+   "gender": "f",
+   "performanceRaw": "2'02\"69",
+   "performanceNumeric": 122.69,
+   "category": "Sen",
+   "categoryRaw": "Sen",
+   "year": 2025,
+   "yearRaw": "2025",
+   "date": null,
+   "isNationalRecord": false,
+   "isEspoirsBest": false,
+   "holders": [
+    {
+     "lastName": "HOFFMANN",
+     "firstName": "Vera"
+    }
+   ]
+  },
+  {
+   "id": "f-piste-1000m-8",
+   "disciplineKey": "1000m",
+   "surface": "piste",
+   "gender": "f",
+   "performanceRaw": "2'43\"87",
+   "performanceNumeric": 163.87,
+   "category": "U23",
+   "categoryRaw": "U23",
+   "year": 2017,
+   "yearRaw": "2017",
+   "date": null,
+   "isNationalRecord": false,
+   "isEspoirsBest": true,
+   "holders": [
+    {
+     "lastName": "HOFFMANN",
+     "firstName": "Vera"
+    }
+   ]
+  },
+  {
+   "id": "f-piste-1500m-9",
+   "disciplineKey": "1500m",
+   "surface": "piste",
+   "gender": "f",
+   "performanceRaw": "4'05\"58",
+   "performanceNumeric": 245.58,
+   "category": "Sen",
+   "categoryRaw": "Sen",
+   "year": 2025,
+   "yearRaw": "2025",
+   "date": null,
+   "isNationalRecord": true,
+   "isEspoirsBest": false,
+   "holders": [
+    {
+     "lastName": "HOFFMANN",
+     "firstName": "Vera"
+    }
+   ]
+  },
+  {
+   "id": "f-piste-1-mile-10",
+   "disciplineKey": "1-mile",
+   "surface": "piste",
+   "gender": "f",
+   "performanceRaw": "4'32\"68",
+   "performanceNumeric": 272.68,
+   "category": "Sen",
+   "categoryRaw": "Sen",
+   "year": 2024,
+   "yearRaw": "2024",
+   "date": null,
+   "isNationalRecord": true,
+   "isEspoirsBest": false,
+   "holders": [
+    {
+     "lastName": "HOFFMANN",
+     "firstName": "Vera"
+    }
+   ]
+  },
+  {
+   "id": "f-piste-2000m-11",
+   "disciplineKey": "2000m",
+   "surface": "piste",
+   "gender": "f",
+   "performanceRaw": "6'34\"91",
+   "performanceNumeric": 394.91,
+   "category": "Sen",
+   "categoryRaw": "Sen",
+   "year": 2014,
+   "yearRaw": "2014",
+   "date": null,
+   "isNationalRecord": false,
+   "isEspoirsBest": false,
+   "holders": [
+    {
+     "lastName": "MELLINA",
+     "firstName": "Martine"
+    }
+   ]
+  },
+  {
+   "id": "f-piste-3000m-12",
+   "disciplineKey": "3000m",
+   "surface": "piste",
+   "gender": "f",
+   "performanceRaw": "8'48\"84",
+   "performanceNumeric": 528.84,
+   "category": "Sen",
+   "categoryRaw": "Sen",
+   "year": 2025,
+   "yearRaw": "2025",
+   "date": null,
+   "isNationalRecord": true,
+   "isEspoirsBest": false,
+   "holders": [
+    {
+     "lastName": "HOFFMANN",
+     "firstName": "Vera"
+    }
+   ]
+  },
+  {
+   "id": "f-piste-5000m-13",
+   "disciplineKey": "5000m",
+   "surface": "piste",
+   "gender": "f",
+   "performanceRaw": "15'29\"06",
+   "performanceNumeric": 929.06,
+   "category": "Sen",
+   "categoryRaw": "Sen",
+   "year": 2025,
+   "yearRaw": "2025",
+   "date": null,
+   "isNationalRecord": true,
+   "isEspoirsBest": false,
+   "holders": [
+    {
+     "lastName": "HOFFMANN",
+     "firstName": "Vera"
+    }
+   ]
+  },
+  {
+   "id": "f-piste-10000m-14",
+   "disciplineKey": "10000m",
+   "surface": "piste",
+   "gender": "f",
+   "performanceRaw": "34'04\"10",
+   "performanceNumeric": 2044.1,
+   "category": "Sen",
+   "categoryRaw": "Sen",
+   "year": 2015,
+   "yearRaw": "2015",
+   "date": null,
+   "isNationalRecord": false,
+   "isEspoirsBest": false,
+   "holders": [
+    {
+     "lastName": "Königs-GAMACHU",
+     "firstName": "Mimi"
+    }
+   ]
+  },
+  {
+   "id": "f-piste-100m-h-15",
+   "disciplineKey": "100m-h",
+   "surface": "piste",
+   "gender": "f",
+   "performanceRaw": "13\"23",
+   "performanceNumeric": 13.23,
+   "category": "Sen",
+   "categoryRaw": "Sen",
+   "year": 2025,
+   "yearRaw": "2025",
+   "date": null,
+   "isNationalRecord": true,
+   "isEspoirsBest": false,
+   "holders": [
+    {
+     "lastName": "RAUSCH",
+     "firstName": "Victoria"
+    }
+   ]
+  },
+  {
+   "id": "f-piste-400m-h-16",
+   "disciplineKey": "400m-h",
+   "surface": "piste",
+   "gender": "f",
+   "performanceRaw": "58\"54",
+   "performanceNumeric": 58.54,
+   "category": "U20",
+   "categoryRaw": "U20",
+   "year": 2026,
+   "yearRaw": "2026",
+   "date": null,
+   "isNationalRecord": true,
+   "isEspoirsBest": false,
+   "holders": [
+    {
+     "lastName": "GRANGER",
+     "firstName": "Uyana"
+    }
+   ]
+  },
+  {
+   "id": "f-piste-2000m-st-17",
+   "disciplineKey": "2000m-st",
+   "surface": "piste",
+   "gender": "f",
+   "performanceRaw": "6'56\"64",
+   "performanceNumeric": 416.64,
+   "category": "U18",
+   "categoryRaw": "U18",
+   "year": 2024,
+   "yearRaw": "2024",
+   "date": null,
+   "isNationalRecord": false,
+   "isEspoirsBest": false,
+   "holders": [
+    {
+     "lastName": "LOPES",
+     "firstName": "Elena"
+    }
+   ]
+  },
+  {
+   "id": "f-piste-3000m-st-18",
+   "disciplineKey": "3000m-st",
+   "surface": "piste",
+   "gender": "f",
+   "performanceRaw": "10'58\"58",
+   "performanceNumeric": 658.58,
+   "category": "Sen",
+   "categoryRaw": "Sen",
+   "year": 2008,
+   "yearRaw": "2008",
+   "date": null,
+   "isNationalRecord": true,
+   "isEspoirsBest": false,
+   "holders": [
+    {
+     "lastName": "HANSEN",
+     "firstName": "Véronique"
+    }
+   ]
+  },
+  {
+   "id": "f-piste-longueur-19",
+   "disciplineKey": "longueur",
+   "surface": "piste",
+   "gender": "f",
+   "performanceRaw": "5,99 m",
+   "performanceNumeric": 5.99,
+   "category": "U20",
+   "categoryRaw": "U20",
+   "year": 2014,
+   "yearRaw": "2014",
+   "date": null,
+   "isNationalRecord": false,
+   "isEspoirsBest": true,
+   "holders": [
+    {
+     "lastName": "JONES",
+     "firstName": "Laurence"
+    }
+   ]
+  },
+  {
+   "id": "f-piste-triple-20",
+   "disciplineKey": "triple",
+   "surface": "piste",
+   "gender": "f",
+   "performanceRaw": "11,42 m",
+   "performanceNumeric": 11.42,
+   "category": "U20",
+   "categoryRaw": "U20",
+   "year": 2013,
+   "yearRaw": "2013",
+   "date": null,
+   "isNationalRecord": false,
+   "isEspoirsBest": false,
+   "holders": [
+    {
+     "lastName": "ZENS",
+     "firstName": "Cathie"
+    }
+   ]
+  },
+  {
+   "id": "f-piste-perche-21",
+   "disciplineKey": "perche",
+   "surface": "piste",
+   "gender": "f",
+   "performanceRaw": "3,30 m",
+   "performanceNumeric": 3.3,
+   "category": "U23",
+   "categoryRaw": "U23 U20",
+   "year": 2013,
+   "yearRaw": "2009 2013",
+   "date": null,
+   "isNationalRecord": false,
+   "isEspoirsBest": false,
+   "holders": [
+    {
+     "lastName": "WEBER",
+     "firstName": "Fabienne"
+    },
+    {
+     "lastName": "SCHMIT",
+     "firstName": "Cathy"
+    }
+   ]
+  },
+  {
+   "id": "f-piste-hauteur-22",
+   "disciplineKey": "hauteur",
+   "surface": "piste",
+   "gender": "f",
+   "performanceRaw": "1,74 m",
+   "performanceNumeric": 1.74,
+   "category": "U20",
+   "categoryRaw": "U20",
+   "year": 2016,
+   "yearRaw": "2016",
+   "date": null,
+   "isNationalRecord": false,
+   "isEspoirsBest": true,
+   "holders": [
+    {
+     "lastName": "ZIMMER",
+     "firstName": "Cathy"
+    }
+   ]
+  },
+  {
+   "id": "f-piste-disque-23",
+   "disciplineKey": "disque",
+   "surface": "piste",
+   "gender": "f",
+   "performanceRaw": "35,39 m",
+   "performanceNumeric": 35.39,
+   "category": "U20",
+   "categoryRaw": "U20",
+   "year": 2015,
+   "yearRaw": "2015",
+   "date": null,
+   "isNationalRecord": false,
+   "isEspoirsBest": false,
+   "holders": [
+    {
+     "lastName": "MICHEL",
+     "firstName": "Véroniqe"
+    }
+   ]
+  },
+  {
+   "id": "f-piste-poids-24",
+   "disciplineKey": "poids",
+   "surface": "piste",
+   "gender": "f",
+   "performanceRaw": "14,06 m",
+   "performanceNumeric": 14.06,
+   "category": "U20",
+   "categoryRaw": "U20",
+   "year": 2007,
+   "yearRaw": "2007",
+   "date": null,
+   "isNationalRecord": false,
+   "isEspoirsBest": false,
+   "holders": [
+    {
+     "lastName": "SCHARTZ",
+     "firstName": "Kim"
+    }
+   ]
+  },
+  {
+   "id": "f-piste-javelot-25",
+   "disciplineKey": "javelot",
+   "surface": "piste",
+   "gender": "f",
+   "performanceRaw": "43,76 m",
+   "performanceNumeric": 43.76,
+   "category": "U20",
+   "categoryRaw": "U20",
+   "year": 2015,
+   "yearRaw": "2015",
+   "date": null,
+   "isNationalRecord": false,
+   "isEspoirsBest": false,
+   "holders": [
+    {
+     "lastName": "MICHEL",
+     "firstName": "Véronique"
+    }
+   ]
+  },
+  {
+   "id": "f-piste-marteau-26",
+   "disciplineKey": "marteau",
+   "surface": "piste",
+   "gender": "f",
+   "performanceRaw": "47,90 m",
+   "performanceNumeric": 47.9,
+   "category": "U23",
+   "categoryRaw": "U23",
+   "year": 2008,
+   "yearRaw": "2008",
+   "date": null,
+   "isNationalRecord": false,
+   "isEspoirsBest": false,
+   "holders": [
+    {
+     "lastName": "SCHARTZ",
+     "firstName": "Kim"
+    }
+   ]
+  },
+  {
+   "id": "f-piste-heptathlon-27",
+   "disciplineKey": "heptathlon",
+   "surface": "piste",
+   "gender": "f",
+   "performanceRaw": "4 570 P",
+   "performanceNumeric": 4570,
+   "category": "Sen",
+   "categoryRaw": "Sen",
+   "year": 2011,
+   "yearRaw": "2011",
+   "date": null,
+   "isNationalRecord": false,
+   "isEspoirsBest": false,
+   "holders": [
+    {
+     "lastName": "HAYEN",
+     "firstName": "Chantal"
+    }
+   ]
+  },
+  {
+   "id": "f-piste-4x100m-28",
+   "disciplineKey": "4x100m",
+   "surface": "piste",
+   "gender": "f",
+   "performanceRaw": "47\"18",
+   "performanceNumeric": 47.18,
+   "category": "U23",
+   "categoryRaw": "U23",
+   "year": 2014,
+   "yearRaw": "2014",
+   "date": null,
+   "isNationalRecord": false,
+   "isEspoirsBest": false,
+   "holders": [
+    {
+     "lastName": "RAUSCH",
+     "firstName": "Victoria"
+    },
+    {
+     "lastName": "BAUER",
+     "firstName": "Annäis"
+    },
+    {
+     "lastName": "ZENS",
+     "firstName": "Anouk"
+    },
+    {
+     "lastName": "JONES",
+     "firstName": "Laurence"
+    }
+   ]
+  },
+  {
+   "id": "f-piste-4x400m-29",
+   "disciplineKey": "4x400m",
+   "surface": "piste",
+   "gender": "f",
+   "performanceRaw": "4'00\"98",
+   "performanceNumeric": 240.98,
+   "category": "Sen",
+   "categoryRaw": "Sen",
+   "year": 2010,
+   "yearRaw": "2010",
+   "date": null,
+   "isNationalRecord": false,
+   "isEspoirsBest": false,
+   "holders": [
+    {
+     "lastName": "BAUER",
+     "firstName": "Anaïs"
+    },
+    {
+     "lastName": "SCHARTZ",
+     "firstName": "Joanne"
+    },
+    {
+     "lastName": "MELLINA",
+     "firstName": "Martine"
+    },
+    {
+     "lastName": "HAYEN",
+     "firstName": "Chantal"
+    }
+   ]
+  },
+  {
+   "id": "f-piste-3x800m-30",
+   "disciplineKey": "3x800m",
+   "surface": "piste",
+   "gender": "f",
+   "performanceRaw": "6'44\"11",
+   "performanceNumeric": 404.11,
+   "category": "Sen",
+   "categoryRaw": "Sen",
+   "year": 2012,
+   "yearRaw": "2012",
+   "date": null,
+   "isNationalRecord": false,
+   "isEspoirsBest": false,
+   "holders": [
+    {
+     "lastName": "LEY-FRANSISSI",
+     "firstName": "Tania"
+    },
+    {
+     "lastName": "GLODEN",
+     "firstName": "Jenny"
+    },
+    {
+     "lastName": "MELLINA",
+     "firstName": "Martine"
+    }
+   ]
+  },
+  {
+   "id": "m-piste-100m-0",
+   "disciplineKey": "100m",
+   "surface": "piste",
+   "gender": "m",
+   "performanceRaw": "10\"74",
+   "performanceNumeric": 10.74,
+   "category": "Sen",
+   "categoryRaw": "Sen",
+   "year": 2014,
+   "yearRaw": "2014",
+   "date": null,
+   "isNationalRecord": false,
+   "isEspoirsBest": false,
+   "holders": [
+    {
+     "lastName": "GERALDO",
+     "firstName": "Festus"
+    }
+   ]
+  },
+  {
+   "id": "m-piste-150m-1",
+   "disciplineKey": "150m",
+   "surface": "piste",
+   "gender": "m",
+   "performanceRaw": "16\"87",
+   "performanceNumeric": 16.87,
+   "category": "Sen",
+   "categoryRaw": "Sen",
+   "year": 1997,
+   "yearRaw": "1997",
+   "date": null,
+   "isNationalRecord": false,
+   "isEspoirsBest": false,
+   "holders": [
+    {
+     "lastName": "ZENS",
+     "firstName": "Pol"
+    }
+   ]
+  },
+  {
+   "id": "m-piste-200m-2",
+   "disciplineKey": "200m",
+   "surface": "piste",
+   "gender": "m",
+   "performanceRaw": "21\"88",
+   "performanceNumeric": 21.88,
+   "category": "Sen",
+   "categoryRaw": "Sen",
+   "year": 2014,
+   "yearRaw": "2014",
+   "date": null,
+   "isNationalRecord": false,
+   "isEspoirsBest": false,
+   "holders": [
+    {
+     "lastName": "GERALDO",
+     "firstName": "Festus"
+    }
+   ]
+  },
+  {
+   "id": "m-piste-300m-3",
+   "disciplineKey": "300m",
+   "surface": "piste",
+   "gender": "m",
+   "performanceRaw": "35\"22",
+   "performanceNumeric": 35.22,
+   "category": "Sen",
+   "categoryRaw": "Sen",
+   "year": 1997,
+   "yearRaw": "1997",
+   "date": null,
+   "isNationalRecord": false,
+   "isEspoirsBest": false,
+   "holders": [
+    {
+     "lastName": "ZENS",
+     "firstName": "Pol"
+    }
+   ]
+  },
+  {
+   "id": "m-piste-400m-4",
+   "disciplineKey": "400m",
+   "surface": "piste",
+   "gender": "m",
+   "performanceRaw": "48\"76",
+   "performanceNumeric": 48.76,
+   "category": "Sen",
+   "categoryRaw": "Sen",
+   "year": 1997,
+   "yearRaw": "1997",
+   "date": null,
+   "isNationalRecord": false,
+   "isEspoirsBest": false,
+   "holders": [
+    {
+     "lastName": "ZENS",
+     "firstName": "Pol"
+    }
+   ]
+  },
+  {
+   "id": "m-piste-500m-5",
+   "disciplineKey": "500m",
+   "surface": "piste",
+   "gender": "m",
+   "performanceRaw": "65\"40",
+   "performanceNumeric": 65.4,
+   "category": "Sen",
+   "categoryRaw": "Sen",
+   "year": 1997,
+   "yearRaw": "1997",
+   "date": null,
+   "isNationalRecord": false,
+   "isEspoirsBest": false,
+   "holders": [
+    {
+     "lastName": "ZENS",
+     "firstName": "Pol"
+    }
+   ]
+  },
+  {
+   "id": "m-piste-600m-6",
+   "disciplineKey": "600m",
+   "surface": "piste",
+   "gender": "m",
+   "performanceRaw": "1'20\"50",
+   "performanceNumeric": 80.5,
+   "category": "Jun",
+   "categoryRaw": "Jun",
+   "year": 1977,
+   "yearRaw": "1977",
+   "date": null,
+   "isNationalRecord": false,
+   "isEspoirsBest": false,
+   "holders": [
+    {
+     "lastName": "WIETOR",
+     "firstName": "Jean-Claude"
+    }
+   ]
+  },
+  {
+   "id": "m-piste-800m-7",
+   "disciplineKey": "800m",
+   "surface": "piste",
+   "gender": "m",
+   "performanceRaw": "1'49\"12",
+   "performanceNumeric": 109.12,
+   "category": "Esp",
+   "categoryRaw": "Esp",
+   "year": 2022,
+   "yearRaw": "2022",
+   "date": null,
+   "isNationalRecord": false,
+   "isEspoirsBest": false,
+   "holders": [
+    {
+     "lastName": "QUERINJEAN",
+     "firstName": "Ruben"
+    }
+   ]
+  },
+  {
+   "id": "m-piste-1000m-8",
+   "disciplineKey": "1000m",
+   "surface": "piste",
+   "gender": "m",
+   "performanceRaw": "2'26\"28",
+   "performanceNumeric": 146.28,
+   "category": "Sen",
+   "categoryRaw": "Sen",
+   "year": 1991,
+   "yearRaw": "1991",
+   "date": null,
+   "isNationalRecord": false,
+   "isEspoirsBest": false,
+   "holders": [
+    {
+     "lastName": "ASSEL",
+     "firstName": "Claude"
+    }
+   ]
+  },
+  {
+   "id": "m-piste-1500m-9",
+   "disciplineKey": "1500m",
+   "surface": "piste",
+   "gender": "m",
+   "performanceRaw": "3'39\"02",
+   "performanceNumeric": 219.02,
+   "category": "Esp",
+   "categoryRaw": "Esp",
+   "year": 2022,
+   "yearRaw": "2022",
+   "date": null,
+   "isNationalRecord": false,
+   "isEspoirsBest": false,
+   "holders": [
+    {
+     "lastName": "QUERINJEAN",
+     "firstName": "Ruben"
+    }
+   ]
+  },
+  {
+   "id": "m-piste-1-mile-10",
+   "disciplineKey": "1-mile",
+   "surface": "piste",
+   "gender": "m",
+   "performanceRaw": "4'10\"53",
+   "performanceNumeric": 250.53,
+   "category": "Sen",
+   "categoryRaw": "Sen",
+   "year": 2020,
+   "yearRaw": "2020",
+   "date": null,
+   "isNationalRecord": false,
+   "isEspoirsBest": false,
+   "holders": [
+    {
+     "lastName": "BERTEMES",
+     "firstName": "Bob"
+    }
+   ]
+  },
+  {
+   "id": "m-piste-2000m-11",
+   "disciplineKey": "2000m",
+   "surface": "piste",
+   "gender": "m",
+   "performanceRaw": "5'31\"70",
+   "performanceNumeric": 331.7,
+   "category": "Esp",
+   "categoryRaw": "Esp",
+   "year": 2010,
+   "yearRaw": "2010",
+   "date": null,
+   "isNationalRecord": false,
+   "isEspoirsBest": false,
+   "holders": [
+    {
+     "lastName": "MELLINA",
+     "firstName": "Pol"
+    }
+   ]
+  },
+  {
+   "id": "m-piste-3000m-12",
+   "disciplineKey": "3000m",
+   "surface": "piste",
+   "gender": "m",
+   "performanceRaw": "7'53\"60",
+   "performanceNumeric": 473.6,
+   "category": "Esp",
+   "categoryRaw": "Esp",
+   "year": 2022,
+   "yearRaw": "2022",
+   "date": null,
+   "isNationalRecord": true,
+   "isEspoirsBest": false,
+   "holders": [
+    {
+     "lastName": "QUERINJEAN",
+     "firstName": "Ruben"
+    }
+   ]
+  },
+  {
+   "id": "m-piste-5000m-13",
+   "disciplineKey": "5000m",
+   "surface": "piste",
+   "gender": "m",
+   "performanceRaw": "14'04\"09",
+   "performanceNumeric": 844.09,
+   "category": "Sen",
+   "categoryRaw": "Sen",
+   "year": 2015,
+   "yearRaw": "2015",
+   "date": null,
+   "isNationalRecord": false,
+   "isEspoirsBest": false,
+   "holders": [
+    {
+     "lastName": "MELLINA",
+     "firstName": "Pol"
+    }
+   ]
+  },
+  {
+   "id": "m-piste-10000m-14",
+   "disciplineKey": "10000m",
+   "surface": "piste",
+   "gender": "m",
+   "performanceRaw": "29'43\"82",
+   "performanceNumeric": 1783.82,
+   "category": "Sen",
+   "categoryRaw": "Sen",
+   "year": 2014,
+   "yearRaw": "2014",
+   "date": null,
+   "isNationalRecord": false,
+   "isEspoirsBest": false,
+   "holders": [
+    {
+     "lastName": "MELLINA",
+     "firstName": "Pol"
+    }
+   ]
+  },
+  {
+   "id": "m-piste-1-stonn-15",
+   "disciplineKey": "1-stonn",
+   "surface": "piste",
+   "gender": "m",
+   "performanceRaw": "17 400 m",
+   "performanceNumeric": 17400,
+   "category": "Sen",
+   "categoryRaw": "Sen",
+   "year": 1988,
+   "yearRaw": "1988",
+   "date": null,
+   "isNationalRecord": false,
+   "isEspoirsBest": false,
+   "holders": [
+    {
+     "lastName": "GUTH",
+     "firstName": "Fernand"
+    }
+   ]
+  },
+  {
+   "id": "m-piste-60m-h-16",
+   "disciplineKey": "60m-h",
+   "surface": "piste",
+   "gender": "m",
+   "performanceRaw": "8\"10",
+   "performanceNumeric": 8.1,
+   "category": "Sen",
+   "categoryRaw": "Sen",
+   "year": 1991,
+   "yearRaw": "1991",
+   "date": null,
+   "isNationalRecord": false,
+   "isEspoirsBest": false,
+   "holders": [
+    {
+     "lastName": "Udelhoven",
+     "firstName": "Lukas"
+    }
+   ]
+  },
+  {
+   "id": "m-piste-110m-h-17",
+   "disciplineKey": "110m-h",
+   "surface": "piste",
+   "gender": "m",
+   "performanceRaw": "14\"72",
+   "performanceNumeric": 14.72,
+   "category": "Sen",
+   "categoryRaw": "Sen",
+   "year": 2018,
+   "yearRaw": "2018",
+   "date": null,
+   "isNationalRecord": false,
+   "isEspoirsBest": false,
+   "holders": [
+    {
+     "lastName": "GRAILLET",
+     "firstName": "François"
+    }
+   ]
+  },
+  {
+   "id": "m-piste-400m-h-18",
+   "disciplineKey": "400m-h",
+   "surface": "piste",
+   "gender": "m",
+   "performanceRaw": "56\"40",
+   "performanceNumeric": 56.4,
+   "category": "Sen",
+   "categoryRaw": "Sen",
+   "year": 1993,
+   "yearRaw": "1993",
+   "date": null,
+   "isNationalRecord": false,
+   "isEspoirsBest": false,
+   "holders": [
+    {
+     "lastName": "Udelhoven",
+     "firstName": "Lukas"
+    }
+   ]
+  },
+  {
+   "id": "m-piste-2000m-st-19",
+   "disciplineKey": "2000m-st",
+   "surface": "piste",
+   "gender": "m",
+   "performanceRaw": "5'41\"29",
+   "performanceNumeric": 341.29,
+   "category": "Sen",
+   "categoryRaw": "Sen",
+   "year": 2025,
+   "yearRaw": "2025",
+   "date": null,
+   "isNationalRecord": false,
+   "isEspoirsBest": false,
+   "holders": [
+    {
+     "lastName": "WEICHERDING",
+     "firstName": "Gil"
+    }
+   ]
+  },
+  {
+   "id": "m-piste-3000m-st-20",
+   "disciplineKey": "3000m-st",
+   "surface": "piste",
+   "gender": "m",
+   "performanceRaw": "8'41\"16",
+   "performanceNumeric": 521.16,
+   "category": "Esp",
+   "categoryRaw": "Esp",
+   "year": 2022,
+   "yearRaw": "2022",
+   "date": null,
+   "isNationalRecord": false,
+   "isEspoirsBest": false,
+   "holders": [
+    {
+     "lastName": "QUERINJEAN",
+     "firstName": "Ruben"
+    }
+   ]
+  },
+  {
+   "id": "m-piste-hauteur-21",
+   "disciplineKey": "hauteur",
+   "surface": "piste",
+   "gender": "m",
+   "performanceRaw": "2,05 m",
+   "performanceNumeric": 2.05,
+   "category": "Sen",
+   "categoryRaw": "Sen",
+   "year": 1989,
+   "yearRaw": "1989",
+   "date": null,
+   "isNationalRecord": false,
+   "isEspoirsBest": false,
+   "holders": [
+    {
+     "lastName": "Udelhoven",
+     "firstName": "Lukas"
+    }
+   ]
+  },
+  {
+   "id": "m-piste-longueur-22",
+   "disciplineKey": "longueur",
+   "surface": "piste",
+   "gender": "m",
+   "performanceRaw": "7,58 m",
+   "performanceNumeric": 7.58,
+   "category": "Sen",
+   "categoryRaw": "Sen",
+   "year": 2017,
+   "yearRaw": "2017",
+   "date": null,
+   "isNationalRecord": true,
+   "isEspoirsBest": false,
+   "holders": [
+    {
+     "lastName": "GRAILLET",
+     "firstName": "François"
+    }
+   ]
+  },
+  {
+   "id": "m-piste-triple-23",
+   "disciplineKey": "triple",
+   "surface": "piste",
+   "gender": "m",
+   "performanceRaw": "13,77 m",
+   "performanceNumeric": 13.77,
+   "category": "Sen",
+   "categoryRaw": "Sen",
+   "year": 1993,
+   "yearRaw": "1993",
+   "date": null,
+   "isNationalRecord": false,
+   "isEspoirsBest": false,
+   "holders": [
+    {
+     "lastName": "Udelhoven",
+     "firstName": "Lukas"
+    }
+   ]
+  },
+  {
+   "id": "m-piste-perche-24",
+   "disciplineKey": "perche",
+   "surface": "piste",
+   "gender": "m",
+   "performanceRaw": "4,30 m",
+   "performanceNumeric": 4.3,
+   "category": "Sen",
+   "categoryRaw": "Sen",
+   "year": 1991,
+   "yearRaw": "1991",
+   "date": null,
+   "isNationalRecord": false,
+   "isEspoirsBest": false,
+   "holders": [
+    {
+     "lastName": "BIRCHEN",
+     "firstName": "René"
+    }
+   ]
+  },
+  {
+   "id": "m-piste-poids-25",
+   "disciplineKey": "poids",
+   "surface": "piste",
+   "gender": "m",
+   "performanceRaw": "12,74 m",
+   "performanceNumeric": 12.74,
+   "category": "Sen",
+   "categoryRaw": "Sen",
+   "year": 1995,
+   "yearRaw": "1995",
+   "date": null,
+   "isNationalRecord": false,
+   "isEspoirsBest": false,
+   "holders": [
+    {
+     "lastName": "Udelhoven",
+     "firstName": "Lukas"
+    }
+   ]
+  },
+  {
+   "id": "m-piste-javelot-26",
+   "disciplineKey": "javelot",
+   "surface": "piste",
+   "gender": "m",
+   "performanceRaw": "63,60 m",
+   "performanceNumeric": 63.6,
+   "category": "Sen",
+   "categoryRaw": "Sen",
+   "year": 1994,
+   "yearRaw": "1994",
+   "date": null,
+   "isNationalRecord": false,
+   "isEspoirsBest": false,
+   "holders": [
+    {
+     "lastName": "Udelhoven",
+     "firstName": "Lukas"
+    }
+   ]
+  },
+  {
+   "id": "m-piste-disque-27",
+   "disciplineKey": "disque",
+   "surface": "piste",
+   "gender": "m",
+   "performanceRaw": "38,76 m",
+   "performanceNumeric": 38.76,
+   "category": "Sen",
+   "categoryRaw": "Sen",
+   "year": 1995,
+   "yearRaw": "1995",
+   "date": null,
+   "isNationalRecord": false,
+   "isEspoirsBest": false,
+   "holders": [
+    {
+     "lastName": "Udelhoven",
+     "firstName": "Lukas"
+    }
+   ]
+  },
+  {
+   "id": "m-piste-marteau-28",
+   "disciplineKey": "marteau",
+   "surface": "piste",
+   "gender": "m",
+   "performanceRaw": "35,96 m",
+   "performanceNumeric": 35.96,
+   "category": "Sen",
+   "categoryRaw": "Sen",
+   "year": 2019,
+   "yearRaw": "2019",
+   "date": null,
+   "isNationalRecord": false,
+   "isEspoirsBest": false,
+   "holders": [
+    {
+     "lastName": "MICHEL",
+     "firstName": "Benny"
+    }
+   ]
+  },
+  {
+   "id": "m-piste-decathlon-29",
+   "disciplineKey": "decathlon",
+   "surface": "piste",
+   "gender": "m",
+   "performanceRaw": "7 010 P",
+   "performanceNumeric": 7010,
+   "category": "Sen",
+   "categoryRaw": "Sen",
+   "year": 1995,
+   "yearRaw": "1995",
+   "date": null,
+   "isNationalRecord": false,
+   "isEspoirsBest": false,
+   "holders": [
+    {
+     "lastName": "Udelhoven",
+     "firstName": "Lukas"
+    }
+   ]
+  },
+  {
+   "id": "m-piste-4x100m-30",
+   "disciplineKey": "4x100m",
+   "surface": "piste",
+   "gender": "m",
+   "performanceRaw": "44\"56",
+   "performanceNumeric": 44.56,
+   "category": "Sen",
+   "categoryRaw": "Sen",
+   "year": 1998,
+   "yearRaw": "1998",
+   "date": null,
+   "isNationalRecord": false,
+   "isEspoirsBest": false,
+   "holders": [
+    {
+     "lastName": "NOWAK",
+     "firstName": "Eric"
+    },
+    {
+     "lastName": "KAYSER",
+     "firstName": "Roland"
+    },
+    {
+     "lastName": "ZENS",
+     "firstName": "Pol"
+    },
+    {
+     "lastName": "SCHEER",
+     "firstName": "Sébastien"
+    }
+   ]
+  },
+  {
+   "id": "m-piste-4x400m-31",
+   "disciplineKey": "4x400m",
+   "surface": "piste",
+   "gender": "m",
+   "performanceRaw": "3'24\"86",
+   "performanceNumeric": 204.86,
+   "category": "Sen",
+   "categoryRaw": "Sen",
+   "year": 2023,
+   "yearRaw": "2023",
+   "date": null,
+   "isNationalRecord": false,
+   "isEspoirsBest": false,
+   "holders": [
+    {
+     "lastName": "SCHLAMMES",
+     "firstName": "Ben"
+    },
+    {
+     "lastName": "REILAND",
+     "firstName": "Fabrice"
+    },
+    {
+     "lastName": "HEUTS",
+     "firstName": "Sam"
+    },
+    {
+     "lastName": "RECHT",
+     "firstName": "Tom"
+    }
+   ]
+  },
+  {
+   "id": "m-piste-3x1000m-32",
+   "disciplineKey": "3x1000m",
+   "surface": "piste",
+   "gender": "m",
+   "performanceRaw": "7'38\"00",
+   "performanceNumeric": 458,
+   "category": "Sen",
+   "categoryRaw": "Sen",
+   "year": 1983,
+   "yearRaw": "1983",
+   "date": null,
+   "isNationalRecord": false,
+   "isEspoirsBest": false,
+   "holders": [
+    {
+     "lastName": "WILLIÈRE",
+     "firstName": "Paul"
+    },
+    {
+     "lastName": "SCHMIT",
+     "firstName": "Paul"
+    },
+    {
+     "lastName": "PETIT",
+     "firstName": "Jean-Claude"
+    }
+   ]
+  },
+  {
+   "id": "f-indoor-50m-0",
+   "disciplineKey": "50m",
+   "surface": "indoor",
+   "gender": "f",
+   "performanceRaw": "6\"51",
+   "performanceNumeric": 6.51,
+   "category": "Sen",
+   "categoryRaw": "Sen",
+   "year": 2025,
+   "yearRaw": "2025",
+   "date": null,
+   "isNationalRecord": false,
+   "isEspoirsBest": false,
+   "holders": [
+    {
+     "lastName": "RAUSCH",
+     "firstName": "Victoria"
+    }
+   ]
+  },
+  {
+   "id": "f-indoor-60m-1",
+   "disciplineKey": "60m",
+   "surface": "indoor",
+   "gender": "f",
+   "performanceRaw": "7\"54",
+   "performanceNumeric": 7.54,
+   "category": "Sen",
+   "categoryRaw": "Sen",
+   "year": 2026,
+   "yearRaw": "2026",
+   "date": null,
+   "isNationalRecord": false,
+   "isEspoirsBest": false,
+   "holders": [
+    {
+     "lastName": "RAUSCH",
+     "firstName": "Victoria"
+    }
+   ]
+  },
+  {
+   "id": "f-indoor-200m-2",
+   "disciplineKey": "200m",
+   "surface": "indoor",
+   "gender": "f",
+   "performanceRaw": "24\"74",
+   "performanceNumeric": 24.74,
+   "category": "Jun",
+   "categoryRaw": "Jun",
+   "year": 2014,
+   "yearRaw": "2014",
+   "date": null,
+   "isNationalRecord": false,
+   "isEspoirsBest": false,
+   "holders": [
+    {
+     "lastName": "JONES",
+     "firstName": "Laurence"
+    }
+   ]
+  },
+  {
+   "id": "f-indoor-300m-3",
+   "disciplineKey": "300m",
+   "surface": "indoor",
+   "gender": "f",
+   "performanceRaw": "40\"70",
+   "performanceNumeric": 40.7,
+   "category": "Jun",
+   "categoryRaw": "Jun",
+   "year": 2015,
+   "yearRaw": "2015",
+   "date": null,
+   "isNationalRecord": false,
+   "isEspoirsBest": false,
+   "holders": [
+    {
+     "lastName": "ZENS",
+     "firstName": "Anouk"
+    }
+   ]
+  },
+  {
+   "id": "f-indoor-400m-4",
+   "disciplineKey": "400m",
+   "surface": "indoor",
+   "gender": "f",
+   "performanceRaw": "56\"54",
+   "performanceNumeric": 56.54,
+   "category": "Jun",
+   "categoryRaw": "Jun",
+   "year": 2016,
+   "yearRaw": "2016",
+   "date": null,
+   "isNationalRecord": false,
+   "isEspoirsBest": false,
+   "holders": [
+    {
+     "lastName": "ZENS",
+     "firstName": "Anouk"
+    }
+   ]
+  },
+  {
+   "id": "f-indoor-600m-5",
+   "disciplineKey": "600m",
+   "surface": "indoor",
+   "gender": "f",
+   "performanceRaw": "1'34\"38",
+   "performanceNumeric": 94.38,
+   "category": "Cad",
+   "categoryRaw": "Cad",
+   "year": 2023,
+   "yearRaw": "2023",
+   "date": null,
+   "isNationalRecord": false,
+   "isEspoirsBest": false,
+   "holders": [
+    {
+     "lastName": "CICCONE",
+     "firstName": "Julia"
+    }
+   ]
+  },
+  {
+   "id": "f-indoor-800m-6",
+   "disciplineKey": "800m",
+   "surface": "indoor",
+   "gender": "f",
+   "performanceRaw": "2'03\"04",
+   "performanceNumeric": 123.04,
+   "category": "Sen",
+   "categoryRaw": "Sen",
+   "year": 2024,
+   "yearRaw": "2024",
+   "date": null,
+   "isNationalRecord": false,
+   "isEspoirsBest": false,
+   "holders": [
+    {
+     "lastName": "HOFFMANN",
+     "firstName": "Vera"
+    }
+   ]
+  },
+  {
+   "id": "f-indoor-1000m-7",
+   "disciplineKey": "1000m",
+   "surface": "indoor",
+   "gender": "f",
+   "performanceRaw": "2'49\"61",
+   "performanceNumeric": 169.61,
+   "category": "Esp",
+   "categoryRaw": "Esp",
+   "year": 2019,
+   "yearRaw": "2019",
+   "date": null,
+   "isNationalRecord": true,
+   "isEspoirsBest": false,
+   "holders": [
+    {
+     "lastName": "HOFFMANN",
+     "firstName": "Vera"
+    }
+   ]
+  },
+  {
+   "id": "f-indoor-1500m-8",
+   "disciplineKey": "1500m",
+   "surface": "indoor",
+   "gender": "f",
+   "performanceRaw": "4'08\"73",
+   "performanceNumeric": 248.73,
+   "category": "Sen",
+   "categoryRaw": "Sen",
+   "year": 2023,
+   "yearRaw": "2023",
+   "date": null,
+   "isNationalRecord": true,
+   "isEspoirsBest": false,
+   "holders": [
+    {
+     "lastName": "HOFFMANN",
+     "firstName": "Vera"
+    }
+   ]
+  },
+  {
+   "id": "f-indoor-3000m-9",
+   "disciplineKey": "3000m",
+   "surface": "indoor",
+   "gender": "f",
+   "performanceRaw": "9'07\"54",
+   "performanceNumeric": 547.54,
+   "category": "Sen",
+   "categoryRaw": "Sen",
+   "year": 2025,
+   "yearRaw": "2025",
+   "date": null,
+   "isNationalRecord": true,
+   "isEspoirsBest": false,
+   "holders": [
+    {
+     "lastName": "HOFFMANN",
+     "firstName": "Vera"
+    }
+   ]
+  },
+  {
+   "id": "f-indoor-5000m-10",
+   "disciplineKey": "5000m",
+   "surface": "indoor",
+   "gender": "f",
+   "performanceRaw": "15'59\"74",
+   "performanceNumeric": 959.74,
+   "category": "Sen",
+   "categoryRaw": "Sen",
+   "year": 2023,
+   "yearRaw": "2023",
+   "date": null,
+   "isNationalRecord": true,
+   "isEspoirsBest": false,
+   "holders": [
+    {
+     "lastName": "HOFFMANN",
+     "firstName": "Vera"
+    }
+   ]
+  },
+  {
+   "id": "f-indoor-60m-h-11",
+   "disciplineKey": "60m-h",
+   "surface": "indoor",
+   "gender": "f",
+   "performanceRaw": "8\"08",
+   "performanceNumeric": 8.08,
+   "category": "Sen",
+   "categoryRaw": "Sen",
+   "year": 2026,
+   "yearRaw": "2026",
+   "date": null,
+   "isNationalRecord": true,
+   "isEspoirsBest": false,
+   "holders": [
+    {
+     "lastName": "RAUSCH",
+     "firstName": "Victoria"
+    }
+   ]
+  },
+  {
+   "id": "f-indoor-longueur-12",
+   "disciplineKey": "longueur",
+   "surface": "indoor",
+   "gender": "f",
+   "performanceRaw": "5,95 m",
+   "performanceNumeric": 5.95,
+   "category": "Jun",
+   "categoryRaw": "Jun",
+   "year": 2014,
+   "yearRaw": "2014",
+   "date": null,
+   "isNationalRecord": true,
+   "isEspoirsBest": false,
+   "holders": [
+    {
+     "lastName": "JONES",
+     "firstName": "Laurence"
+    }
+   ]
+  },
+  {
+   "id": "f-indoor-hauteur-13",
+   "disciplineKey": "hauteur",
+   "surface": "indoor",
+   "gender": "f",
+   "performanceRaw": "1,76 m",
+   "performanceNumeric": 1.76,
+   "category": "Jun",
+   "categoryRaw": "Jun",
+   "year": 2017,
+   "yearRaw": "2017",
+   "date": null,
+   "isNationalRecord": false,
+   "isEspoirsBest": false,
+   "holders": [
+    {
+     "lastName": "ZIMMER",
+     "firstName": "Cathy"
+    }
+   ]
+  },
+  {
+   "id": "f-indoor-triple-14",
+   "disciplineKey": "triple",
+   "surface": "indoor",
+   "gender": "f",
+   "performanceRaw": "10,96 m",
+   "performanceNumeric": 10.96,
+   "category": "Jun",
+   "categoryRaw": "Jun",
+   "year": 2012,
+   "yearRaw": "2012",
+   "date": null,
+   "isNationalRecord": false,
+   "isEspoirsBest": false,
+   "holders": [
+    {
+     "lastName": "ZENS",
+     "firstName": "Cathy"
+    }
+   ]
+  },
+  {
+   "id": "f-indoor-perche-15",
+   "disciplineKey": "perche",
+   "surface": "indoor",
+   "gender": "f",
+   "performanceRaw": "3,40 m",
+   "performanceNumeric": 3.4,
+   "category": "Esp",
+   "categoryRaw": "Esp",
+   "year": 2009,
+   "yearRaw": "2009",
+   "date": null,
+   "isNationalRecord": false,
+   "isEspoirsBest": false,
+   "holders": [
+    {
+     "lastName": "WEBER",
+     "firstName": "Fabienne"
+    }
+   ]
+  },
+  {
+   "id": "f-indoor-poids-4kg-16",
+   "disciplineKey": "poids-4kg",
+   "surface": "indoor",
+   "gender": "f",
+   "performanceRaw": "13,56 m",
+   "performanceNumeric": 13.56,
+   "category": "Jun",
+   "categoryRaw": "Jun",
+   "year": 2007,
+   "yearRaw": "2007",
+   "date": null,
+   "isNationalRecord": false,
+   "isEspoirsBest": false,
+   "holders": [
+    {
+     "lastName": "SCHARTZ",
+     "firstName": "Kim"
+    }
+   ]
+  },
+  {
+   "id": "f-indoor-4x200m-17",
+   "disciplineKey": "4x200m",
+   "surface": "indoor",
+   "gender": "f",
+   "performanceRaw": "1'43\"82",
+   "performanceNumeric": 103.82,
+   "category": "Cad",
+   "categoryRaw": "Cad Sen Jun Esp",
+   "year": 2014,
+   "yearRaw": "2014",
+   "date": null,
+   "isNationalRecord": false,
+   "isEspoirsBest": false,
+   "holders": [
+    {
+     "lastName": "ZENS",
+     "firstName": "Annouk"
+    },
+    {
+     "lastName": "HAYEN",
+     "firstName": "Chantal"
+    },
+    {
+     "lastName": "JONES",
+     "firstName": "Laurence"
+    },
+    {
+     "lastName": "BAUER",
+     "firstName": "Annaïs"
+    }
+   ]
+  },
+  {
+   "id": "m-indoor-50m-0",
+   "disciplineKey": "50m",
+   "surface": "indoor",
+   "gender": "m",
+   "performanceRaw": "6\"79",
+   "performanceNumeric": 6.79,
+   "category": "U16",
+   "categoryRaw": "U16",
+   "year": 2021,
+   "yearRaw": "2021",
+   "date": null,
+   "isNationalRecord": false,
+   "isEspoirsBest": false,
+   "holders": [
+    {
+     "lastName": "JÜCH",
+     "firstName": "Mats"
+    }
+   ]
+  },
+  {
+   "id": "m-indoor-60m-1",
+   "disciplineKey": "60m",
+   "surface": "indoor",
+   "gender": "m",
+   "performanceRaw": "7\"00",
+   "performanceNumeric": 7,
+   "category": "Sen",
+   "categoryRaw": "Sen",
+   "year": 2013,
+   "yearRaw": "2013",
+   "date": null,
+   "isNationalRecord": false,
+   "isEspoirsBest": false,
+   "holders": [
+    {
+     "lastName": "GERALDO",
+     "firstName": "Festus"
+    }
+   ]
+  },
+  {
+   "id": "m-indoor-100m-2",
+   "disciplineKey": "100m",
+   "surface": "indoor",
+   "gender": "m",
+   "performanceRaw": "11\"80",
+   "performanceNumeric": 11.8,
+   "category": "Sen",
+   "categoryRaw": "Sen",
+   "year": 1991,
+   "yearRaw": "1991",
+   "date": null,
+   "isNationalRecord": false,
+   "isEspoirsBest": false,
+   "holders": [
+    {
+     "lastName": "WENNMACHER",
+     "firstName": "Frank"
+    }
+   ]
+  },
+  {
+   "id": "m-indoor-200m-3",
+   "disciplineKey": "200m",
+   "surface": "indoor",
+   "gender": "m",
+   "performanceRaw": "22\"18",
+   "performanceNumeric": 22.18,
+   "category": "Sen",
+   "categoryRaw": "Sen",
+   "year": 2014,
+   "yearRaw": "2014",
+   "date": null,
+   "isNationalRecord": false,
+   "isEspoirsBest": false,
+   "holders": [
+    {
+     "lastName": "GERALDO",
+     "firstName": "Festus"
+    }
+   ]
+  },
+  {
+   "id": "m-indoor-300m-4",
+   "disciplineKey": "300m",
+   "surface": "indoor",
+   "gender": "m",
+   "performanceRaw": "35\"38",
+   "performanceNumeric": 35.38,
+   "category": "U23",
+   "categoryRaw": "U23",
+   "year": 2011,
+   "yearRaw": "2011",
+   "date": null,
+   "isNationalRecord": false,
+   "isEspoirsBest": false,
+   "holders": [
+    {
+     "lastName": "FISCHER",
+     "firstName": "Sven"
+    }
+   ]
+  },
+  {
+   "id": "m-indoor-400m-5",
+   "disciplineKey": "400m",
+   "surface": "indoor",
+   "gender": "m",
+   "performanceRaw": "49\"63",
+   "performanceNumeric": 49.63,
+   "category": "U23",
+   "categoryRaw": "U23",
+   "year": 2011,
+   "yearRaw": "2011",
+   "date": null,
+   "isNationalRecord": false,
+   "isEspoirsBest": false,
+   "holders": [
+    {
+     "lastName": "FISCHER",
+     "firstName": "Sven"
+    }
+   ]
+  },
+  {
+   "id": "m-indoor-600m-6",
+   "disciplineKey": "600m",
+   "surface": "indoor",
+   "gender": "m",
+   "performanceRaw": "1'23\"19",
+   "performanceNumeric": 83.19,
+   "category": "U23",
+   "categoryRaw": "U23",
+   "year": 2011,
+   "yearRaw": "2011",
+   "date": null,
+   "isNationalRecord": false,
+   "isEspoirsBest": false,
+   "holders": [
+    {
+     "lastName": "FISCHER",
+     "firstName": "Sven"
+    }
+   ]
+  },
+  {
+   "id": "m-indoor-800m-7",
+   "disciplineKey": "800m",
+   "surface": "indoor",
+   "gender": "m",
+   "performanceRaw": "1'51\"37",
+   "performanceNumeric": 111.37,
+   "category": "U23",
+   "categoryRaw": "U23",
+   "year": 2024,
+   "yearRaw": "2024",
+   "date": null,
+   "isNationalRecord": false,
+   "isEspoirsBest": false,
+   "holders": [
+    {
+     "lastName": "RECHT",
+     "firstName": "Tom"
+    }
+   ]
+  },
+  {
+   "id": "m-indoor-1000m-8",
+   "disciplineKey": "1000m",
+   "surface": "indoor",
+   "gender": "m",
+   "performanceRaw": "2'29\"69",
+   "performanceNumeric": 149.69,
+   "category": "U23",
+   "categoryRaw": "U23",
+   "year": 2014,
+   "yearRaw": "2014",
+   "date": null,
+   "isNationalRecord": false,
+   "isEspoirsBest": false,
+   "holders": [
+    {
+     "lastName": "BERTEMES",
+     "firstName": "Bob"
+    }
+   ]
+  },
+  {
+   "id": "m-indoor-1500m-9",
+   "disciplineKey": "1500m",
+   "surface": "indoor",
+   "gender": "m",
+   "performanceRaw": "3'43\"89",
+   "performanceNumeric": 223.89,
+   "category": "Sen",
+   "categoryRaw": "Sen",
+   "year": 2021,
+   "yearRaw": "2021",
+   "date": null,
+   "isNationalRecord": false,
+   "isEspoirsBest": false,
+   "holders": [
+    {
+     "lastName": "BERTEMES",
+     "firstName": "Bob"
+    }
+   ]
+  },
+  {
+   "id": "m-indoor-2000m-10",
+   "disciplineKey": "2000m",
+   "surface": "indoor",
+   "gender": "m",
+   "performanceRaw": "5'13\"64",
+   "performanceNumeric": 313.64,
+   "category": "Sen",
+   "categoryRaw": "Sen",
+   "year": 2022,
+   "yearRaw": "2022",
+   "date": null,
+   "isNationalRecord": true,
+   "isEspoirsBest": false,
+   "holders": [
+    {
+     "lastName": "BERTEMES",
+     "firstName": "Bob"
+    }
+   ]
+  },
+  {
+   "id": "m-indoor-3000m-11",
+   "disciplineKey": "3000m",
+   "surface": "indoor",
+   "gender": "m",
+   "performanceRaw": "8'10\"21",
+   "performanceNumeric": 490.21,
+   "category": "Sen",
+   "categoryRaw": "Sen",
+   "year": 2015,
+   "yearRaw": "2015",
+   "date": null,
+   "isNationalRecord": false,
+   "isEspoirsBest": false,
+   "holders": [
+    {
+     "lastName": "MELLINA",
+     "firstName": "Pol"
+    }
+   ]
+  },
+  {
+   "id": "m-indoor-5000m-12",
+   "disciplineKey": "5000m",
+   "surface": "indoor",
+   "gender": "m",
+   "performanceRaw": "14'27\"18",
+   "performanceNumeric": 867.18,
+   "category": "Sen",
+   "categoryRaw": "Sen",
+   "year": 2023,
+   "yearRaw": "2023",
+   "date": null,
+   "isNationalRecord": true,
+   "isEspoirsBest": false,
+   "holders": [
+    {
+     "lastName": "BERTEMES",
+     "firstName": "Bob"
+    }
+   ]
+  },
+  {
+   "id": "m-indoor-60m-h-13",
+   "disciplineKey": "60m-h",
+   "surface": "indoor",
+   "gender": "m",
+   "performanceRaw": "8\"14",
+   "performanceNumeric": 8.14,
+   "category": "Sen",
+   "categoryRaw": "Sen",
+   "year": 1991,
+   "yearRaw": "1991",
+   "date": null,
+   "isNationalRecord": false,
+   "isEspoirsBest": false,
+   "holders": [
+    {
+     "lastName": "UDELHOVEN",
+     "firstName": "Lukas"
+    }
+   ]
+  },
+  {
+   "id": "m-indoor-poids-14",
+   "disciplineKey": "poids",
+   "surface": "indoor",
+   "gender": "m",
+   "performanceRaw": "12,77 m",
+   "performanceNumeric": 12.77,
+   "category": "U23",
+   "categoryRaw": "U23",
+   "year": 2022,
+   "yearRaw": "2022",
+   "date": null,
+   "isNationalRecord": false,
+   "isEspoirsBest": false,
+   "holders": [
+    {
+     "lastName": "MICHEL",
+     "firstName": "Benny"
+    }
+   ]
+  },
+  {
+   "id": "m-indoor-hauteur-15",
+   "disciplineKey": "hauteur",
+   "surface": "indoor",
+   "gender": "m",
+   "performanceRaw": "1,96 m",
+   "performanceNumeric": 1.96,
+   "category": "U18",
+   "categoryRaw": "U18",
+   "year": 2024,
+   "yearRaw": "2024",
+   "date": null,
+   "isNationalRecord": false,
+   "isEspoirsBest": false,
+   "holders": [
+    {
+     "lastName": "JOLY",
+     "firstName": "Till"
+    }
+   ]
+  },
+  {
+   "id": "m-indoor-longueur-16",
+   "disciplineKey": "longueur",
+   "surface": "indoor",
+   "gender": "m",
+   "performanceRaw": "7,68 m",
+   "performanceNumeric": 7.68,
+   "category": "Sen",
+   "categoryRaw": "Sen",
+   "year": 2017,
+   "yearRaw": "2017",
+   "date": null,
+   "isNationalRecord": true,
+   "isEspoirsBest": false,
+   "holders": [
+    {
+     "lastName": "LAMBERT",
+     "firstName": "Romain"
+    }
+   ]
+  },
+  {
+   "id": "m-indoor-perche-17",
+   "disciplineKey": "perche",
+   "surface": "indoor",
+   "gender": "m",
+   "performanceRaw": "4,50 m",
+   "performanceNumeric": 4.5,
+   "category": "U20",
+   "categoryRaw": "U20",
+   "year": 2026,
+   "yearRaw": "2026",
+   "date": null,
+   "isNationalRecord": false,
+   "isEspoirsBest": false,
+   "holders": [
+    {
+     "lastName": "JOLY",
+     "firstName": "Till"
+    }
+   ]
+  },
+  {
+   "id": "m-indoor-triple-18",
+   "disciplineKey": "triple",
+   "surface": "indoor",
+   "gender": "m",
+   "performanceRaw": "11,15 m",
+   "performanceNumeric": 11.15,
+   "category": "U20",
+   "categoryRaw": "U20",
+   "year": 2011,
+   "yearRaw": "2011",
+   "date": null,
+   "isNationalRecord": false,
+   "isEspoirsBest": false,
+   "holders": [
+    {
+     "lastName": "MICHEL",
+     "firstName": "Roy"
+    }
+   ]
+  },
+  {
+   "id": "m-indoor-heptathlon-19",
+   "disciplineKey": "heptathlon",
+   "surface": "indoor",
+   "gender": "m",
+   "performanceRaw": "5 093 P",
+   "performanceNumeric": 5093,
+   "category": "U18",
+   "categoryRaw": "U18",
+   "year": 2025,
+   "yearRaw": "2025",
+   "date": null,
+   "isNationalRecord": false,
+   "isEspoirsBest": false,
+   "holders": [
+    {
+     "lastName": "JOLY",
+     "firstName": "Till"
+    }
+   ]
+  },
+  {
+   "id": "m-indoor-4x200m-20",
+   "disciplineKey": "4x200m",
+   "surface": "indoor",
+   "gender": "m",
+   "performanceRaw": "1'34\"33",
+   "performanceNumeric": 94.33,
+   "category": "U18",
+   "categoryRaw": "U18 U20 U23 U20",
+   "year": 2014,
+   "yearRaw": "2014",
+   "date": null,
+   "isNationalRecord": false,
+   "isEspoirsBest": false,
+   "holders": [
+    {
+     "lastName": "RIVNY",
+     "firstName": "Genrikh"
+    },
+    {
+     "lastName": "STEFFEN",
+     "firstName": "Kevin"
+    },
+    {
+     "lastName": "HERBER",
+     "firstName": "Eric"
+    },
+    {
+     "lastName": "KOHL",
+     "firstName": "Yannick"
+    }
+   ]
+  },
+  {
+   "id": "f-route-10km-strooss-0",
+   "disciplineKey": "10km-strooss",
+   "surface": "route",
+   "gender": "f",
+   "performanceRaw": "33'37\"",
+   "performanceNumeric": 2017,
+   "category": "Sen",
+   "categoryRaw": "Sen",
+   "year": 2026,
+   "yearRaw": "2026",
+   "date": null,
+   "isNationalRecord": true,
+   "isEspoirsBest": false,
+   "holders": [
+    {
+     "lastName": "HOFFMANN",
+     "firstName": "Vera"
+    }
+   ]
+  },
+  {
+   "id": "f-route-halbmarathon-1",
+   "disciplineKey": "halbmarathon",
+   "surface": "route",
+   "gender": "f",
+   "performanceRaw": "1h18'42\"00",
+   "performanceNumeric": 4722,
+   "category": "Sen",
+   "categoryRaw": "Sen",
+   "year": 2015,
+   "yearRaw": "2015",
+   "date": null,
+   "isNationalRecord": false,
+   "isEspoirsBest": false,
+   "holders": [
+    {
+     "lastName": "Königs-GAMACHU",
+     "firstName": "Mimi"
+    }
+   ]
+  },
+  {
+   "id": "f-route-marathon-2",
+   "disciplineKey": "marathon",
+   "surface": "route",
+   "gender": "f",
+   "performanceRaw": "2h40'40\"00",
+   "performanceNumeric": 9640,
+   "category": "Sen",
+   "categoryRaw": "Sen",
+   "year": 2015,
+   "yearRaw": "2015",
+   "date": null,
+   "isNationalRecord": false,
+   "isEspoirsBest": false,
+   "holders": [
+    {
+     "lastName": "Königs-Gamachu",
+     "firstName": "Mimi"
+    }
+   ]
+  },
+  {
+   "id": "m-route-10km-strooss-0",
+   "disciplineKey": "10km-strooss",
+   "surface": "route",
+   "gender": "m",
+   "performanceRaw": "29'30\"",
+   "performanceNumeric": 1770,
+   "category": "Sen",
+   "categoryRaw": "Sen",
+   "year": 2022,
+   "yearRaw": "2022",
+   "date": null,
+   "isNationalRecord": true,
+   "isEspoirsBest": false,
+   "holders": [
+    {
+     "lastName": "KINDE",
+     "firstName": "Yonas"
+    }
+   ]
+  },
+  {
+   "id": "m-route-halbmarathon-1",
+   "disciplineKey": "halbmarathon",
+   "surface": "route",
+   "gender": "m",
+   "performanceRaw": "1h04'52\"00",
+   "performanceNumeric": 3892,
+   "category": "Sen",
+   "categoryRaw": "Sen",
+   "year": 1986,
+   "yearRaw": "1986",
+   "date": null,
+   "isNationalRecord": false,
+   "isEspoirsBest": false,
+   "holders": [
+    {
+     "lastName": "PETIT",
+     "firstName": "Jean-Claude"
+    }
+   ]
+  },
+  {
+   "id": "m-route-marathon-2",
+   "disciplineKey": "marathon",
+   "surface": "route",
+   "gender": "m",
+   "performanceRaw": "2h17'09\"00",
+   "performanceNumeric": 8229,
+   "category": "Sen",
+   "categoryRaw": "Sen",
+   "year": 2019,
+   "yearRaw": "2019",
+   "date": null,
+   "isNationalRecord": false,
+   "isEspoirsBest": false,
+   "holders": [
+    {
+     "lastName": "KINDE",
+     "firstName": "Yonas"
+    }
+   ]
+  }
+ ],
+ "venue": [
+  {
+   "id": "stade-100m-0",
+   "disciplineKey": "100m",
+   "performanceRaw": "11\"29",
+   "performanceNumeric": 11.29,
+   "holders": [
+    {
+     "lastName": "VAN DER WEKEN",
+     "firstName": "Patrizia"
+    }
+   ],
+   "nation": "LUX",
+   "year": 2023,
+   "isNationalRecord": false
+  },
+  {
+   "id": "stade-200m-1",
+   "disciplineKey": "200m",
+   "performanceRaw": "23\"70",
+   "performanceNumeric": 23.7,
+   "holders": [
+    {
+     "lastName": "GHOSH",
+     "firstName": "Shanta"
+    }
+   ],
+   "nation": "GER",
+   "year": 1998,
+   "isNationalRecord": false
+  },
+  {
+   "id": "stade-400m-2",
+   "disciplineKey": "400m",
+   "performanceRaw": "53\"19",
+   "performanceNumeric": 53.19,
+   "holders": [
+    {
+     "lastName": "REGENT-TALBOT",
+     "firstName": "Ketty"
+    }
+   ],
+   "nation": "FRA",
+   "year": 1990,
+   "isNationalRecord": false
+  },
+  {
+   "id": "stade-800m-3",
+   "disciplineKey": "800m",
+   "performanceRaw": "2'04\"71",
+   "performanceNumeric": 124.71,
+   "holders": [
+    {
+     "lastName": "EYKENS",
+     "firstName": "Renée"
+    }
+   ],
+   "nation": "BEL",
+   "year": 2020,
+   "isNationalRecord": false
+  },
+  {
+   "id": "stade-1500m-4",
+   "disciplineKey": "1500m",
+   "performanceRaw": "4'23\"07",
+   "performanceNumeric": 263.07,
+   "holders": [
+    {
+     "lastName": "SALT",
+     "firstName": "Christa"
+    }
+   ],
+   "nation": "LUX",
+   "year": 1997,
+   "isNationalRecord": false
+  },
+  {
+   "id": "stade-3000m-5",
+   "disciplineKey": "3000m",
+   "performanceRaw": "9'24\"75",
+   "performanceNumeric": 564.75,
+   "holders": [
+    {
+     "lastName": "HOFFMANN",
+     "firstName": "Vera"
+    }
+   ],
+   "nation": "LUX",
+   "year": 2023,
+   "isNationalRecord": false
+  },
+  {
+   "id": "stade-5000m-6",
+   "disciplineKey": "5000m",
+   "performanceRaw": "17'17\"16",
+   "performanceNumeric": 1037.16,
+   "holders": [
+    {
+     "lastName": "SCHMOETTEN",
+     "firstName": "Pascale"
+    }
+   ],
+   "nation": "LUX",
+   "year": null,
+   "isNationalRecord": true
+  },
+  {
+   "id": "stade-10000m-7",
+   "disciplineKey": "10000m",
+   "performanceRaw": "35'45\"21",
+   "performanceNumeric": 2145.21,
+   "holders": [
+    {
+     "lastName": "MAY",
+     "firstName": "Liz"
+    }
+   ],
+   "nation": "LUX",
+   "year": 2007,
+   "isNationalRecord": false
+  },
+  {
+   "id": "stade-100m-h-8",
+   "disciplineKey": "100m-h",
+   "performanceRaw": "13\"46",
+   "performanceNumeric": 13.46,
+   "holders": [
+    {
+     "lastName": "LINSTER",
+     "firstName": "Véronique"
+    }
+   ],
+   "nation": "LUX",
+   "year": 1996,
+   "isNationalRecord": false
+  },
+  {
+   "id": "stade-400m-h-9",
+   "disciplineKey": "400m-h",
+   "performanceRaw": "60\"84",
+   "performanceNumeric": 60.84,
+   "holders": [
+    {
+     "lastName": "SYVERTSEN",
+     "firstName": "Barbro"
+    }
+   ],
+   "nation": "NOR",
+   "year": 1988,
+   "isNationalRecord": true
+  },
+  {
+   "id": "stade-2000m-st-10",
+   "disciplineKey": "2000m-st",
+   "performanceRaw": "7'17\"08",
+   "performanceNumeric": 437.08,
+   "holders": [
+    {
+     "lastName": "HANSEN",
+     "firstName": "Véronique"
+    }
+   ],
+   "nation": "LUX",
+   "year": 2000,
+   "isNationalRecord": true
+  },
+  {
+   "id": "stade-3000m-st-11",
+   "disciplineKey": "3000m-st",
+   "performanceRaw": "11'19\"88",
+   "performanceNumeric": 679.88,
+   "holders": [
+    {
+     "lastName": "GLODEN",
+     "firstName": "Jenny"
+    }
+   ],
+   "nation": "LUX",
+   "year": 2023,
+   "isNationalRecord": false
+  },
+  {
+   "id": "stade-4x100m-12",
+   "disciplineKey": "4x100m",
+   "performanceRaw": "46\"84",
+   "performanceNumeric": 46.84,
+   "holders": [
+    {
+     "lastName": "RHENANIE",
+     "firstName": "Sélection"
+    }
+   ],
+   "nation": "GER",
+   "year": 1988,
+   "isNationalRecord": false
+  },
+  {
+   "id": "stade-hauteur-13",
+   "disciplineKey": "hauteur",
+   "performanceRaw": "1,88 m",
+   "performanceNumeric": 1.88,
+   "holders": [
+    {
+     "lastName": "VANDERWEIDE",
+     "firstName": "Monique"
+    }
+   ],
+   "nation": "NED",
+   "year": 1990,
+   "isNationalRecord": false
+  },
+  {
+   "id": "stade-longueur-14",
+   "disciplineKey": "longueur",
+   "performanceRaw": "6,35 m",
+   "performanceNumeric": 6.35,
+   "holders": [
+    {
+     "lastName": "HORT",
+     "firstName": "Stéphanie"
+    }
+   ],
+   "nation": "GER",
+   "year": 1996,
+   "isNationalRecord": false
+  },
+  {
+   "id": "stade-perche-15",
+   "disciplineKey": "perche",
+   "performanceRaw": "4,10 m",
+   "performanceNumeric": 4.1,
+   "holders": [
+    {
+     "lastName": "GADSCHEW",
+     "firstName": "Kristina"
+    }
+   ],
+   "nation": "GER",
+   "year": 2015,
+   "isNationalRecord": false
+  },
+  {
+   "id": "stade-triple-16",
+   "disciplineKey": "triple",
+   "performanceRaw": "12,65 m",
+   "performanceNumeric": 12.65,
+   "holders": [
+    {
+     "lastName": "VELDAKOVA",
+     "firstName": "Dana"
+    }
+   ],
+   "nation": "SLO",
+   "year": 1998,
+   "isNationalRecord": false
+  },
+  {
+   "id": "stade-disque-17",
+   "disciplineKey": "disque",
+   "performanceRaw": "50,94 m",
+   "performanceNumeric": 50.94,
+   "holders": [
+    {
+     "lastName": "KELHETTER",
+     "firstName": "Danièle"
+    }
+   ],
+   "nation": "FRA",
+   "year": 1996,
+   "isNationalRecord": false
+  },
+  {
+   "id": "stade-javelot-18",
+   "disciplineKey": "javelot",
+   "performanceRaw": "58,20 m",
+   "performanceNumeric": 58.2,
+   "holders": [
+    {
+     "lastName": "AUZEL",
+     "firstName": "Nadine"
+    }
+   ],
+   "nation": "FRA",
+   "year": 1996,
+   "isNationalRecord": false
+  },
+  {
+   "id": "stade-marteau-19",
+   "disciplineKey": "marteau",
+   "performanceRaw": "42,87 m",
+   "performanceNumeric": 42.87,
+   "holders": [
+    {
+     "lastName": "SIPILA",
+     "firstName": "Pavivi"
+    }
+   ],
+   "nation": "FIN",
+   "year": 1998,
+   "isNationalRecord": false
+  },
+  {
+   "id": "stade-poids-20",
+   "disciplineKey": "poids",
+   "performanceRaw": "14,94 m",
+   "performanceNumeric": 14.94,
+   "holders": [
+    {
+     "lastName": "BICK",
+     "firstName": "Katja"
+    }
+   ],
+   "nation": "GER",
+   "year": 1988,
+   "isNationalRecord": false
+  },
+  {
+   "id": "stade-heptathlon-21",
+   "disciplineKey": "heptathlon",
+   "performanceRaw": "5 515 P",
+   "performanceNumeric": 5515,
+   "holders": [
+    {
+     "lastName": "STRASCHEWSKI",
+     "firstName": "Anke"
+    }
+   ],
+   "nation": "GER",
+   "year": 1990,
+   "isNationalRecord": false
+  },
+  {
+   "id": "stade-100m-22",
+   "disciplineKey": "100m",
+   "performanceRaw": "10\"45",
+   "performanceNumeric": 10.45,
+   "holders": [
+    {
+     "lastName": "v.d. VLOOT",
+     "firstName": "Regilio"
+    }
+   ],
+   "nation": "NED",
+   "year": 1993,
+   "isNationalRecord": false
+  },
+  {
+   "id": "stade-200m-23",
+   "disciplineKey": "200m",
+   "performanceRaw": "21\"00",
+   "performanceNumeric": 21,
+   "holders": [
+    {
+     "lastName": "LOMBA",
+     "firstName": "Herman"
+    }
+   ],
+   "nation": "FRA",
+   "year": 1992,
+   "isNationalRecord": false
+  },
+  {
+   "id": "stade-400m-24",
+   "disciplineKey": "400m",
+   "performanceRaw": "46\"89",
+   "performanceNumeric": 46.89,
+   "holders": [
+    {
+     "lastName": "DOLLENDORF",
+     "firstName": "Marc"
+    }
+   ],
+   "nation": "BEL",
+   "year": 1994,
+   "isNationalRecord": false
+  },
+  {
+   "id": "stade-800m-25",
+   "disciplineKey": "800m",
+   "performanceRaw": "1'47\"86",
+   "performanceNumeric": 107.86,
+   "holders": [
+    {
+     "lastName": "HEGESIPPE",
+     "firstName": "Joel"
+    }
+   ],
+   "nation": "FRA",
+   "year": 1989,
+   "isNationalRecord": false
+  },
+  {
+   "id": "stade-1000m-26",
+   "disciplineKey": "1000m",
+   "performanceRaw": "2'25\"15",
+   "performanceNumeric": 145.15,
+   "holders": [
+    {
+     "lastName": "CALVO",
+     "firstName": "Carlos"
+    }
+   ],
+   "nation": "LUX",
+   "year": 1999,
+   "isNationalRecord": false
+  },
+  {
+   "id": "stade-1500m-27",
+   "disciplineKey": "1500m",
+   "performanceRaw": "3'41\"70",
+   "performanceNumeric": 221.7,
+   "holders": [
+    {
+     "lastName": "KIPRUTO",
+     "firstName": "Sammy"
+    }
+   ],
+   "nation": "KEN",
+   "year": 2002,
+   "isNationalRecord": false
+  },
+  {
+   "id": "stade-1-mile-28",
+   "disciplineKey": "1-mile",
+   "performanceRaw": "4'08\"63",
+   "performanceNumeric": 248.63,
+   "holders": [
+    {
+     "lastName": "WAMMETSBERGER",
+     "firstName": "Felix"
+    }
+   ],
+   "nation": "GER",
+   "year": 2020,
+   "isNationalRecord": false
+  },
+  {
+   "id": "stade-3000m-29",
+   "disciplineKey": "3000m",
+   "performanceRaw": "8'03\"93",
+   "performanceNumeric": 483.93,
+   "holders": [
+    {
+     "lastName": "GRETHEN",
+     "firstName": "Charles"
+    }
+   ],
+   "nation": "LUX",
+   "year": 2023,
+   "isNationalRecord": false
+  },
+  {
+   "id": "stade-5000m-30",
+   "disciplineKey": "5000m",
+   "performanceRaw": "13'58\"20",
+   "performanceNumeric": 838.2,
+   "holders": [
+    {
+     "lastName": "DIRKS",
+     "firstName": "Tonnie"
+    }
+   ],
+   "nation": "NED",
+   "year": 1990,
+   "isNationalRecord": false
+  },
+  {
+   "id": "stade-10000m-31",
+   "disciplineKey": "10000m",
+   "performanceRaw": "28'48\"90",
+   "performanceNumeric": 1728.9,
+   "holders": [
+    {
+     "lastName": "GLODEN",
+     "firstName": "Justin"
+    }
+   ],
+   "nation": "LUX",
+   "year": 1985,
+   "isNationalRecord": false
+  },
+  {
+   "id": "stade-20000m-32",
+   "disciplineKey": "20000m",
+   "performanceRaw": "1h00'04\"60",
+   "performanceNumeric": 3604.6,
+   "holders": [
+    {
+     "lastName": "GLODEN",
+     "firstName": "Justin"
+    }
+   ],
+   "nation": "LUX",
+   "year": 1985,
+   "isNationalRecord": false
+  },
+  {
+   "id": "stade-1-stonn-33",
+   "disciplineKey": "1-stonn",
+   "performanceRaw": "19 970 m",
+   "performanceNumeric": 19970,
+   "holders": [
+    {
+     "lastName": "GLODEN",
+     "firstName": "Justin"
+    }
+   ],
+   "nation": "LUX",
+   "year": 1985,
+   "isNationalRecord": false
+  },
+  {
+   "id": "stade-110m-h-34",
+   "disciplineKey": "110m-h",
+   "performanceRaw": "13\"88",
+   "performanceNumeric": 13.88,
+   "holders": [
+    {
+     "lastName": "CLARICO",
+     "firstName": "Vincent"
+    }
+   ],
+   "nation": "FRA",
+   "year": 1990,
+   "isNationalRecord": false
+  },
+  {
+   "id": "stade-400m-h-35",
+   "disciplineKey": "400m-h",
+   "performanceRaw": "52\"80",
+   "performanceNumeric": 52.8,
+   "holders": [
+    {
+     "lastName": "EDSON",
+     "firstName": "Egil"
+    }
+   ],
+   "nation": "ISL",
+   "year": 1988,
+   "isNationalRecord": false
+  },
+  {
+   "id": "stade-3000m-st-36",
+   "disciplineKey": "3000m-st",
+   "performanceRaw": "8'55\"54",
+   "performanceNumeric": 535.54,
+   "holders": [
+    {
+     "lastName": "HOESER",
+     "firstName": "Francis"
+    }
+   ],
+   "nation": "LUX",
+   "year": 1984,
+   "isNationalRecord": false
+  },
+  {
+   "id": "stade-10km-marche-37",
+   "disciplineKey": "10km-marche",
+   "performanceRaw": "43'39\"20",
+   "performanceNumeric": 2619.2,
+   "holders": [
+    {
+     "lastName": "SOWA",
+     "firstName": "Marco"
+    }
+   ],
+   "nation": "LUX",
+   "year": 1988,
+   "isNationalRecord": false
+  },
+  {
+   "id": "stade-4x100m-38",
+   "disciplineKey": "4x100m",
+   "performanceRaw": "40\"97",
+   "performanceNumeric": 40.97,
+   "holders": [
+    {
+     "lastName": "SAARE",
+     "firstName": "Sélection"
+    }
+   ],
+   "nation": "GER",
+   "year": 1993,
+   "isNationalRecord": false
+  },
+  {
+   "id": "stade-4x400m-39",
+   "disciplineKey": "4x400m",
+   "performanceRaw": "3'15\"95",
+   "performanceNumeric": 195.95,
+   "holders": [
+    {
+     "lastName": "NATIONALE",
+     "firstName": "Equipe"
+    }
+   ],
+   "nation": "ISL",
+   "year": 1988,
+   "isNationalRecord": false
+  },
+  {
+   "id": "stade-hauteur-40",
+   "disciplineKey": "hauteur",
+   "performanceRaw": "2,19 m",
+   "performanceNumeric": 2.19,
+   "holders": [
+    {
+     "lastName": "CONZEMIUS",
+     "firstName": "Raymond"
+    }
+   ],
+   "nation": "LUX",
+   "year": 1984,
+   "isNationalRecord": false
+  },
+  {
+   "id": "stade-longueur-41",
+   "disciplineKey": "longueur",
+   "performanceRaw": "7,79 m",
+   "performanceNumeric": 7.79,
+   "holders": [
+    {
+     "lastName": "DIPPE",
+     "firstName": "Didier"
+    }
+   ],
+   "nation": "FRA",
+   "year": 1993,
+   "isNationalRecord": false
+  },
+  {
+   "id": "stade-triple-42",
+   "disciplineKey": "triple",
+   "performanceRaw": "15,40 m",
+   "performanceNumeric": 15.4,
+   "holders": [
+    {
+     "lastName": "BÖHM",
+     "firstName": "Stephan"
+    }
+   ],
+   "nation": "GER",
+   "year": 1990,
+   "isNationalRecord": false
+  },
+  {
+   "id": "stade-perche-43",
+   "disciplineKey": "perche",
+   "performanceRaw": "5,50 m",
+   "performanceNumeric": 5.5,
+   "holders": [
+    {
+     "lastName": "TIWONTSCHIK",
+     "firstName": "Andrej"
+    }
+   ],
+   "nation": "GER",
+   "year": 1993,
+   "isNationalRecord": false
+  },
+  {
+   "id": "stade-disque-44",
+   "disciplineKey": "disque",
+   "performanceRaw": "59,30 m",
+   "performanceNumeric": 59.3,
+   "holders": [
+    {
+     "lastName": "HAFTSTEINSSON",
+     "firstName": "Vestein"
+    }
+   ],
+   "nation": "ISL",
+   "year": 1988,
+   "isNationalRecord": false
+  },
+  {
+   "id": "stade-poids-45",
+   "disciplineKey": "poids",
+   "performanceRaw": "20,11 m",
+   "performanceNumeric": 20.11,
+   "holders": [
+    {
+     "lastName": "BERTEMES",
+     "firstName": "Bob"
+    }
+   ],
+   "nation": "LUX",
+   "year": 2023,
+   "isNationalRecord": false
+  },
+  {
+   "id": "stade-javelot-46",
+   "disciplineKey": "javelot",
+   "performanceRaw": "77,22 m",
+   "performanceNumeric": 77.22,
+   "holders": [
+    {
+     "lastName": "VAN LIESHOUT",
+     "firstName": "Johan"
+    }
+   ],
+   "nation": "NED",
+   "year": 1993,
+   "isNationalRecord": false
+  },
+  {
+   "id": "stade-marteau-47",
+   "disciplineKey": "marteau",
+   "performanceRaw": "71,36 m",
+   "performanceNumeric": 71.36,
+   "holders": [
+    {
+     "lastName": "PIOLANTI",
+     "firstName": "Raphael"
+    }
+   ],
+   "nation": "FRA",
+   "year": 1988,
+   "isNationalRecord": false
+  },
+  {
+   "id": "stade-pentathlon-48",
+   "disciplineKey": "pentathlon",
+   "performanceRaw": "3 300 P",
+   "performanceNumeric": 3300,
+   "holders": [
+    {
+     "lastName": "BRANDT",
+     "firstName": "Bert"
+    }
+   ],
+   "nation": "GER",
+   "year": 1988,
+   "isNationalRecord": false
+  },
+  {
+   "id": "stade-decathlon-49",
+   "disciplineKey": "decathlon",
+   "performanceRaw": "7 699 P",
+   "performanceNumeric": 7699,
+   "holders": [
+    {
+     "lastName": "MULLER",
+     "firstName": "Frank"
+    }
+   ],
+   "nation": "GER",
+   "year": 1991,
+   "isNationalRecord": false
+  }
+ ]
+}
