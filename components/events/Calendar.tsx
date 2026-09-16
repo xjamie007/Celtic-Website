@@ -1,6 +1,7 @@
 import { getLocale, getTranslations } from "next-intl/server";
 
 import type { ClubEvent, FederationEvent } from "@/lib/data/events";
+import { shortLocation } from "@/lib/events-view";
 import { localized } from "@/lib/localized";
 import { cn } from "@/lib/utils";
 
@@ -104,9 +105,20 @@ export async function Calendar({
     <div className="space-y-12">
       {[...months].map(([month, list]) => (
         <section key={month}>
-          <h3 className="border-hairline-on-page font-data text-data-xs text-muted-on-page border-b pb-2 uppercase">
-            {monthFormat.format(new Date(`${month}-01`))}
-          </h3>
+          {/* Der Monat traegt jetzt die Zahl der Termine — beim Scrollen
+              durch ein Jahr sagt sie, wie voll der Monat ist, bevor man ihn
+              liest. */}
+          {/* h2, nicht h3: darueber steht die h1 der Seite und sonst nichts.
+              Eine uebersprungene Ebene ist fuer eine Sprachausgabe eine
+              fehlende Ebene — sie liest die Struktur vor, nicht die Optik. */}
+          <h2 className="border-hairline-on-page flex items-baseline justify-between gap-4 border-b pb-2">
+            <span className="font-data text-data-xs text-ink-text tracking-[0.12em] uppercase">
+              {monthFormat.format(new Date(`${month}-01`))}
+            </span>
+            <span className="font-data text-data-xs text-muted-on-page tabular-nums">
+              {list.length}
+            </span>
+          </h2>
 
           <ul>
             {list.map((entry) => {
@@ -174,8 +186,24 @@ export async function Calendar({
                       ) : null}
                     </span>
 
-                    <span className="font-data text-data-xs text-muted-on-page uppercase sm:text-right">
-                      {entry.location ?? entry.category ?? ""}
+                    {/* Kategorie als Etikett, Ort als Zeile darunter (§5).
+                        Vorher stand hier nur eines von beiden — je nachdem,
+                        was gefuellt war —, sodass bei einem Termin die Art
+                        und beim naechsten der Ort zu sehen war. Und lange
+                        Adressen wie "Institut National des Sports, 66 rue de
+                        Treves, Luxembourg" zogen die Spalte ueber die halbe
+                        Zeile. */}
+                    <span className="flex flex-col items-start gap-1.5 sm:items-end">
+                      {entry.category ? (
+                        <span className="font-data text-data-xs text-muted-on-page border-hairline-on-page shrink-0 border px-1.5 py-0.5 leading-none tracking-[0.08em] uppercase">
+                          {entry.category}
+                        </span>
+                      ) : null}
+                      {entry.location ? (
+                        <span className="font-data text-data-xs text-muted-on-page max-w-[32ch] truncate uppercase sm:text-right">
+                          {shortLocation(entry.location)}
+                        </span>
+                      ) : null}
                     </span>
                   </Row>
                 </li>

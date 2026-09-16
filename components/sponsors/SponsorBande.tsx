@@ -4,9 +4,22 @@ import type { Sponsor } from "@/lib/data/sponsors";
 import { cn } from "@/lib/utils";
 
 /**
- * Eine Bande. Graustufen bei 70% Deckkraft; erst bei Hover volle Farbe, volle
- * Deckkraft, 4px angehoben mit weichem Schatten (§7). Der Sponsor bekommt
- * Aufmerksamkeit genau dann, wenn der Besucher sie gibt.
+ * Eine Bande auf der Zielgeraden (§7, §8).
+ *
+ * Das Logo steht in voller Farbe auf einer hellen Tafel — kein Graustufen-
+ * filter mehr, der erst bei Hover weicht.
+ *
+ * Die Tafel ist nicht Dekoration, sondern die Bedingung dafuer, dass "farbig"
+ * ueberhaupt funktioniert. Vier der fuenf Logos sind auf weissem Grund
+ * angelegt, das fuenfte (Asport) ist eine schwarze Wortmarke auf
+ * Transparenz — auf dem dunkelblauen Band war es schlicht unsichtbar. Genau
+ * deshalb stand im Auftrag, es fehle ein Asport-Logo: die Datei war da, nur
+ * nicht zu sehen. Auf einheitlich hellen Tafeln sitzen alle fuenf gleich, in
+ * ihren eigenen Farben, und keines faellt aus dem Rahmen.
+ *
+ * Einheitlich heisst hier: gleiche Tafelhoehe, gleiche Innenluft, gleiche
+ * Logohoehe. Die Breite darf variieren, denn ein Logo auf eine feste Breite
+ * zu zwingen hiesse, es zu verzerren oder zu beschneiden.
  */
 export function SponsorBande({
   sponsor,
@@ -20,39 +33,38 @@ export function SponsorBande({
      laufen — sichtbar passiert nichts, der Fokus verschwindet einfach. */
   decorative?: boolean;
 }) {
+  /* §7: Ohne Logo keine Bande. Gefiltert wird in lib/data/sponsors.ts; diese
+     Bedingung ist die zweite Sicherung, damit hier nie eine leere Tafel
+     entsteht, falls jemand die Komponente anderswo verwendet. */
+  if (!sponsor.logoUrl) return null;
+
   const isMain = sponsor.tier === "haaptsponsor";
 
-  const content = sponsor.logoUrl ? (
-    <Image
-      src={sponsor.logoUrl}
-      alt={sponsor.name}
-      width={isMain ? 240 : 160}
-      height={56}
-      sizes={isMain ? "240px" : "160px"}
-      className="h-full w-auto object-contain grayscale transition-[filter] duration-300 group-hover/bande:grayscale-0"
-    />
-  ) : (
-    /* Solange kein Logo vorliegt, traegt die Bande den Namen — gesetzt wie
-       eine Bandenbeschriftung, nicht wie ein Platzhalter. */
+  const content = (
     <span
       className={cn(
-        "font-display leading-none font-extrabold whitespace-nowrap uppercase wdth-88",
-        isMain ? "text-[1.5rem] tracking-[-0.02em]" : "text-[1.0625rem] tracking-[-0.01em]",
-        sponsor.tier === "supporter" && "text-[0.9375rem]",
+        "sponsor-plate flex items-center justify-center bg-white",
+        isMain ? "h-16 px-7" : "h-14 px-5",
       )}
     >
-      {sponsor.name}
+      <Image
+        src={sponsor.logoUrl}
+        alt={sponsor.name}
+        width={isMain ? 300 : 220}
+        height={112}
+        sizes={isMain ? "300px" : "220px"}
+        className={cn(
+          "h-auto w-auto object-contain",
+          isMain ? "max-h-10 max-w-[170px]" : "max-h-8 max-w-[130px]",
+        )}
+      />
     </span>
   );
 
   const className = cn(
-    "group/bande flex shrink-0 items-center justify-center px-6",
-    "border-x border-hairline-on-ink/60 text-white/70",
-    "transition-[opacity,transform,box-shadow,color] duration-300",
-    "hover:-translate-y-1 hover:text-white hover:opacity-100",
-    "hover:shadow-[0_10px_24px_-8px_var(--color-ink)]",
-    "focus-visible:-translate-y-1 focus-visible:text-white",
-    isMain ? "h-16 min-w-[19rem]" : "h-16 min-w-[9.5rem]",
+    "group/bande flex shrink-0 items-center px-3",
+    "transition-transform duration-300 ease-[cubic-bezier(0.16,1,0.3,1)]",
+    "hover:-translate-y-1 focus-visible:-translate-y-1",
   );
 
   if (!sponsor.websiteUrl) {

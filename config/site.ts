@@ -54,7 +54,16 @@ export const site = {
   shortName: "CELTIC",
   foundedYear: 1968,
   domain: "celtic.lu",
-  url: "https://www.celtic.lu",
+  /**
+   * Die Adresse, unter der diese Fassung wirklich steht. Sie geht in
+   * Sitemap, robots.txt und die kanonischen Verweise ein.
+   *
+   * Vorgabe ist die spaetere Vereinsdomain. Eine Vorschau — etwa der
+   * statische Export auf GitHub Pages — setzt NEXT_PUBLIC_SITE_URL und
+   * meldet damit sich selbst statt celtic.lu: sonst verweist eine
+   * Vorschau Suchmaschinen auf Seiten, die es noch nicht gibt.
+   */
+  url: process.env.NEXT_PUBLIC_SITE_URL || "https://www.celtic.lu",
 
   /* ── Kontakt (§9) ────────────────────────────────────────────────────── */
   contact: {
@@ -116,8 +125,7 @@ export const site = {
   },
 
   /* ── Shop (§9: reine Weiterleitung) ──────────────────────────────────── */
-  shopUrl:
-    "https://absolute-teamsport.lu/collections/celtic-diekirch",
+  shopUrl: "https://absolute-teamsport.lu/collections/celtic-diekirch",
 
   /**
    * Vereinsveranstaltungen. Vorerst externe Links — die Architektur muss sie
@@ -244,10 +252,16 @@ export const site = {
    * nennt, steht in seinem eigenen Text auf /club/training — und von dort
    * kommen diese vier.
    */
+  /* Die Kurzbeschreibungen stammen aus dem Bestand der alten Seite
+     (data/pages.json, club/training) und sind gekuerzt, nicht neu
+     geschrieben. Ohne sie war die Karte der Gruppe "fir Jiddereen" leer —
+     Name und sonst nichts. */
   trainingGroups: [
     {
       key: "liichtathletikschoul",
       name: "CELTIC Liichtathletikschoul",
+      description:
+        "Sprint, Laf, Sprong a Worf spilleresch léieren — Virbereedung op all Sportaart am Veräin. Dat Wichtegst ass d’Freed zesummen mat de Kollegen.",
       section: "athletics",
       ages: "5–11",
       categories: "Ludiques (U8) · Benjamins (U10) · Débutants (U12)",
@@ -265,6 +279,8 @@ export const site = {
     {
       key: "createur",
       name: "CELTIC Créateur d’athlètes",
+      description:
+        "Zesumme mam Athlet seng Disziplin fannen an hien dohinner orientéieren. D’Minimes maachen hir éischt Erfarungen op Meeschterschaften.",
       section: "athletics",
       ages: "12–14",
       categories: "Scolaires (U14) · Minimes (U16)",
@@ -280,6 +296,8 @@ export const site = {
     {
       key: "powerhouse",
       name: "CELTIC Powerhouse of athletics",
+      description:
+        "Vun de Cadets bis un d’Enn vun der Carrière. Hei gëtt op déi Joeren virdrun opgebaut — Esthetik an Efficacitéit esou no wéi méiglech zesummen.",
       section: "athletics",
       ages: "Cadets +",
       categories: null,
@@ -297,6 +315,8 @@ export const site = {
     {
       key: "jiddereen",
       name: "CELTIC Liichtathletik fir Jiddereen",
+      description:
+        "Trainéieren ouni Wettkampfambitioun. De CELTIC Trainerteam beréit op Wonsch an no Méiglechkeet.",
       section: "athletics",
       ages: null,
       categories: null,
@@ -310,6 +330,8 @@ export const site = {
     {
       key: "tri-celtic",
       name: "Tri-Celtic",
+      description:
+        "Schwammen, Rad a Laf — eng eege Sektioun mat eegene Traineren an eegene Kategorien.",
       section: "triathlon",
       ages: null,
       categories: "Kids · Jeunes masculin · Jeunes féminin · Altersklassen",
@@ -327,7 +349,11 @@ export const site = {
   /* ── Trainingszeiten und -orte (§4) ──────────────────────────────── */
   trainingLocations: [
     { key: "1", name: "Centre Sportif", address: "rue Jos Merten, Diekirch" },
-    { key: "2", name: "Sportshal Lycée Classique Diekirch", address: "Neit Gebei" },
+    {
+      key: "2",
+      name: "Sportshal Lycée Classique Diekirch",
+      address: "Neit Gebei",
+    },
     { key: "3", name: "Sportshal Primaireschoul", address: "Place de l’Ecole" },
   ] as const,
 
@@ -339,7 +365,12 @@ export const site = {
       groups: ["createur", "powerhouse"],
     },
     { dayKey: "wednesday", time: "18:00–20:00", locations: ["1"], groups: [] },
-    { dayKey: "friday", time: "18:00–20:00", locations: ["1", "2"], groups: [] },
+    {
+      dayKey: "friday",
+      time: "18:00–20:00",
+      locations: ["1", "2"],
+      groups: [],
+    },
   ] as const,
 
   /** Ein Rekord gilt so lange als NEI und traegt den pulsierenden Punkt (§10). */

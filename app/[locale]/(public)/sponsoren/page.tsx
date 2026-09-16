@@ -5,8 +5,9 @@ import { requireFeature } from "@/lib/features";
 import { LaneSection } from "@/components/lane/LaneSection";
 import { Reveal } from "@/components/motion/Reveal";
 import { SponsorJersey } from "@/components/sponsors/SponsorJersey";
+import { SponsorTile } from "@/components/sponsors/SponsorTile";
 import { site } from "@/config/site";
-import { getSponsors } from "@/lib/data/sponsors";
+import { getVisibleSponsors } from "@/lib/data/sponsors";
 
 type PageProps = { params: Promise<{ locale: string }> };
 
@@ -33,7 +34,7 @@ export default async function SponsorsPage({ params }: PageProps) {
 
   const t = await getTranslations("sponsors");
   const tn = await getTranslations("nav");
-  const sponsors = await getSponsors();
+  const sponsors = await getVisibleSponsors();
 
   const tiers = site.sponsorTiers.map((tier) => ({
     tier,
@@ -63,25 +64,18 @@ export default async function SponsorsPage({ params }: PageProps) {
                     <h2 className="font-data text-data-xs text-muted-on-page rise mb-4 uppercase">
                       {group.label}
                     </h2>
-                    <ul className="border-hairline-on-page grid border-t sm:grid-cols-2 lg:grid-cols-3">
+                    <ul className="grid gap-x-6 gap-y-8 sm:grid-cols-2 lg:grid-cols-3">
                       {group.entries.map((sponsor, index) => (
                         <li
                           key={sponsor.id}
-                          className="border-hairline-on-page record-row rise border-b py-4"
+                          className="rise"
                           style={{ "--i": index } as React.CSSProperties}
                         >
-                          {sponsor.websiteUrl ? (
-                            <a
-                              href={sponsor.websiteUrl}
-                              target="_blank"
-                              rel="noopener noreferrer sponsored"
-                              className="record-name text-ui hover:text-accent-on-page transition-colors duration-200"
-                            >
-                              {sponsor.name} ↗
-                            </a>
-                          ) : (
-                            <span className="record-name text-ui">{sponsor.name}</span>
-                          )}
+                          <SponsorTile
+                            sponsor={sponsor}
+                            label={t("visit", { name: sponsor.name })}
+                            emphasis={group.tier === "haaptsponsor"}
+                          />
                         </li>
                       ))}
                     </ul>

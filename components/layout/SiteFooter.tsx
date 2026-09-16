@@ -2,6 +2,7 @@ import { getTranslations } from "next-intl/server";
 
 import { footerNav, legalNav, site } from "@/config/site";
 import { getFeatures, isPathEnabled } from "@/lib/features";
+import { supabaseConfigured } from "@/lib/supabase/env";
 import { SocialLinks } from "@/components/layout/SocialLinks";
 import { Wordmark } from "@/components/layout/Wordmark";
 import { Link } from "@/i18n/navigation";
@@ -162,14 +163,23 @@ export async function SiteFooter() {
                 nicht an Besucher. Hier unten findet ihn, wer ihn sucht, und
                 er steht niemandem im Weg.
               */}
-              <li>
-                <Link
-                  href="/login"
-                  className="font-data text-data-xs text-muted-on-ink uppercase transition-colors duration-200 hover:text-white"
-                >
-                  {tf("memberArea")}
-                </Link>
-              </li>
+              {/*
+                Ohne hinterlegte Instanz gibt es keine Anmeldung — die
+                Middleware schliesst den Redaktionsbereich dann ohnehin, und
+                der statische Export enthaelt ihn gar nicht. Ein Link, der
+                auf eine Maske zeigt, die niemand bedienen kann, ist genau
+                der tote Link, den §2 im Footer verbietet.
+              */}
+              {supabaseConfigured ? (
+                <li>
+                  <Link
+                    href="/login"
+                    className="font-data text-data-xs text-muted-on-ink uppercase transition-colors duration-200 hover:text-white"
+                  >
+                    {tf("memberArea")}
+                  </Link>
+                </li>
+              ) : null}
             </ul>
           </nav>
         </div>

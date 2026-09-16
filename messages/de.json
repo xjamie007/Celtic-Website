@@ -93,7 +93,11 @@
     "clubLead": "Vom Débutant bis zum Landesrekord — acht Gruppen, eine Bahn.",
     "clubLink": "Trainingszeiten und Gruppen",
     "nextAll": "Alle Termine",
-    "groupPhotoAlt": "Die Mannschaft des CELTIC Diekirch im Trainingslager in Palamós"
+    "groupPhotoAlt": "Die Mannschaft des CELTIC Diekirch im Trainingslager in Palamós",
+    "nextLead": "Wo der CELTIC in den nächsten Wochen am Start steht.",
+    "heroLead": "Vom ersten Sprint in der Leichtathletikschule bis zum Landesrekord — alles auf derselben Bahn.",
+    "heroPhotoAlt": "Die Tartanbahn im Stade Municipal in Diekirch",
+    "heroPhotoCaption": "Stade Municipal · Diekirch"
   },
   "error": {
     "notFoundTitle": "Nichts gefunden",
@@ -145,7 +149,13 @@
     "until": "bis",
     "recurring": "Unsere eigenen Veranstaltungen",
     "ourRace": "Unser Lauf",
-    "calendar": "Kalender"
+    "calendar": "Kalender",
+    "today": "heute",
+    "tomorrow": "morgen",
+    "inDays": "in {count} Tagen",
+    "timeLabel": "Uhr",
+    "placeLabel": "Ort",
+    "upcoming": "Nächste Termine"
   },
   "news": {
     "empty": "Noch keine Meldungen.",
@@ -382,6 +392,9 @@
     "colGroup": "Gruppe",
     "allGroups": "Alle Gruppen",
     "sectionTriathlon": "Triathlon",
-    "triNote": "Der Triathlon ist eine eigene Sektion mit eigenen Trainern."
+    "triNote": "Der Triathlon ist eine eigene Sektion mit eigenen Trainern.",
+    "years": "Jahre",
+    "moreCoaches": "+{count} weitere",
+    "groupNumber": "Gruppe {number}"
   }
 }

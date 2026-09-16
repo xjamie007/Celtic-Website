@@ -54,6 +54,12 @@
 @theme inline {
   /* Flaechen */
   --color-page: var(--celtic-paper);
+  /* Die angehobene Flaeche auf dem Seitengrund: Karten, Tafeln, Kacheln.
+     Reines Weiss gegen das leicht getoente Papier — der Unterschied ist klein,
+     aber er reicht, damit eine Karte auf der Seite liegt statt in sie
+     geschnitten zu sein. Ein zweiter Grauton waere hier eine dritte Flaeche
+     ohne dritte Bedeutung. */
+  --color-surface: var(--celtic-white);
   --color-deep: var(--celtic-blue-deep);
   --color-ink: var(--celtic-ink);
   --color-blue: var(--celtic-blue);
@@ -136,8 +142,9 @@
   --text-hero--line-height: 0.82;
   --text-hero--letter-spacing: -0.035em;
 
-  /* Layout: die Bahn belegt links eine feste Rinne, Inhalt weicht ihr aus.
-     96px Rinne = 72px Bahnbelag + 24px Luft bis zum Text. */
+  /* Layout: ab md belegt die Bahn links eine feste Rinne, der Inhalt weicht
+     ihr aus. 96px Rinne = 72px Bahnbelag + 24px Luft bis zum Text. Darunter
+     liegt der 6px-Streifen unter dem ohnehin vorhandenen Innenabstand. */
   --spacing-lane: 6rem;
 }
 
@@ -152,14 +159,27 @@
        auf dem sie stehen koennen, und ein durchgehender Belag verhindert,
        dass neben dunklen Sektionen ein heller Rest der Seitenfarbe stehen
        bleibt. */
-    --lane-channel-width: 4.5rem; /* 72px */
+    /* Auf dem Handy ist der Belag ein 6px-Streifen am Rand und beansprucht
+       keine eigene Rinne — er liegt unter dem Innenabstand des Textes. Mit
+       72px saesse der Inhalt bei 390px sichtbar aus der Mitte, und das faellt
+       mehr auf als die Bahn nutzt. Ab md die volle Rinne mit Belag, Strichen
+       und Beschriftung. */
+    --lane-channel-width: 0.375rem; /* 6px */
+    --lane-line-offset: 0.1875rem;
+    --lane-line-width: 2px;
     /* Punkt und Marken laufen nicht bis an die Viewportkante: START und ZIEL
        wuerden sonst am Rand halbiert. Der Belag bleibt durchgehend, nur die
        bewegte Schicht haelt Abstand. */
     --lane-inset: 2.5rem;
-    --lane-line-offset: 2rem; /* 32px vom Rand bis Linienmitte */
-    --lane-line-width: 3px;
     --header-height: 4.5rem;
+  }
+
+  @media (width >= 48rem) {
+    :root {
+      --lane-channel-width: 4.5rem; /* 72px */
+      --lane-line-offset: 2rem; /* 32px vom Rand bis Linienmitte */
+      --lane-line-width: 3px;
+    }
   }
 
   html {
@@ -330,20 +350,10 @@
      zusammen, und genau das faellt auf. */
   .lane-rail {
     position: absolute;
-    top: 0;
-    right: var(--lane-inset);
-    left: var(--lane-inset);
-    height: 0.375rem;
-  }
-
-  @media (width >= 64rem) {
-    .lane-rail {
-      top: var(--lane-inset);
-      right: 0;
-      bottom: var(--lane-inset);
-      left: 0;
-      height: auto;
-    }
+    top: var(--lane-inset);
+    right: 0;
+    bottom: var(--lane-inset);
+    left: 0;
   }
 
   .lane-carrier-v {
@@ -351,15 +361,220 @@
     will-change: transform;
   }
 
-  .lane-carrier-h {
-    transform: translate3d(calc(var(--lane-p, 0) * 100%), 0, 0);
-    will-change: transform;
+  /* ── Der Belag ─────────────────────────────────────────────────────────
+     Tartan ist Gummigranulat, keine glatte Farbflaeche. Drei Punktraster mit
+     teilerfremden Kachelgroessen (7, 11, 13px) ueberlagern sich zu einer
+     Koernung, die sich im sichtbaren Bereich nicht wiederholt — anders als
+     ein einzelnes Raster, dessen Kachelkante man sofort sieht. Kein Bild,
+     keine Datei, kein zusaetzlicher Request.
+
+     Die Kante nach rechts ist eine echte Kante: ein schmaler Schatten setzt
+     den Belag vom Seitengrund ab, statt ihn danebenzulegen. */
+  .lane-surface {
+    background-color: var(--color-lane-channel);
+    background-image:
+      radial-gradient(
+        circle at 30% 20%,
+        rgb(255 255 255 / 0.05) 0.5px,
+        transparent 0.6px
+      ),
+      radial-gradient(
+        circle at 70% 60%,
+        rgb(255 255 255 / 0.04) 0.5px,
+        transparent 0.6px
+      ),
+      radial-gradient(
+        circle at 45% 85%,
+        rgb(255 255 255 / 0.035) 0.5px,
+        transparent 0.6px
+      );
+    background-size:
+      7px 7px,
+      11px 11px,
+      13px 13px;
+    box-shadow: inset -1px 0 0 0 rgb(0 0 0 / 0.25);
+  }
+
+  /* Die kurzen Marken quer zur Bahn, alle 96px — im Stadion sind es die
+     Zehnmeterstriche. Sie geben der Bahn beim Scrollen einen Massstab: ohne
+     sie bewegt sich der Punkt vor einer Flaeche ohne Tiefe. */
+  .lane-ticks {
+    background-image: linear-gradient(
+      to bottom,
+      rgb(255 255 255 / 0.16) 0 1px,
+      transparent 1px
+    );
+    background-repeat: repeat-y;
+    background-size: 0.75rem 6rem;
+    background-position: calc(var(--lane-line-offset) + 0.5rem) 0;
+  }
+
+  /* Die Tafel, auf der ein Sponsorenlogo steht (§8). Ein Haarstrich in
+     Trikotblau statt eines Rahmens: er setzt die weisse Flaeche vom Band ab,
+     ohne sie einzukasteln. Beim Hover hebt sie sich und wirft einen Schatten
+     nach unten — dieselbe Geste wie eine Bande, die im Wind steht. */
+  .sponsor-plate {
+    box-shadow: 0 0 0 1px rgb(255 255 255 / 0.14);
+    transition: box-shadow 300ms cubic-bezier(0.16, 1, 0.3, 1);
+  }
+
+  .group\/bande:hover .sponsor-plate,
+  .group\/bande:focus-visible .sponsor-plate {
+    box-shadow:
+      0 0 0 1px rgb(255 255 255 / 0.3),
+      0 0.75rem 1.5rem -0.5rem rgb(0 0 0 / 0.45);
+  }
+
+  /* Dieselbe Tafel auf hellem Grund. */
+  .sponsor-tile > span:first-child {
+    box-shadow: 0 0 0 1px var(--color-hairline-on-page);
+    transition: box-shadow 300ms cubic-bezier(0.16, 1, 0.3, 1);
+  }
+
+  .sponsor-tile:hover > span:first-child,
+  .sponsor-tile:focus-visible > span:first-child {
+    box-shadow:
+      0 0 0 1px color-mix(in oklab, var(--color-ink) 22%, transparent),
+      0 0.875rem 1.75rem -0.75rem color-mix(in oklab, var(--color-ink) 30%, transparent);
+  }
+
+/* ═══════════════════════════════════════════════════════════════════════════
+   TRAININGSGRUPPEN (§6)
+   ═══════════════════════════════════════════════════════════════════════════ */
+  .group-card {
+    background-color: var(--color-surface);
+    box-shadow: 0 0 0 1px var(--color-hairline-on-page);
+    transition:
+      transform 300ms cubic-bezier(0.16, 1, 0.3, 1),
+      box-shadow 300ms cubic-bezier(0.16, 1, 0.3, 1);
+  }
+
+  .group-card:hover,
+  .group-card:focus-within {
+    transform: translateY(-2px);
+    box-shadow:
+      0 0 0 1px color-mix(in oklab, var(--color-ink) 20%, transparent),
+      0 1rem 1.75rem -0.75rem color-mix(in oklab, var(--color-ink) 26%, transparent);
+  }
+
+  /* Der Punkt laeuft die Bahn der Karte hinunter, sobald man sie anfasst —
+     dieselbe Geste wie am Seitenrand, nur auf 40 Pixel Breite. Er startet
+     unter der Nummer, damit er sie nicht verdeckt. */
+  .group-lane-dot {
+    top: 3.25rem;
+    opacity: 0;
+    transition:
+      transform 900ms cubic-bezier(0.16, 1, 0.3, 1),
+      opacity 200ms;
+  }
+
+  .group-card:hover .group-lane-dot,
+  .group-card:focus-within .group-lane-dot {
+    opacity: 1;
+    transform: translate(-50%, calc(var(--group-lane-run, 6rem)));
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .group-card {
+      transition: none;
+    }
+    .group-card:hover,
+    .group-card:focus-within {
+      transform: none;
+    }
+    .group-lane-dot {
+      transition: none;
+    }
+    .group-card:hover .group-lane-dot,
+    .group-card:focus-within .group-lane-dot {
+      opacity: 0;
+    }
+  }
+
+/* ═══════════════════════════════════════════════════════════════════════════
+   TERMINKARTEN (§5)
+   ═══════════════════════════════════════════════════════════════════════════ */
+  /* Die Karte liegt auf dem Seitengrund, nicht in einem Kasten. Der Haarstrich
+     rundum haelt sie zusammen, der Datumsblock traegt die Farbe. Beim Hover
+     hebt sie sich um 2px und der Schatten kommt von unten — genug, um zu
+     sagen "anklickbar", zu wenig, um zu wackeln. */
+  .event-card {
+    background-color: var(--color-surface);
+    box-shadow: 0 0 0 1px var(--color-hairline-on-page);
+    transition:
+      transform 260ms cubic-bezier(0.16, 1, 0.3, 1),
+      box-shadow 260ms cubic-bezier(0.16, 1, 0.3, 1);
+  }
+
+  a.event-card:hover,
+  a.event-card:focus-visible {
+    transform: translateY(-2px);
+    box-shadow:
+      0 0 0 1px color-mix(in oklab, var(--color-ink) 20%, transparent),
+      0 0.875rem 1.5rem -0.75rem color-mix(in oklab, var(--color-ink) 28%, transparent);
+  }
+
+  /* Der Datumsblock ist gesetzt wie eine Startnummer: schmale Spalte, Zahl
+     mittig, Monat und Wochentag klein darueber und darunter. Die feste
+     Mindestbreite haelt alle Karten im Raster auf derselben Kante — ein
+     einstelliger Tag darf die Spalte nicht schmaler machen. */
+  .event-bib {
+    min-width: 4.75rem;
+    color: var(--color-white);
+  }
+
+  .event-bib-default {
+    background-image: linear-gradient(
+      160deg,
+      var(--celtic-blue) 0%,
+      var(--celtic-blue-deep) 100%
+    );
+  }
+
+  /* Eigene Veranstaltungen tragen den Akzent — sie sind der Grund fuer den
+     Kalender, nicht ein Eintrag darin. */
+  .event-bib-club {
+    background-image: linear-gradient(
+      160deg,
+      var(--celtic-magenta) 0%,
+      var(--celtic-blue) 130%
+    );
+  }
+
+  .event-arrow {
+    transition:
+      transform 260ms cubic-bezier(0.16, 1, 0.3, 1),
+      color 260ms;
+  }
+
+  a.event-card:hover .event-arrow,
+  a.event-card:focus-visible .event-arrow {
+    transform: translate(2px, -2px);
+    color: var(--color-accent-on-page);
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .event-card,
+    .event-arrow {
+      transition: none;
+    }
+    a.event-card:hover,
+    a.event-card:focus-visible {
+      transform: none;
+    }
+    a.event-card:hover .event-arrow {
+      transform: none;
+    }
   }
 
   .lane-dot {
     position: absolute;
     border-radius: 9999px;
     background-color: var(--color-lane-marker);
+    /* Der Punkt leuchtet leicht in den Belag hinein. Ohne den Schein sitzt er
+       flach auf der Flaeche; mit ihm liegt er darauf. */
+    box-shadow: 0 0 0.75rem 0.125rem
+      color-mix(in oklab, var(--color-lane-marker) 55%, transparent);
   }
 
   .lane-dot-v {
@@ -367,14 +582,6 @@
     left: var(--lane-line-offset);
     width: 9px;
     height: 9px;
-    transform: translate(-50%, -50%);
-  }
-
-  .lane-dot-h {
-    top: 50%;
-    left: 0;
-    width: 7px;
-    height: 7px;
     transform: translate(-50%, -50%);
   }
 
@@ -419,45 +626,36 @@
     );
   }
 
-  .lane-trail-behind-h,
-  .lane-trail-ahead-h {
-    top: 50%;
-    width: 120px;
-    height: 2px;
-  }
-
-  .lane-trail-behind-h {
-    left: 0;
-    transform: translate(-100%, -50%) scaleX(var(--lane-trail-behind, 0));
-    transform-origin: right center;
-    background-image: linear-gradient(
-      to right,
-      transparent 0%,
-      var(--celtic-blue) 40%,
-      var(--celtic-magenta) 100%
-    );
-  }
-
-  .lane-trail-ahead-h {
-    left: 0;
-    transform: translate(0, -50%) scaleX(var(--lane-trail-ahead, 0));
-    transform-origin: left center;
-    background-image: linear-gradient(
-      to left,
-      transparent 0%,
-      var(--celtic-blue) 40%,
-      var(--celtic-magenta) 100%
-    );
-  }
-
   /* Die Distanzmarkierungen stehen laengs der Bahn, nicht quer dazu. Das ist
      nicht Stilwille: quer gesetzt braeuchte START rund 38px und liefe damit
      aus dem 72px-Belag heraus auf den hellen Seitengrund, wo weisse Schrift
      verschwindet. Laengs gesetzt passt die Beschriftung in den Belag — und so
      steht sie auf einer echten Bahn auch. */
-  .lane-marker-label {
+  .lane-marker {
     writing-mode: vertical-rl;
     text-orientation: mixed;
+    /* Neben der Linie, nicht darauf: 14px rechts der Linienmitte.
+       Das Innenpolster ist keine Optik, sondern die Trefferflaeche: senkrecht
+       gesetzt ist "100" rund 12px breit, und darauf zielt niemand. Mit 6px
+       links und rechts sind es 24px — das Minimum. Der negative Aussenabstand
+       nimmt das Polster optisch wieder heraus, damit die Marke dort steht,
+       wo sie vorher stand. */
+    padding-inline: 0.375rem;
+    margin-left: 0.5rem;
+    letter-spacing: 0.12em;
+  }
+
+  /* Die aktive Marke bekommt einen kurzen Strich zur Linie hin — dieselbe
+     Geste wie der Zielstrich, nur klein. */
+  .lane-marker[aria-current="true"]::before {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: -0.5rem;
+    width: 0.625rem;
+    height: 2px;
+    background-color: var(--color-lane-marker);
+    transform: translate(-100%, -50%);
   }
 
   /* §5: bei reduzierter Bewegung springt der Punkt, und der Trail entfaellt. */
@@ -465,8 +663,7 @@
     .lane-trail {
       display: none;
     }
-    .lane-carrier-v,
-    .lane-carrier-h {
+    .lane-carrier-v {
       will-change: auto;
     }
   }
@@ -486,6 +683,76 @@
    Alles laeuft in CSS. Der Hero ist die erste Sekunde der Seite; er soll
    nicht auf JavaScript warten muessen.
    ═══════════════════════════════════════════════════════════════════════════ */
+/* Das Foto hinter dem Hero (§3).
+
+   Die Maske ist der ganze Trick. Ein Bild wirkt aufgeklebt, weil es eine
+   Kante hat — also bekommt es keine: die radiale Maske ist unten rechts voll
+   deckend und laeuft bis 66% aus, sodass links oben, wo Wortmarke und Text
+   stehen, praktisch nichts mehr davon uebrig ist. Kein Rahmen, kein Rechteck,
+   kein Uebergang, den man benennen koennte.
+
+   Die Behandlung dazu: entsaettigt, leicht aufgehellt und mit Trikotblau
+   multipliziert. Damit liegt das Foto in der Palette der Seite statt eine
+   zweite danebenzustellen — das echte Blau der Tartanbahn und das Blau des
+   Trikots sind nicht dasselbe Blau, und nebeneinander faellt genau das auf.
+
+   Deckkraft 0.5 klingt viel; durch die Maske sind es dort, wo Text steht,
+   effektiv unter 5%. Der Kontrast der Schrift bleibt unangetastet. */
+.hero-photo {
+  position: absolute;
+  inset: 0;
+  z-index: -2;
+  overflow: hidden;
+  opacity: 0.5;
+  /* Zwei Masken, verschnitten: die radiale loest das Bild nach links oben
+     auf, die lineare nimmt ihm die Unterkante. Ohne die zweite schnitt der
+     untere Rand der Sektion das Foto glatt ab — eine waagerechte Kante quer
+     durchs Bild, also genau das Aufgeklebte, das die Maske verhindern soll. */
+  -webkit-mask-image:
+    radial-gradient(118% 96% at 84% 104%, #000 0%, #000 18%, transparent 66%),
+    linear-gradient(to bottom, #000 0%, #000 62%, transparent 100%);
+  -webkit-mask-composite: source-in;
+  mask-image:
+    radial-gradient(118% 96% at 84% 104%, #000 0%, #000 18%, transparent 66%),
+    linear-gradient(to bottom, #000 0%, #000 62%, transparent 100%);
+  mask-composite: intersect;
+}
+
+.hero-photo img {
+  filter: saturate(0.5) brightness(1.02) contrast(1.02);
+}
+
+.hero-photo::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-color: var(--celtic-blue);
+  mix-blend-mode: multiply;
+  opacity: 0.22;
+}
+
+/* Feine Koernung ueber dem Hero. Zwei Punktraster mit teilerfremden
+   Kachelgroessen — dieselbe Technik wie beim Bahnbelag, damit sich die
+   Struktur im sichtbaren Bereich nicht wiederholt. Sie nimmt dem Verlauf das
+   Digitale: grosse Farbflaechen bilden sonst sichtbare Stufen. */
+.hero-grain {
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  pointer-events: none;
+  background-image:
+    radial-gradient(circle at 25% 30%, rgb(9 14 66 / 0.045) 0.5px, transparent 0.6px),
+    radial-gradient(circle at 75% 70%, rgb(9 14 66 / 0.035) 0.5px, transparent 0.6px);
+  background-size:
+    3px 3px,
+    5px 5px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  /* Nichts zu tun — beide Ebenen sind statisch. Der Block steht hier, damit
+     niemand spaeter eine Animation ergaenzt, ohne daran zu denken. */
+}
+
 @property --hero-wipe {
   syntax: "<percentage>";
   inherits: false;
@@ -735,6 +1002,91 @@
 
   .record-col-category {
     color: var(--color-muted-on-ink);
+  }
+
+  /* §8: Der Werttausch beim Tabwechsel — 180ms, 8px Versatz, 15ms je Zeile
+     von oben nach unten, damit der Blick dem Wechsel folgt wie einem Feld,
+     das durchs Ziel laeuft.
+
+     Bewusst eine CSS-Animation und keine JS-gesteuerte Kreuzblende: Sie
+     beginnt bei 0 und endet bei 1, und sie endet ohne Zutun. Die frueher
+     hier verwendete AnimatePresence-Loesung konnte zwischen Aus- und
+     Eintritt stehenbleiben und liess die Zelle dauerhaft leer. */
+  @keyframes record-cell-in {
+    from {
+      opacity: 0;
+      transform: translateY(8px);
+    }
+    to {
+      opacity: 1;
+      transform: none;
+    }
+  }
+
+  /* Unbestimmter Fortschritt unter dem angeklickten Navigationspunkt.
+     Er misst nichts — er sagt nur: angekommen, es laeuft. */
+  @keyframes nav-pending {
+    0% {
+      transform: scaleX(0);
+      opacity: 0;
+    }
+    12% {
+      opacity: 1;
+    }
+    100% {
+      transform: scaleX(1);
+      opacity: 1;
+    }
+  }
+
+  .nav-pending {
+    animation: nav-pending 1.4s cubic-bezier(0.16, 1, 0.3, 1) both;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .nav-pending {
+      animation: none;
+      transform: scaleX(1);
+    }
+  }
+
+  /* Das Mobilmenue schiebt sich beim Einhaengen kurz herunter.
+
+     Die Keyframe fasst ausdruecklich NUR transform an, nicht opacity. Waere
+     die Deckkraft Teil der Animation, haenge die Sichtbarkeit des Menues
+     wieder daran, dass die Animation laeuft — und sie laeuft nicht, solange
+     der Browser die Seite nicht zeichnet. So bleibt das Menue in jedem Fall
+     voll sichtbar und bedienbar; im schlimmsten Fall steht es acht Pixel zu
+     hoch. Das ist der ganze Schaden, den eine ausgefallene Animation hier
+     noch anrichten kann. */
+  @keyframes menu-in {
+    from {
+      transform: translateY(-0.5rem);
+    }
+    to {
+      transform: none;
+    }
+  }
+
+  .menu-in {
+    animation: menu-in 180ms cubic-bezier(0.16, 1, 0.3, 1) both;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .menu-in {
+      animation: none;
+    }
+  }
+
+  .record-cell-in {
+    animation: record-cell-in 180ms cubic-bezier(0.16, 1, 0.3, 1) both;
+    animation-delay: calc(var(--row, 0) * 15ms);
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .record-cell-in {
+      animation: none;
+    }
   }
 
   /* Unter sm bricht die Zeile auf zwei Zeilen um: Disziplin und Leistung

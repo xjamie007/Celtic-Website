@@ -37,6 +37,49 @@ statt mit einer leeren Seite. Die Zuordnung Pfad → Bereich steht einmal in
 `lib/features.ts`; ohne sie muesste man beim Abschalten an vier Stellen
 denken — und genau das vergisst man.
 
+## Entscheidungen der dritten Runde
+
+**Die Bahn laeuft auf jeder Breite senkrecht am Rand.** Vorher kippte sie
+unter 1024px in eine waagerechte Leiste am oberen Fensterrand — mit demselben
+Punkt und demselben Verlaufsschweif, nur quer. Das war der "Strahl oben": kein
+eigenes Element, sondern die Bahn selbst. Auf dem Handy ist der Belag jetzt ein
+6px-Streifen ohne eigene Rinne; er liegt unter dem Innenabstand des Textes.
+Mit 72px saesse der Inhalt bei 390px sichtbar aus der Mitte, und das faellt
+mehr auf, als die Bahn dort nutzt.
+
+**Sichtbarkeit ist nie das Ergebnis einer Animation.** Zweimal ist dieselbe
+Sorte Fehler aufgetreten: die Rekordzellen blieben nach einem Tabwechsel leer
+(`AnimatePresence mode="wait"` haengt, wenn der Austritt sein Ende nicht
+meldet), und das Mobilmenue war offen, aber unsichtbar (ein Uebergang laeuft
+nicht, solange der Browser die Seite nicht zeichnet). Beide Stellen arbeiten
+jetzt ohne diese Abhaengigkeit: die Zellen mit einer CSS-Keyframe, die immer
+endet, das Menue durch Ein- und Aushaengen. Wo noch animiert wird, faesst die
+Animation nur `transform` an — faellt sie aus, steht das Element ein paar
+Pixel daneben, aber es steht.
+
+**Das Foto im Hero hat keine Kante.** Eine radiale Maske loest die Aufnahme der
+Tartanbahn nach links oben auf, wo Wortmarke und Text stehen; eine zweite,
+lineare nimmt ihr die Unterkante. Entsaettigt und mit Trikotblau multipliziert
+liegt sie in der Palette der Seite. Es ist bewusst die Bahn und kein
+Gruppenbild: die Bahn ist die Metapher der ganzen Seite, bis hin zum Streifen
+am Rand. Das Gruppenbild steht weiter in voller Staerke vor den
+Trainingsgruppen.
+
+**Sponsoren ohne Logo erscheinen nicht** (`getVisibleSponsors`). Vorher trug
+die Bande ersatzweise den Namen als Schriftzug — das sah aus wie ein
+Platzhalter, weil es einer war. Der Redaktionsbereich sieht ueber `getSponsors`
+weiterhin alle, damit der Vorstand Logos nachtragen kann; sobald eines drin
+ist, erscheint der Sponsor ohne weiteres Zutun.
+
+**Logos stehen in voller Farbe auf hellen Tafeln.** Die Tafel ist nicht
+Dekoration, sondern die Bedingung dafuer, dass "farbig" funktioniert: vier der
+fuenf Logos sind auf weissem Grund angelegt, Asport ist eine schwarze
+Wortmarke auf Transparenz und war auf dem dunkelblauen Band schlicht
+unsichtbar. Genau deshalb hiess es, ein Asport-Logo fehle — die Datei war da,
+nur nicht zu sehen. Begrenzt wird in beide Richtungen (Hoehe UND Breite): bei
+fester Hoehe belegt ein breites Logo das Fuenffache der Flaeche eines
+quadratischen.
+
 ## Assets
 
 | | |

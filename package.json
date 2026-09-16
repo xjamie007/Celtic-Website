@@ -5,6 +5,8 @@
   "scripts": {
     "dev": "next dev --turbopack",
     "build": "next build --turbopack",
+    "build:static": "node scripts/build-static.mjs",
+    "serve:static": "node scripts/serve-static.mjs",
     "start": "next start",
     "lint": "eslint",
     "typecheck": "tsc --noEmit",
@@ -41,7 +43,7 @@
     "tailwindcss": "^4",
     "typescript": "^5"
   },
-  "description": "Relaunch celtic.lu \u2014 CELTIC Diekirch",
+  "description": "Relaunch celtic.lu — CELTIC Diekirch",
   "overrides": {
     "postcss": "^8.5.26",
     "sharp": "^0.35.3"

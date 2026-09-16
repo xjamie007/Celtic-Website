@@ -2,7 +2,7 @@ import { getTranslations } from "next-intl/server";
 
 import { site } from "@/config/site";
 import { Link } from "@/i18n/navigation";
-import { getSponsors } from "@/lib/data/sponsors";
+import { getVisibleSponsors } from "@/lib/data/sponsors";
 
 import { SponsorBande } from "./SponsorBande";
 
@@ -23,7 +23,7 @@ import { SponsorBande } from "./SponsorBande";
  * Startseite kein einziges Kilobyte JS (§14).
  */
 export async function Zilgerad() {
-  const sponsors = await getSponsors();
+  const sponsors = await getVisibleSponsors();
   const t = await getTranslations("sponsors");
 
   if (sponsors.length === 0) return null;

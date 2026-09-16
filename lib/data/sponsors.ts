@@ -40,6 +40,12 @@ const seed: readonly Sponsor[] = [
 ];
 
 /**
+ * Alle Sponsoren — auch die ohne Logo. Diese Fassung benutzt der
+ * Redaktionsbereich: dort sollen Peters Sports, S-Cape und Reiff Mazout
+ * sichtbar bleiben, damit der Vorstand ihre Logos nachtragen kann. Sobald
+ * eines eingetragen ist, erscheint der Sponsor ohne weiteres Zutun auch
+ * oeffentlich.
+ *
  * §12: Sponsoren mit abgelaufener Laufzeit verschwinden automatisch von der
  * Seite, bleiben aber im Datenbestand. Die Filterung gehoert deshalb hierhin
  * und nicht in die Komponente.
@@ -74,4 +80,23 @@ export async function getSponsors(now = new Date()): Promise<readonly Sponsor[]>
   return seed
     .filter((s) => !s.activeUntil || new Date(s.activeUntil) >= now)
     .toSorted((a, b) => a.sortOrder - b.sortOrder);
+}
+
+/**
+ * Die oeffentliche Sicht (§7): nur Sponsoren, fuer die ein Logo vorliegt.
+ *
+ * Vorher trug die Bande ersatzweise den Namen als Schriftzug. Das sah aus wie
+ * ein Platzhalter, weil es einer war — und drei Namen in Versalien neben fuenf
+ * echten Logos lassen das ganze Band unfertig wirken. Lieber fuenf Sponsoren
+ * richtig zeigen als acht halb.
+ *
+ * Gefiltert wird hier und nicht in den Komponenten, damit Zielgerade,
+ * Sponsorenseite und Trikot dieselbe Liste sehen. Drei Stellen mit derselben
+ * Regel gehen irgendwann auseinander.
+ */
+export async function getVisibleSponsors(
+  now = new Date(),
+): Promise<readonly Sponsor[]> {
+  const all = await getSponsors(now);
+  return all.filter((sponsor) => Boolean(sponsor.logoUrl));
 }

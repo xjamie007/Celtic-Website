@@ -93,7 +93,11 @@
     "clubLead": "Vum Debutant bis zum Landesrekord — aacht Gruppen, eng Bunn.",
     "clubLink": "Trainingszäiten a Gruppen",
     "nextAll": "All Termine",
-    "groupPhotoAlt": "D’Ekipp vum CELTIC Diekirch am Trainingslager zu Palamós"
+    "groupPhotoAlt": "D’Ekipp vum CELTIC Diekirch am Trainingslager zu Palamós",
+    "nextLead": "Wou de CELTIC déi nächst Wochen um Start steet.",
+    "heroLead": "Vum éischte Sprint an der Liichtathletikschoul bis zum Landesrekord — alles op derselwechter Bunn.",
+    "heroPhotoAlt": "D’Tartanbunn am Stade Municipal zu Dikrech",
+    "heroPhotoCaption": "Stade Municipal · Dikrech"
   },
   "error": {
     "notFoundTitle": "Näischt fonnt",
@@ -145,7 +149,13 @@
     "until": "bis",
     "recurring": "Eis eege Veranstaltungen",
     "ourRace": "Eise Cours",
-    "calendar": "Kalenner"
+    "calendar": "Kalenner",
+    "today": "haut",
+    "tomorrow": "muer",
+    "inDays": "an {count} Deeg",
+    "timeLabel": "Auer",
+    "placeLabel": "Plaz",
+    "upcoming": "Nächst Termine"
   },
   "news": {
     "empty": "Nach keng Meldungen.",
@@ -382,6 +392,9 @@
     "colGroup": "Grupp",
     "allGroups": "All Gruppen",
     "sectionTriathlon": "Triathlon",
-    "triNote": "Den Triathlon ass eng eege Sektioun mat eegene Traineren."
+    "triNote": "Den Triathlon ass eng eege Sektioun mat eegene Traineren.",
+    "years": "Joer",
+    "moreCoaches": "+{count} weider",
+    "groupNumber": "Grupp {number}"
   }
 }

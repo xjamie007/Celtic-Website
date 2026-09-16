@@ -1,0 +1,75 @@
+# ═══════════════════════════════════════════════════════════════════════════
+# Die Seite als statische Vorschau auf GitHub Pages
+# ═══════════════════════════════════════════════════════════════════════════
+# GitHub Pages liefert nur Dateien aus. scripts/build-static.mjs baut die
+# Seite deshalb ohne die Teile, die einen Server brauchen (Redaktionsbereich,
+# Anmeldung, Middleware) und legt fertiges HTML in out/ ab.
+#
+# Die Adresse kommt aus configure-pages und nicht als fester Text: unter
+# xjamie007.github.io/Celtic-Website liegt die Seite in einem Unterordner und
+# braucht ein Praefix, unter einer eigenen Domain spaeter nicht. So muss beim
+# Umzug auf celtic.lu an dieser Datei nichts geaendert werden.
+#
+# Ohne hinterlegte Supabase-Instanz liest die Seite aus data/ — genau die
+# Bestandsdaten, die auch der Seed in die Datenbank schreibt.
+
+name: GitHub Pages
+
+on:
+  push:
+    branches: [main]
+  # Erlaubt es, die Seite von Hand neu zu veroeffentlichen.
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+# Eine Veroeffentlichung zur Zeit. Laufende nicht abbrechen: sonst kann ein
+# halb hochgeladener Stand stehen bleiben.
+concurrency:
+  group: pages
+  cancel-in-progress: false
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+
+      - run: npm ci
+
+      # Typen, Lint, Farbtokens, Uebersetzungen und Kontraste — vor dem Bauen,
+      # damit ein Fehler hier nicht erst auf der veroeffentlichten Seite auffaellt.
+      - name: Pruefungen
+        run: npm run check
+
+      - name: Pages-Adresse ermitteln
+        id: pages
+        uses: actions/configure-pages@v5
+
+      - name: Statischen Export bauen
+        run: npm run build:static
+        env:
+          NEXT_PUBLIC_BASE_PATH: ${{ steps.pages.outputs.base_path }}
+          NEXT_PUBLIC_SITE_URL: ${{ steps.pages.outputs.origin }}${{ steps.pages.outputs.base_path }}
+
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: out
+
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - id: deployment
+        uses: actions/deploy-pages@v4

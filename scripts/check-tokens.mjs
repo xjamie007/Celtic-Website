@@ -12,7 +12,17 @@ import { extname, join, relative } from "node:path";
 
 const ROOT = process.cwd();
 const ALLOWED = new Set(["app/globals.css"]);
-const SKIP_DIRS = new Set(["node_modules", ".next", ".git", "public", "app/fonts"]);
+/* out/ und .static-export-stash/ sind Bauergebnisse, kein Quelltext:
+   die Pruefung gilt dem, was jemand schreibt. */
+const SKIP_DIRS = new Set([
+  "node_modules",
+  ".next",
+  ".git",
+  "public",
+  "app/fonts",
+  "out",
+  ".static-export-stash",
+]);
 const EXTENSIONS = new Set([".ts", ".tsx", ".css", ".js", ".jsx", ".mjs"]);
 const HEX = /#[0-9a-fA-F]{3,8}\b/g;
 /** rgb()/rgba()/hsl()/hsla() mit Zahlen sind genauso hartkodierte Farben. */

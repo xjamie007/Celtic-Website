@@ -42,3 +42,6 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+# statischer Export (scripts/build-static.mjs); /out/ steht schon oben
+/.static-export-build/

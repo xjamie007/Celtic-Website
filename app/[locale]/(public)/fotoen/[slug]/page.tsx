@@ -6,10 +6,23 @@ import { PhotoGrid } from "@/components/photos/PhotoGrid";
 import { requireFeature } from "@/lib/features";
 import { LaneSection } from "@/components/lane/LaneSection";
 import { Link } from "@/i18n/navigation";
-import { getAlbum } from "@/lib/data/albums";
+import { getAlbum, getAlbums } from "@/lib/data/albums";
 import { localized } from "@/lib/localized";
 
 type PageProps = { params: Promise<{ locale: string; slug: string }> };
+
+/**
+ * §14: die Alben werden beim Bauen vorgerendert, nicht bei jedem Aufruf.
+ *
+ * Ohne Datenbank gibt es keine Alben — dann entsteht hier keine Seite, und
+ * /fotoen ist ohnehin abgeschaltet (features.photoGallery). Ein spaeter
+ * hochgeladenes Album erscheint trotzdem sofort: dynamicParams bleibt an,
+ * die Route wird beim ersten Aufruf nachgerendert.
+ */
+export async function generateStaticParams() {
+  const albums = await getAlbums();
+  return albums.map((album) => ({ slug: album.slug }));
+}
 
 export async function generateMetadata({ params }: PageProps): Promise<Metadata> {
   const { locale, slug } = await params;

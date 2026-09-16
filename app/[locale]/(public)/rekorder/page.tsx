@@ -8,10 +8,7 @@ import { getDiscipline, getRecords, getVenueRecords } from "@/lib/data/records";
 import { requireFeature } from "@/lib/features";
 import { isNewRecord } from "@/lib/records";
 
-type PageProps = {
-  params: Promise<{ locale: string }>;
-  searchParams: Promise<Record<string, string | string[] | undefined>>;
-};
+type PageProps = { params: Promise<{ locale: string }> };
 
 export async function generateMetadata({ params }: PageProps): Promise<Metadata> {
   const { locale } = await params;
@@ -26,11 +23,15 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
  * einmal an die Tabelle gereicht; der Wechsel zwischen den Ansichten
  * passiert im Browser, ohne neu zu laden — deshalb koennen die Zeilen dabei
  * stehen bleiben und nur die Werte tauschen.
+ *
+ * Der verlinkbare Tab (?bunn=) wurde frueher hier aus der Adresse gelesen.
+ * Das machte die Seite von der Anfrage abhaengig — fuer eine Tabelle, die
+ * sich zwischen zwei Rekorden nicht aendert, ein schlechter Tausch, und im
+ * statischen Export unmoeglich. Die Adresse liest jetzt die Tabelle selbst,
+ * im Browser, wo der Wechsel ohnehin stattfindet.
  */
-export default async function RecordsPage({ params, searchParams }: PageProps) {
+export default async function RecordsPage({ params }: PageProps) {
   const { locale } = await params;
-  const query = await searchParams;
-  const initialView = typeof query.bunn === "string" ? query.bunn : undefined;
   setRequestLocale(locale);
 
   await requireFeature("records");
@@ -113,7 +114,6 @@ export default async function RecordsPage({ params, searchParams }: PageProps) {
         <div className="mt-10">
           <RecordMatrix
               views={views}
-              initialView={initialView}
               labels={{
                 discipline: t("colDiscipline"),
                 performance: t("colPerformance"),

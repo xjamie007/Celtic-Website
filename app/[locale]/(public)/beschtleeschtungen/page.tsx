@@ -63,10 +63,14 @@ export default async function BestPerformancesPage({ params }: PageProps) {
         <div className="space-y-10">
           {sections.map((section) => (
             <section key={`${section.surface}-${section.gender}`}>
-              <h3 className="font-data text-data-xs text-muted-on-ink mb-3 uppercase">
+              {/* h2, nicht h3: ueber diesen Abschnitten steht nur die h1 der
+                  Seite. Die Kategorie darueber ist ein Tab-Knopf, keine
+                  Ueberschrift — fuer eine Sprachausgabe fehlte damit eine
+                  Ebene. */}
+              <h2 className="font-data text-data-xs text-muted-on-ink mb-3 uppercase">
                 {surfaceLabel[section.surface]}{" "}
                 {section.gender === "f" ? t("genderF") : t("genderM")}
-              </h3>
+              </h2>
               <BestPerformanceTable
                 performances={inCategory}
                 surface={section.surface}

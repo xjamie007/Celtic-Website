@@ -1,8 +1,8 @@
 "use client";
 
-import { AnimatePresence, motion, useReducedMotion } from "framer-motion";
+import { motion, useReducedMotion } from "framer-motion";
 import { useTranslations } from "next-intl";
-import { useCallback, useRef, useState } from "react";
+import { useCallback, useEffect, useRef, useState } from "react";
 
 import { cn } from "@/lib/utils";
 
@@ -35,17 +35,15 @@ export type MatrixView = {
   readonly rows: readonly MatrixRow[];
 };
 
-/** §8: 15ms pro Zeile, von oben nach unten. */
-const STAGGER = 0.015;
+/* Die Staffelung von 15ms je Zeile (§8) steht jetzt in globals.css als
+   animation-delay der Klasse .record-cell-in — dieselbe Zahl, nur dort, wo
+   die Animation auch laeuft. */
 
 export function RecordMatrix({
   views,
   labels,
-  initialView,
 }: {
   views: readonly MatrixView[];
-  /** Aktiver Tab beim ersten Rendern, aus der Adresse (§8). */
-  initialView?: string;
   labels: {
     discipline: string;
     performance: string;
@@ -63,16 +61,26 @@ export function RecordMatrix({
   const tablistRef = useRef<HTMLDivElement>(null);
 
   const fallback = views[0]?.key ?? "";
+  const [active, setActive] = useState(fallback);
+
   /*
-    Der Anfangswert kommt serverseitig aus der Adresse (initialView), nicht
-    aus useSearchParams. Der Hook zwingt die Seite in eine Suspense-Grenze,
-    und in einer statisch gerenderten Seite uebernimmt der Browser diesen
-    Teilbaum dann gar nicht mehr: die Tabelle stand da, reagierte aber auf
-    keinen Klick. Ohne den Hook hydratisiert sie normal.
+    §8: Der aktive Tab steht in der Adresse und ist damit verlinkbar. Gelesen
+    wird er hier und erst nach dem Einhaengen.
+
+    Nicht mit useSearchParams: der Hook zwingt die Seite in eine
+    Suspense-Grenze, und in einer statisch gerenderten Seite uebernimmt der
+    Browser diesen Teilbaum dann gar nicht mehr — die Tabelle stand da,
+    reagierte aber auf keinen Klick.
+
+    Und nicht schon beim ersten Rendern: dort steht auf dem Server der erste
+    Tab, und ein abweichender Wert im Browser waere ein Hydrationsfehler.
+    Wer einen Tab verlinkt bekommt, sieht ihn also einen Wimpernschlag
+    spaeter — wer /rekorder normal aufruft, merkt nichts.
   */
-  const [active, setActive] = useState(
-    initialView && views.some((v) => v.key === initialView) ? initialView : fallback,
-  );
+  useEffect(() => {
+    const wanted = new URLSearchParams(window.location.search).get("bunn");
+    if (wanted && views.some((v) => v.key === wanted)) setActive(wanted);
+  }, [views]);
 
   const select = useCallback((key: string) => {
     setActive(key);
@@ -244,19 +252,16 @@ export function RecordMatrix({
                     <AnimatedCell
                       value={row.performanceRaw}
                       index={index}
-                      reduced={Boolean(reduced)}
                       className="record-col-performance"
                     />
                     <AnimatedCell
                       value={row.names}
                       index={index}
-                      reduced={Boolean(reduced)}
                       className="record-col-name record-name"
                     />
                     <AnimatedCell
                       value={row.category}
                       index={index}
-                      reduced={Boolean(reduced)}
                       className="record-col-category"
                     />
                     <td className="record-col-year">
@@ -298,28 +303,38 @@ export function RecordMatrix({
 function AnimatedCell({
   value,
   index,
-  reduced,
   className,
 }: {
   value: string;
   index: number;
-  reduced: boolean;
   className: string;
 }) {
   return (
     <td className={className}>
-      <AnimatePresence mode="wait" initial={false}>
-        <motion.span
-          key={value}
-          initial={reduced ? { opacity: 0 } : { opacity: 0, y: 8 }}
-          animate={{ opacity: 1, y: 0 }}
-          exit={reduced ? { opacity: 0 } : { opacity: 0, y: -8 }}
-          transition={{ duration: 0.18, delay: index * STAGGER }}
-          className="block"
-        >
-          {value}
-        </motion.span>
-      </AnimatePresence>
+      {/*
+        Der Wechsel laeuft als CSS-Animation, nicht ueber AnimatePresence.
+
+        Vorher stand hier <AnimatePresence mode="wait">: erst den alten Wert
+        austreten lassen, dann den neuen einhaengen. Genau das ist beim Test
+        haengengeblieben — meldet die Austrittsanimation ihr Ende nicht (und
+        das tut sie unter einem Elternteil, das gleichzeitig eine
+        layout-Animation faehrt, zuverlaessig unzuverlaessig), wird der neue
+        Wert nie eingehaengt. Ergebnis: Leeschtung, Numm und Kategorie blieben
+        nach dem Tabwechsel leer, bis irgendein fremder Re-Render die Tabelle
+        anfasste.
+
+        Ein Schluesselwechsel plus CSS-Keyframe kann das nicht: die Animation
+        beginnt bei opacity 0 und endet bei 1, und sie endet immer — daran ist
+        kein JavaScript beteiligt. Der Wert steht auch dann im Markup, wenn
+        die Animation gar nicht laeuft.
+      */}
+      <span
+        key={value}
+        className="record-cell-in block"
+        style={{ ["--row" as string]: index }}
+      >
+        {value}
+      </span>
     </td>
   );
 }

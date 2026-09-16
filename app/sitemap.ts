@@ -4,6 +4,14 @@ import { locales, defaultLocale, site } from "@/config/site";
 import { disciplines } from "@/lib/data/records";
 import { getFeatures, isPathEnabled } from "@/lib/features";
 
+/*
+  Beide Bauarten rendern diese Datei einmal beim Bauen. Der statische Export
+  verlangt die Angabe ausdruecklich: ohne sie haelt Next die Metadaten-Route
+  fuer serverabhaengig und bricht ab, obwohl hier nichts steht, was zur
+  Laufzeit entstehen muesste.
+*/
+export const dynamic = "force-static";
+
 /**
  * Sitemap fuer alle drei Sprachfassungen.
  *

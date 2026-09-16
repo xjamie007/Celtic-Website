@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { getTranslations, setRequestLocale } from "next-intl/server";
 
+import { TrainingGroupCard } from "@/components/club/TrainingGroupCard";
 import { LaneSection } from "@/components/lane/LaneSection";
 import { Reveal } from "@/components/motion/Reveal";
 import { site } from "@/config/site";
@@ -52,46 +53,41 @@ export default async function TrainingPage({ params }: PageProps) {
           </p>
 
           <Reveal>
-            <ul className="mt-12">
+            {/*
+              §6: Karten statt Liste.
+
+              Vorher stand hier je Gruppe ein Block aus Ueberschrift,
+              Altersangabe rechts, Kategorien und Trainernamen, getrennt durch
+              Haarstriche. Alles richtig, alles gleich gewichtet — und deshalb
+              nichts, was den Blick fuehrt. Wer eine Gruppe fuer sein Kind
+              sucht, sucht zuerst das Alter und dann die Kategorien; beides ging
+              in der Textwueste unter.
+
+              Die Karten tragen links ein Stueck Bahn mit der Gruppennummer.
+              Damit lesen sich fuenf Gruppen als fuenf Bahnen — und die Seite
+              erklaert ihre eigene Metapher, ohne ein Wort darueber zu
+              verlieren.
+            */}
+            <ul className="mt-12 grid gap-4 md:grid-cols-2">
               {athletics.map((group, index) => (
                 <li
                   key={group.key}
-                  className="border-hairline-on-page rise border-t py-8"
+                  className="rise"
                   style={{ "--i": index } as React.CSSProperties}
                 >
-                  <div className="grid gap-x-8 gap-y-3 sm:grid-cols-[1fr_auto]">
-                    <h2 className="text-h3 wdth-100 font-display font-bold">
-                      {group.name}
-                    </h2>
-                    {group.ages ? (
-                      <p className="font-data text-data-xs text-muted-on-page uppercase sm:text-right">
-                        {group.ages}
-                      </p>
-                    ) : null}
-                  </div>
-                  {group.categories ? (
-                    <p className="text-muted-on-page text-ui-sm mt-2">
-                      {group.categories}
-                    </p>
-                  ) : null}
-                  {group.coaches.length > 0 ? (
-                    <p className="text-ui-sm mt-3">
-                      <span className="font-data text-data-xs text-muted-on-page mr-2 uppercase">
-                        {t("coachesLabel")}
-                      </span>
-                      {group.coaches.join(" · ")}
-                    </p>
-                  ) : null}
-                  {/* §4: Der Hinweis aus der Liichtathletikschoul verbindet
-                      beide Sektionen und gehoert genau hierhin. */}
-                  {group.key === "liichtathletikschoul" ? (
-                    <p className="border-motion-accent text-ui-sm text-muted-on-page mt-4 border-l-2 py-1 pl-4">
-                      {t("schoolNote")}
-                    </p>
-                  ) : null}
+                  <TrainingGroupCard group={group} index={index} />
                 </li>
               ))}
             </ul>
+
+            {/* §4: Der Hinweis aus der Liichtathletikschoul verbindet beide
+                Sektionen. Er stand vorher in der Karte der Schule; dort war er
+                laenger als alles andere darin und kippte die Karte. Unter dem
+                Raster gilt er sichtbar fuer die ganze Sektion — was er auch
+                tut. */}
+            <p className="border-motion-accent text-ui text-muted-on-page rise mt-8 max-w-prose border-l-2 py-1 pl-5">
+              {t("schoolNote")}
+            </p>
           </Reveal>
         </div>
       </LaneSection>

@@ -51,6 +51,12 @@ type Marker = {
 /** §5: 120px Trail bei voller Geschwindigkeit. */
 const VELOCITY_FULL = 2800; // px/s, ab hier ist der Trail auf voller Laenge
 
+/** Muss zu --lane-inset in globals.css passen (2.5rem). */
+const LANE_INSET_PX = 40;
+
+/** Kleinster Abstand zweier Marken. Eine Marke ist rund 47px hoch. */
+const MIN_MARKER_GAP_PX = 64;
+
 const clamp01 = (value: number) => Math.min(Math.max(value, 0), 1);
 
 export function Lane() {
@@ -93,8 +99,23 @@ export function Lane() {
     const nodes = Array.from(
       document.querySelectorAll<HTMLElement>("[data-lane-section]"),
     );
-    const maxScroll =
-      document.documentElement.scrollHeight - window.innerHeight;
+
+    /*
+      window.innerHeight kann 0 sein — in eingebetteten oder noch nicht
+      gezeichneten Kontexten meldet der Browser die Fensterhoehe erst, wenn er
+      das erste Mal Layout gemacht hat. Die ganze Rechnung der Bahn haengt an
+      dieser Zahl: mit 0 wird maxScroll zur vollen Dokumenthoehe (jede Marke
+      landet zu weit oben) und der Mindestabstand zwischen zwei Marken
+      explodiert, sodass alle bis auf eine verworfen werden. Genau so ist es
+      im Test passiert: auf der Startseite blieb nur noch ZIEL stehen.
+
+      clientHeight als zweite Quelle, 800 als letzte Notloesung. Ein zu
+      grosszuegiger Wert kostet eine ungenaue Position; eine 0 kostet die
+      ganze Bahn.
+    */
+    const viewportHeight =
+      window.innerHeight || document.documentElement.clientHeight || 800;
+    const maxScroll = document.documentElement.scrollHeight - viewportHeight;
 
     /* Zwei getrennte Bedingungen, weil es zwei getrennte Aussagen sind:
        Ohne Scrollweg gibt es keine Position zu zeigen — dann bleibt nur der
@@ -109,6 +130,28 @@ export function Lane() {
     }
 
     const lastIndex = nodes.length - 1;
+
+    /*
+      Zwei Marken duerfen sich nicht draengen.
+
+      Die Position einer Marke ergibt sich aus dem Scrollfortschritt der
+      Sektion, nicht aus einem gleichmaessigen Raster. Auf einer langen Seite
+      mit einer kurzen Schlusssektion liegen die letzten beiden dadurch
+      wenige Pixel auseinander: auf /next standen "100" und ZIEL 46px
+      voneinander entfernt, bei 47px Markenhoehe. Zwei Beschriftungen, die
+      sich beruehren, sind schwer zu treffen und schwerer zu lesen.
+
+      Der Mindestabstand wird in Pixeln gedacht und in Fortschritt
+      umgerechnet, weil die Bahn so hoch ist wie das Fenster — auf einem
+      kurzen Fenster braucht derselbe Abstand mehr Fortschritt.
+
+      Fallen zwei zusammen, weicht die frueher liegende: der Zielstrich steht
+      fest, und ein START, an dem man vorbeilaeuft, wuerde noch mehr stoeren
+      als eine fehlende Zwischenmarke.
+    */
+    const railHeight = Math.max(viewportHeight - 2 * LANE_INSET_PX, 1);
+    const minGap = MIN_MARKER_GAP_PX / railHeight;
+
     setMarkers(
       nodes.map((node, index) => {
         const isFinish = index === lastIndex;
@@ -136,7 +179,15 @@ export function Lane() {
               ),
           toEnd: isFinish,
         };
-      }),
+      })
+        /* Von hinten nach vorn gehen und alles verwerfen, was der bereits
+           behaltenen Marke zu nahe kommt. Rueckwaerts, damit ZIEL die
+           anderen verdraengt und nicht umgekehrt. */
+        .reduceRight<Marker[]>((kept, marker) => {
+          const next = kept[0];
+          if (next && next.progress - marker.progress < minGap) return kept;
+          return [marker, ...kept];
+        }, []),
     );
   }, [t]);
 
@@ -209,18 +260,10 @@ export function Lane() {
         style={laneStyle}
       >
         <div className="lane-rail">
-          {/* ab lg: senkrecht am linken Rand */}
-          <div className="lane-carrier-v absolute inset-0 hidden lg:block">
+          <div className="lane-carrier-v absolute inset-0">
             <span className="lane-trail lane-trail-behind-v" />
             <span className="lane-trail lane-trail-ahead-v" />
             <span className="lane-dot lane-dot-v" />
-          </div>
-
-          {/* darunter: waagerecht am oberen Rand */}
-          <div className="lane-carrier-h absolute inset-0 lg:hidden">
-            <span className="lane-trail lane-trail-behind-h" />
-            <span className="lane-trail lane-trail-ahead-h" />
-            <span className="lane-dot lane-dot-h" />
           </div>
         </div>
       </motion.div>
@@ -236,7 +279,7 @@ export function Lane() {
               const isActive = index === active;
               return (
                 <li key={marker.id}>
-                  {/* ab lg mit Beschriftung */}
+                  {/* Ab md mit Beschriftung neben der Linie */}
                   <button
                     type="button"
                     onClick={() => jumpTo(marker)}
@@ -244,8 +287,8 @@ export function Lane() {
                     title={t("goTo", { label: marker.label })}
                     style={{ top: `${marker.progress * 100}%` }}
                     className={cn(
-                      "lane-marker-label font-data text-data-xs pointer-events-auto absolute hidden",
-                      "left-[2.875rem] -translate-x-1/2 -translate-y-1/2 whitespace-nowrap uppercase lg:block",
+                      "lane-marker font-data text-data-xs pointer-events-auto absolute hidden md:block",
+                      "left-[var(--lane-line-offset)] -translate-y-1/2 whitespace-nowrap uppercase",
                       "transition-colors duration-300",
                       isActive
                         ? "text-accent-on-dark"
@@ -255,19 +298,27 @@ export function Lane() {
                     {marker.label}
                   </button>
 
-                  {/* darunter nur als Punkt, ohne Beschriftung (§5) */}
+                  {/* Auf dem Handy nur ein Punkt auf der Linie — der Belag ist
+                      dort 6px breit, eine Beschriftung haette keinen Platz.
+                      Die Trefferflaeche bleibt trotzdem 24px. */}
                   <button
                     type="button"
                     onClick={() => jumpTo(marker)}
                     aria-current={isActive ? "true" : undefined}
                     aria-label={t("goTo", { label: marker.label })}
-                    style={{ left: `${marker.progress * 100}%` }}
+                    style={{ top: `${marker.progress * 100}%` }}
                     className={cn(
-                      "pointer-events-auto absolute top-0 h-1.5 w-1.5 -translate-x-1/2 rounded-full lg:hidden",
-                      "transition-colors duration-300",
-                      isActive ? "bg-motion-accent" : "bg-lane-line/70",
+                      "pointer-events-auto absolute grid h-6 w-6 place-items-center md:hidden",
+                      "left-[var(--lane-line-offset)] -translate-x-1/2 -translate-y-1/2",
                     )}
-                  />
+                  >
+                    <span
+                      className={cn(
+                        "block h-1 w-1 rounded-full transition-colors duration-300",
+                        isActive ? "bg-motion-accent" : "bg-lane-line/70",
+                      )}
+                    />
+                  </button>
                 </li>
               );
             })}

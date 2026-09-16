@@ -1,4 +1,4 @@
-import { getTranslations } from "next-intl/server";
+import { getTranslations, setRequestLocale } from "next-intl/server";
 import type { ReactNode } from "react";
 
 import { SessionBar } from "@/components/auth/SessionBar";
@@ -18,7 +18,23 @@ import { getFeatures, isPathEnabled } from "@/lib/features";
  * und ein Admin, in dem beim Scrollen ein Magenta-Punkt an der Bahn
  * entlanglaeuft, waere genau das Gegenteil von "ruhig, dicht, schnell".
  */
-export default async function PublicLayout({ children }: { children: ReactNode }) {
+export default async function PublicLayout({
+  children,
+  params,
+}: {
+  children: ReactNode;
+  params: Promise<{ locale: string }>;
+}) {
+  /*
+    Auch hier, obwohl das Wurzel-Layout die Sprache schon gesetzt hat: React
+    rendert die Huelle nicht zwingend nach ihrem Elternteil, sondern faengt
+    parallel an. Fehlt die Zeile, liest die Navigation die Sprache aus dem
+    Anfragekopf — und schon haengt jede Seite am Server (§14). Die Regel von
+    next-intl lautet deshalb: in jedem Layout und jeder Seite.
+  */
+  const { locale } = await params;
+  setRequestLocale(locale);
+
   const t = await getTranslations("a11y");
   const features = await getFeatures();
 

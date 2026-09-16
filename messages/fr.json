@@ -93,7 +93,11 @@
     "clubLead": "Du débutant au record national — huit groupes, une piste.",
     "clubLink": "Horaires et groupes",
     "nextAll": "Tous les événements",
-    "groupPhotoAlt": "L’équipe du CELTIC Diekirch au stage de Palamós"
+    "groupPhotoAlt": "L’équipe du CELTIC Diekirch au stage de Palamós",
+    "nextLead": "Où le CELTIC sera au départ dans les semaines à venir.",
+    "heroLead": "Du premier sprint à l’école d’athlétisme jusqu’au record national — sur la même piste.",
+    "heroPhotoAlt": "La piste en tartan du Stade Municipal à Diekirch",
+    "heroPhotoCaption": "Stade Municipal · Diekirch"
   },
   "error": {
     "notFoundTitle": "Introuvable",
@@ -145,7 +149,13 @@
     "until": "au",
     "recurring": "Nos propres événements",
     "ourRace": "Notre course",
-    "calendar": "Calendrier"
+    "calendar": "Calendrier",
+    "today": "aujourd’hui",
+    "tomorrow": "demain",
+    "inDays": "dans {count} jours",
+    "timeLabel": "heures",
+    "placeLabel": "Lieu",
+    "upcoming": "Prochaines dates"
   },
   "news": {
     "empty": "Pas encore d'actualités.",
@@ -382,6 +392,9 @@
     "colGroup": "Groupe",
     "allGroups": "Tous les groupes",
     "sectionTriathlon": "Triathlon",
-    "triNote": "Le triathlon est une section à part avec ses propres entraîneurs."
+    "triNote": "Le triathlon est une section à part avec ses propres entraîneurs.",
+    "years": "ans",
+    "moreCoaches": "+{count} autres",
+    "groupNumber": "Groupe {number}"
   }
 }
