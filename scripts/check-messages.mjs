@@ -1,8 +1,13 @@
 #!/usr/bin/env node
 /**
- * §11: lb ist die Referenz. Diese Pruefung meldet, welche Keys in de oder fr
- * fehlen — im Betrieb faellt die Seite still auf lb zurueck, aber im Build
- * soll sichtbar sein, was noch zu uebersetzen ist.
+ * §11: lb ist die Referenz. Diese Pruefung meldet, welche Keys in den anderen
+ * Sprachen fehlen — im Betrieb faellt die Seite still auf lb zurueck, aber im
+ * Build soll sichtbar sein, was noch zu uebersetzen ist.
+ *
+ * Welche Sprachen es gibt, steht in config/site.ts und wird von dort gelesen.
+ * Stand hier eine eigene Liste, pruefte eine neu aufgenommene Sprache
+ * monatelang niemand — genau so ist Englisch beim ersten Anlauf durch die
+ * Pruefung gerutscht.
  */
 import { readFileSync } from "node:fs";
 
@@ -16,10 +21,24 @@ const flatten = (obj, prefix = "") =>
       : [`${prefix}${key}`],
   );
 
-const reference = new Set(flatten(load("lb")));
+/* Aus config/site.ts gelesen statt importiert: die Datei ist TypeScript,
+   und dieses Skript laeuft ohne Uebersetzungsschritt. */
+const siteConfig = readFileSync(
+  new URL("../config/site.ts", import.meta.url),
+  "utf8",
+);
+const localesMatch = siteConfig.match(/export const locales = \[([^\]]*)\]/);
+if (!localesMatch) {
+  console.error("locales in config/site.ts nicht gefunden.");
+  process.exit(1);
+}
+const locales = [...localesMatch[1].matchAll(/"([a-z-]+)"/g)].map((m) => m[1]);
+const defaultLocale = locales[0];
+
+const reference = new Set(flatten(load(defaultLocale)));
 let missingTranslations = 0;
 
-for (const locale of ["de", "fr"]) {
+for (const locale of locales.filter((l) => l !== defaultLocale)) {
   const keys = new Set(flatten(load(locale)));
   const absent = [...reference].filter((k) => !keys.has(k));
   const extra = [...keys].filter((k) => !reference.has(k));
@@ -36,7 +55,9 @@ for (const locale of ["de", "fr"]) {
 }
 
 if (missingTranslations > 0) process.exit(1);
-console.log(`Messages: lb/de/fr vollstaendig (${reference.size} Keys).`);
+console.log(
+  `Messages: ${locales.join("/")} vollstaendig (${reference.size} Keys).`,
+);
 
 /**
  * Zweite Pruefung: benutzt der Code Schluessel, die es nicht gibt?
@@ -50,7 +71,7 @@ import { readdirSync, statSync } from "node:fs";
 import { extname, join } from "node:path";
 
 const SOURCE_DIRS = ["app", "components", "lib"];
-const reference2 = load("lb");
+const reference2 = load(defaultLocale);
 
 const flat = new Set(flatten(reference2));
 

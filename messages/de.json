@@ -76,7 +76,8 @@
   "locale": {
     "lb": "Luxemburgisch",
     "de": "Deutsch",
-    "fr": "Französisch"
+    "fr": "Französisch",
+    "en": "Englisch"
   },
   "home": {
     "tagline": "Diekirch · seit {year}",
@@ -156,6 +157,20 @@
     "timeLabel": "Uhr",
     "placeLabel": "Ort",
     "upcoming": "Nächste Termine"
+  },
+  "events": {
+    "leadNordstadsemi": "Der Foyer Nordstadlaf ist der Strassenlauf des CELTIC Diekirch. Gelaufen wird der Halbmarathon über 21,1 km, dazu ein Lauf über 10 km und einer über 5 km. Start und Ziel liegen in Diekirch.",
+    "leadEurocross": "Der Eurocross ist der Crosslauf des CELTIC Diekirch, zusammen mit dem Eurotail. Gelaufen wird im Spätjahr in Diekirch.",
+    "nextEdition": "Nächster Termin",
+    "lastEdition": "Letzte Ausgabe",
+    "dateTbd": "Der Termin für die nächste Ausgabe steht noch nicht fest.",
+    "dateUnknown": "Der Termin steht noch nicht fest.",
+    "races": "Strecken",
+    "place": "Ort",
+    "edition": "Ausgabe",
+    "editionNumber": "{number}. Ausgabe",
+    "officialNote": "Anmeldung, Ergebnisse und Streckenplan stehen auf der Seite des {name}.",
+    "officialSite": "Zur Seite der Veranstaltung"
   },
   "news": {
     "empty": "Noch keine Meldungen.",

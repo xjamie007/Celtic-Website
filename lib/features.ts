@@ -52,6 +52,7 @@ export async function getFeatures(): Promise<Features> {
 const PATH_FEATURE: readonly (readonly [string, FeatureKey])[] = [
   ["/news", "news"],
   ["/next", "events"],
+  ["/evenementer", "events"],
   ["/rekorder", "records"],
   ["/beschtleeschtungen", "bestPerformances"],
   ["/celtics-best", "celticsBest"],

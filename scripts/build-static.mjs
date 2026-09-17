@@ -50,6 +50,16 @@ const SERVER_ONLY = [
   "app/[locale]/(public)/login",
   "app/[locale]/(public)/[...rest]",
   "app/[locale]/(public)/fotoen/[slug]",
+  /*
+    Abgeschaltete Bereiche (config/site.ts, features) antworten im Betrieb
+    mit 404. Im Export kann eine Seite das nicht: sie waere eine Datei, die
+    da ist, und Next legt dafuer eine leere Huelle ab. Leer ist genau das,
+    was §2 verbietet — also gar nicht erst mitbauen, dann liefert GitHub
+    Pages die richtige 404.html aus.
+
+    Wird "news" wieder eingeschaltet, gehoert diese Zeile weg.
+  */
+  "app/[locale]/(public)/news",
 ];
 
 /**

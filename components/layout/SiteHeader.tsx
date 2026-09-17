@@ -227,8 +227,15 @@ export function SiteHeader({ nav }: { nav: readonly NavItem[] }) {
             </ul>
           </nav>
 
-          <div className="ml-auto flex items-center gap-3 lg:ml-0">
-            <LocaleSwitcher className="hidden sm:flex" />
+          {/*
+            Der Sprachumschalter steht auf jeder Breite in der Leiste, auch
+            auf dem Handy. Vorher lag er dort unten im ausgeklappten Menue —
+            wer ihn suchte, musste erst das Menue oeffnen und scrollen, und
+            genau deshalb hat ihn niemand gefunden. Drei Buchstaben brauchen
+            keine 300px; sie passen neben Wortmarke und Menueknopf.
+          */}
+          <div className="ml-auto flex items-center gap-2 sm:gap-3 lg:ml-0">
+            <LocaleSwitcher />
             <button
               type="button"
               onClick={() => setMenuOpen((open) => !open)}
@@ -300,7 +307,6 @@ export function SiteHeader({ nav }: { nav: readonly NavItem[] }) {
                 </li>
               ))}
             </ul>
-            <LocaleSwitcher className="mt-8 sm:hidden" />
           </nav>
         </div>
       ) : null}

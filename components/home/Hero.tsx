@@ -136,10 +136,15 @@ export async function Hero() {
         </p>
 
         {/* §6: Kein CTA-Button-Paar. Ein einziger Textlink — und rechts
-            daneben, wo vorher nichts stand, die Ortsangabe zum Foto. */}
+            daneben, wo vorher nichts stand, die Ortsangabe zum Foto.
+
+            Er fuehrt auf die Kontaktseite und nicht mehr auf /matmaachen:
+            dort stand nur eine Ueberschrift, der Klick lief also ins Leere.
+            Wer mitmachen will, braucht ohnehin genau das, was auf der
+            Kontaktseite steht — Adresse, Telefon, Trainingsorte. */}
         <div className="hero-after mt-10 flex flex-wrap items-baseline justify-between gap-x-8 gap-y-4">
           <Link
-            href="/matmaachen"
+            href="/club/kontakt"
             className="text-ui-lg decoration-hairline-on-page hover:decoration-motion-accent hover:text-accent-on-page underline decoration-2 underline-offset-8 transition-colors duration-200"
           >
             {t("join")} &rarr;

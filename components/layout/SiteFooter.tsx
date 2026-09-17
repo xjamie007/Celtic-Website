@@ -107,8 +107,10 @@ export async function SiteFooter() {
         </div>
 
         {/* ── Vereinsveranstaltungen + Social ───────────────────────────
-            §9: vorerst externe Links. Sie stehen als Datensatz in der Config,
-            damit sie spaeter ohne Umbau zu Subsites werden koennen. */}
+            Nordstadsemi und Eurocross haben eine eigene Seite im Haus, der
+            Waemper Triathlon liegt auf seiner eigenen Adresse. Der Fuss
+            unterscheidet das, statt alles im neuen Tab zu oeffnen: ein Link,
+            der die Seite verlaesst, sagt das vorher. */}
         <div className="border-hairline-on-ink mt-12 grid gap-8 border-t pt-8 md:grid-cols-2">
           {events.length > 0 ? (
           <div>
@@ -116,19 +118,29 @@ export async function SiteFooter() {
               {tf("events")}
             </h2>
             <ul className="mt-3 flex flex-wrap gap-x-6 gap-y-2">
-              {events.map((event) => (
-                <li key={event.slug}>
-                  <a
-                    href={event.href}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="font-display text-ui-lg font-bold wdth-96 transition-colors duration-200 hover:text-accent-on-dark"
-                  >
-                    {event.name}
-                    <span className="sr-only"> ({tA11y("externalLink")})</span>
-                  </a>
-                </li>
-              ))}
+              {events.map((event) => {
+                const style =
+                  "font-display text-ui-lg font-bold wdth-96 transition-colors duration-200 hover:text-accent-on-dark";
+                return (
+                  <li key={event.slug}>
+                    {event.external ? (
+                      <a
+                        href={event.href}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className={style}
+                      >
+                        {event.name}
+                        <span className="sr-only"> ({tA11y("externalLink")})</span>
+                      </a>
+                    ) : (
+                      <Link href={event.href} className={style}>
+                        {event.name}
+                      </Link>
+                    )}
+                  </li>
+                );
+              })}
             </ul>
           </div>
           ) : null}

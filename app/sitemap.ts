@@ -24,6 +24,8 @@ const PATHS = [
   "",
   "/news",
   "/next",
+  "/evenementer/nordstadsemi",
+  "/evenementer/eurocross",
   "/rekorder",
   "/beschtleeschtungen",
   "/celtics-best",

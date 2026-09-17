@@ -76,7 +76,8 @@
   "locale": {
     "lb": "Lëtzebuergesch",
     "de": "Däitsch",
-    "fr": "Franséisch"
+    "fr": "Franséisch",
+    "en": "Englesch"
   },
   "home": {
     "tagline": "Diekirch · zënter {year}",
@@ -156,6 +157,20 @@
     "timeLabel": "Auer",
     "placeLabel": "Plaz",
     "upcoming": "Nächst Termine"
+  },
+  "events": {
+    "leadNordstadsemi": "De Foyer Nordstadlaf ass de Stroosseleef vum CELTIC Dikrech. Gelaf gëtt de Semi-Marathon iwwer 21,1 km, doriwwer eraus ginn et e Laf iwwer 10 km an een iwwer 5 km. Start an Zil leien zu Dikrech.",
+    "leadEurocross": "De Eurocross ass de Crosslaf vum CELTIC Dikrech, zesumme mam Eurotail. Gelaf gëtt am Spéitjoer zu Dikrech.",
+    "nextEdition": "Nächsten Termin",
+    "lastEdition": "Lescht Editioun",
+    "dateTbd": "Den Termin fir déi nächst Editioun steet nach net fest.",
+    "dateUnknown": "Den Termin steet nach net fest.",
+    "races": "Streck",
+    "place": "Plaz",
+    "edition": "Editioun",
+    "editionNumber": "{number}. Editioun",
+    "officialNote": "Umeldung, Resultater a Streckeplang stinn op der Säit vum {name}.",
+    "officialSite": "Op d’Säit vun der Veranstaltung"
   },
   "news": {
     "empty": "Nach keng Meldungen.",

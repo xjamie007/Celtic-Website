@@ -76,7 +76,8 @@
   "locale": {
     "lb": "Luxembourgeois",
     "de": "Allemand",
-    "fr": "Français"
+    "fr": "Français",
+    "en": "Anglais"
   },
   "home": {
     "tagline": "Diekirch · depuis {year}",
@@ -156,6 +157,20 @@
     "timeLabel": "heures",
     "placeLabel": "Lieu",
     "upcoming": "Prochaines dates"
+  },
+  "events": {
+    "leadNordstadsemi": "Le Foyer Nordstadlaf est la course sur route du CELTIC Diekirch. Au programme : le semi-marathon sur 21,1 km, ainsi qu’une course de 10 km et une de 5 km. Départ et arrivée à Diekirch.",
+    "leadEurocross": "L’Eurocross est le cross du CELTIC Diekirch, avec l’Eurotail. Il se court en fin d’année à Diekirch.",
+    "nextEdition": "Prochaine date",
+    "lastEdition": "Dernière édition",
+    "dateTbd": "La date de la prochaine édition n’est pas encore fixée.",
+    "dateUnknown": "La date n’est pas encore fixée.",
+    "races": "Parcours",
+    "place": "Lieu",
+    "edition": "Édition",
+    "editionNumber": "{number}e édition",
+    "officialNote": "Inscription, résultats et plan du parcours sur le site du {name}.",
+    "officialSite": "Vers le site de l’épreuve"
   },
   "news": {
     "empty": "Pas encore d'actualités.",

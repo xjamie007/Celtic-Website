@@ -96,18 +96,16 @@ export default async function SponsorsPage({ params }: PageProps) {
           <h2 id="trikot-title" className="text-h2 wdth-100">
             {t("jerseyTitle")}
           </h2>
+          {/*
+            Hier stand ein Aufruf, selbst Trikotsponsor zu werden. Der
+            Verein braucht ihn nicht: die Trikotplaetze werden persoenlich
+            vergeben, nicht ueber ein Formular auf der Website. Das Trikot
+            zeigt jetzt nur noch, wo die Sponsoren stehen — das war der
+            Zweck von §7.
+          */}
           <div className="mt-10">
             <SponsorJersey sponsors={sponsors} />
           </div>
-          <p className="text-muted-on-page text-ui mt-12">
-            {t("becomeLead")}{" "}
-            <a
-              href={`mailto:${site.contact.email}`}
-              className="text-ink-text decoration-motion-accent underline decoration-2 underline-offset-4 transition-colors duration-200 hover:text-accent-on-page"
-            >
-              {site.contact.email}
-            </a>
-          </p>
         </div>
       </LaneSection>
     </>

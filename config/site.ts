@@ -14,7 +14,13 @@
 
 export type Locale = (typeof locales)[number];
 
-export const locales = ["lb", "de", "fr"] as const;
+/*
+  Englisch ist die vierte Sprache. Es gilt fuer die Oberflaeche — Navigation,
+  Tabellen, Beschriftungen. Die langen Vereinstexte (Geschichte, Training,
+  Kontakt) liegen als Datensatz in lb/de/fr; wo eine englische Fassung fehlt,
+  zeigt die Seite still den luxemburgischen Text (§11, lib/localized.ts).
+*/
+export const locales = ["lb", "de", "fr", "en"] as const;
 /* satisfies statt einer Typannotation: die Annotation wuerde den Literaltyp
    auf Locale aufweiten, und dann verlangte Localized alle drei Sprachen
    statt nur der Standardsprache als Pflichtfeld (§11). */
@@ -128,40 +134,81 @@ export const site = {
   shopUrl: "https://absolute-teamsport.lu/collections/celtic-diekirch",
 
   /**
-   * Vereinsveranstaltungen. Vorerst externe Links — die Architektur muss sie
-   * spaeter als Subsites aufnehmen koennen, deshalb schon hier als Datensatz
-   * mit Slug statt als hartkodierte Links im Footer.
+   * Die eigenen Veranstaltungen des Vereins (§9).
+   *
+   * Zwei davon haben jetzt eine eigene Seite unter /evenementer/<slug>; der
+   * Waemper Triathlon fuehrt weiter auf seine eigene Adresse, weil er dort
+   * mit Anmeldung, Ergebnissen und Streckenplaenen schon vollstaendig steht.
+   *
+   * Das Datum steht hier nur als letzter bekannter Stand. Sobald eine
+   * Datenbank hinterlegt ist, gilt der Termin aus dem Redaktionsbereich —
+   * die Seite sucht dort nach einem Termin mit demselben Slug. So kann das
+   * Comite das Datum aendern, ohne dass jemand Code anfasst.
    */
   events: [
     {
       slug: "nordstadsemi",
       name: "Nordstadsemi",
-      href: "https://www.nordstadsemi.lu",
-      external: true,
+      /* Der volle Name mit Sponsor, wie er auf der Veranstaltung steht. */
+      fullName: "Foyer Nordstadlaf",
+      href: "/evenementer/nordstadsemi",
+      external: false,
+      website: "https://www.nordstadsemi.lu",
+      city: "Dikrech",
+      mapsQuery: "Diekirch, Luxembourg",
+      /* Die Strecken, wie sie ausgeschrieben werden. Keine Uebersetzung:
+         Zahlen und Distanzen sind in allen drei Sprachen dieselben.
+         Belegt durch die Siegerlisten der Ausgabe 2026. */
+      races: ["Semi-Marathon · 21,1 km", "10 km", "5 km"],
+      lastKnownDate: "2026-03-15",
+      edition: 22,
     },
     {
       slug: "eurocross",
       name: "Eurocross",
-      href: "https://www.eurocross.lu",
-      external: true,
+      /* So steht es auf der eigenen Ankuendigung des Vereins. */
+      fullName: "Eurocross & Eurotail",
+      href: "/evenementer/eurocross",
+      external: false,
+      website: "https://www.eurocross.lu",
+      city: "Dikrech",
+      mapsQuery: "Diekirch, Luxembourg",
+      races: ["Eurocross", "Eurotail"],
+      lastKnownDate: "2025-11-23",
+      edition: null,
     },
     {
-      slug: "tri-celtic",
-      name: "Tri-Celtic",
-      href: "https://www.tri-celtic.lu",
+      slug: "waemper-triathlon",
+      name: "Wämper Triathlon",
+      fullName: "Wämper Triathlon & Wämper Lof",
+      href: "https://www.triathlon.lu",
       external: true,
+      website: "https://www.triathlon.lu",
+      city: "Wämperhaard",
+      mapsQuery: "Weiswampach, Luxembourg",
+      races: [
+        "Olympesch Distanz · 1,5 km / 40 km / 10 km",
+        "Promotiounsdistanz · 750 m / 20 km / 5 km",
+        "Wämper Lof · 5 km a 10 km",
+      ],
+      lastKnownDate: null,
+      edition: null,
     },
-  ],
+  ] as const,
 
   /* ── Navigation (§9) ─────────────────────────────────────────────────── */
+  /*
+    Der Veraïn steht vorne. Vorher stand dort "Aktuellt" — eine Seite ohne
+    eine einzige Meldung, also der erste Klick ins Leere. Was den Verein
+    ausmacht, sind seine Geschichte, seine Gruppen und seine Leute; die
+    Geschichte haengt deshalb mit im Ausklappmenue und nicht nur im Fuss.
+  */
   mainNav: [
-    { key: "news", href: "/news" },
-    { key: "next", href: "/next" },
-    { key: "records", href: "/rekorder" },
     {
       key: "club",
       href: "/club",
       children: [
+        { key: "history", href: "/zenter-1968" },
         { key: "clubTraining", href: "/club/training" },
         { key: "clubCoaches", href: "/club/trainer" },
         { key: "clubCommittee", href: "/club/comite" },
@@ -170,6 +217,8 @@ export const site = {
         { key: "clubContact", href: "/club/kontakt" },
       ],
     },
+    { key: "next", href: "/next" },
+    { key: "records", href: "/rekorder" },
     { key: "sponsors", href: "/sponsoren" },
   ] as const satisfies readonly NavItem[],
 
@@ -403,7 +452,11 @@ export const site = {
      Das hier sind die Vorgaben. Umschalten kann der Verein sie im
      Redaktionsbereich unter /admin/astellungen — ohne Auslieferung. */
   features: {
-    news: true,
+    /* Die Seite hatte keine einzige Meldung. Aus heisst: raus aus
+       Navigation, Fuss und Sitemap, und die Adresse antwortet mit 404 statt
+       mit einer leeren Seite. Schreibt der Verein Meldungen, steht sie mit
+       einem Klick im Redaktionsbereich wieder da. */
+    news: false,
     events: true,
     records: true,
     /* Noch keine Daten oder noch kein Material: */
