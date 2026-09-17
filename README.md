@@ -203,6 +203,52 @@ einem gedrosselten Tab nie ausloest. Eine Animation darf nie darueber
 entscheiden, ob Inhalt existiert — weder fuer Suchmaschinen noch fuer jemanden,
 bei dem ein Skript haengenbleibt.
 
+## Den Redaktionsbereich vorfuehren
+
+Die oeffentliche Seite liegt als statischer Export auf GitHub Pages. Dort gibt
+es keinen Server, also auch keine Anmeldung — der Redaktionsbereich laeuft auf
+dem eigenen Rechner. Vier Schritte:
+
+```bash
+open -a Docker                                   # Docker Desktop muss laufen
+npx supabase start                               # Datenbank, Auth, Postfach
+npm run admin:create -- comite@celtic.lu "Comité CELTIC" admin
+npm run dev
+```
+
+Dann `http://localhost:3000/login` aufrufen, die Adresse eintragen, und den
+Anmeldelink aus dem lokalen Postfach unter `http://127.0.0.1:54324` holen. Es
+geht keine echte Mail hinaus; das Postfach faengt alles ab.
+
+**Warum ein eigener Befehl fuer den Zugang.** Der Redaktionsbereich laesst nur
+herein, wer in `profiles` steht (§12). Eine frische Datenbank hat diese
+Tabelle leer — wer sich anmeldet, bekommt korrekt "Fuer dieses Konto ist noch
+keine Rolle hinterlegt" und kommt nicht weiter. `npm run admin:create` legt den
+ersten Zugang an; weitere Personen dann ueber `/admin/benotzer`.
+
+### Was das Comite dort aendern kann
+
+| Bereich | Wirkt auf |
+|---|---|
+| `/admin/termine` | Kalender und die Seiten unter `/evenementer/` |
+| `/admin/rekorder` | Rekordtabelle und Rekordverlauf |
+| `/admin/traineren` | `/club/trainer` |
+| `/admin/comite` | `/club/comite` |
+| `/admin/sponsoren` | Sponsorenseite, Trikot und die Bande auf jeder Seite |
+| `/admin/astellungen` | Welche Bereiche es ueberhaupt gibt (§2) |
+
+**Der Termin einer eigenen Veranstaltung.** Nordstadsemi und Eurocross haben je
+eine Seite, die ihren Termin aus `/admin/termine` zieht. Der Titel entscheidet:
+Die Seite sucht einen kommenden Termin, dessen Adresse mit ihrem Namen beginnt.
+Ein Termin mit dem Titel **Nordstadsemi** bekommt die Adresse
+`nordstadsemi-2027-03-14` und landet damit auf `/evenementer/nordstadsemi`.
+Heisst er "22. Foyer Nordstadlaf", findet die Seite ihn nicht — der Titel muss
+mit **Nordstadsemi** beziehungsweise **Eurocross** anfangen.
+
+Steht kein kommender Termin da, zeigt die Seite die letzte bekannte Ausgabe aus
+`config/site.ts` und schreibt dazu, dass der naechste Termin noch nicht
+feststeht. Eine erfundene Jahreszahl waere schlimmer als keine.
+
 ## Supabase (Phase 4)
 
 ```bash

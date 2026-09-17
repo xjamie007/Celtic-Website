@@ -12,11 +12,18 @@ const compat = new FlatCompat({
 const eslintConfig = [
   ...compat.extends("next/core-web-vitals", "next/typescript"),
   {
+    /*
+      Bauergebnisse sind kein Quelltext. Die Sternchen-Formen fangen
+      ausserdem die Kopien ab, die macOS beim Synchronisieren anlegt
+      ("out 2") — sonst prueft ESLint ploetzlich 53 MB minifiziertes
+      JavaScript und meldet Hunderte Warnungen, die niemand geschrieben hat.
+    */
     ignores: [
       "node_modules/**",
-      ".next/**",
-      "out/**",
+      ".next*/**",
+      "out*/**",
       "build/**",
+      ".static-export-build*/**",
       "next-env.d.ts",
     ],
   },

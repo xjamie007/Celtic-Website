@@ -59,9 +59,21 @@ export default async function EventPage({ params }: PageProps) {
   const tc = await getTranslations("club");
   const activeLocale = await getLocale();
 
-  /* Ein kommender Termin aus dem Redaktionsbereich schlaegt den Stand aus
-     der Config — deshalb wird hier gesucht und nicht dort gelesen. */
-  const upcoming = (await getClubEvents()).find((item) => item.slug === slug);
+  /*
+    Ein kommender Termin aus dem Redaktionsbereich schlaegt den Stand aus der
+    Config — deshalb wird hier gesucht und nicht dort gelesen.
+
+    Verglichen wird auf den Anfang der Adresse, nicht auf Gleichheit: der
+    Redaktionsbereich bildet die Adresse eines Termins aus Titel und Datum,
+    also "nordstadsemi-2027-03-14". Waere hier Gleichheit verlangt, muesste
+    das Comite eine Adresse von Hand eintippen, die es nirgends sieht — und
+    beim ersten Tippfehler stuende auf der Seite wieder das Jahr davor.
+    getClubEvents liefert nur kommende Termine, aufsteigend sortiert; der
+    erste Treffer ist damit der naechste.
+  */
+  const upcoming = (await getClubEvents()).find(
+    (item) => item.slug === slug || item.slug.startsWith(`${slug}-`),
+  );
   const date = upcoming?.startsAt.slice(0, 10) ?? event.lastKnownDate;
   const isUpcoming = Boolean(upcoming);
 
