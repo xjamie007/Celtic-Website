@@ -1,6 +1,6 @@
 "use client";
 
-import Image from "next/image";
+import { Image } from "@/components/media/Image";
 import { useTranslations } from "next-intl";
 import { useId, useRef, useState } from "react";
 

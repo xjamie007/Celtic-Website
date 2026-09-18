@@ -4,7 +4,6 @@ import { getTranslations, setRequestLocale } from "next-intl/server";
 import { requireFeature } from "@/lib/features";
 import { LaneSection } from "@/components/lane/LaneSection";
 import { Reveal } from "@/components/motion/Reveal";
-import { SponsorJersey } from "@/components/sponsors/SponsorJersey";
 import { SponsorTile } from "@/components/sponsors/SponsorTile";
 import { site } from "@/config/site";
 import { getVisibleSponsors } from "@/lib/data/sponsors";
@@ -20,10 +19,14 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
 /**
  * /sponsoren (§7)
  *
- * Zwei Teile: die Sponsoren nach Stufe, und das Trikot, das zeigt, wo sie
- * stehen. Der Auftrag war, dass Sponsoren einen guten Platz bekommen, der
- * passt und trotzdem nicht stoert — auf der Zielgeraden ist das die
- * Peripherie, hier ist es die Hauptsache.
+ * Die Sponsoren nach Stufe, jeder mit seinem Zeichen. Der Auftrag war, dass
+ * sie einen guten Platz bekommen, der passt und trotzdem nicht stoert — auf
+ * der Zielgeraden ist das die Peripherie, hier ist es die Hauptsache.
+ *
+ * Hier stand darunter ein zweiter Abschnitt mit dem Trikot und den
+ * Positionen der Logos darauf. Der Verein braucht ihn nicht: die Positionen
+ * stehen ohnehin nicht fest, und die Seite soll zeigen, wer den Verein
+ * traegt, nicht wo auf dem Stoff das Zeichen sitzt.
  */
 export default async function SponsorsPage({ params }: PageProps) {
   const { locale } = await params;
@@ -49,8 +52,7 @@ export default async function SponsorsPage({ params }: PageProps) {
   }));
 
   return (
-    <>
-      <LaneSection id="sponsoren" labelledBy="sponsoren-title">
+    <LaneSection id="sponsoren" labelledBy="sponsoren-title">
         <div className="mx-auto max-w-[1240px] px-5 pt-16 pb-16 sm:px-8">
           <h1 id="sponsoren-title" className="text-h1 wdth-112">
             {tn("sponsors")}
@@ -85,29 +87,6 @@ export default async function SponsorsPage({ params }: PageProps) {
             )}
           </div>
         </div>
-      </LaneSection>
-
-      <LaneSection
-        id="trikot"
-        labelledBy="trikot-title"
-        className="border-hairline-on-page border-t"
-      >
-        <div className="mx-auto max-w-[1240px] px-5 py-16 sm:px-8">
-          <h2 id="trikot-title" className="text-h2 wdth-100">
-            {t("jerseyTitle")}
-          </h2>
-          {/*
-            Hier stand ein Aufruf, selbst Trikotsponsor zu werden. Der
-            Verein braucht ihn nicht: die Trikotplaetze werden persoenlich
-            vergeben, nicht ueber ein Formular auf der Website. Das Trikot
-            zeigt jetzt nur noch, wo die Sponsoren stehen — das war der
-            Zweck von §7.
-          */}
-          <div className="mt-10">
-            <SponsorJersey sponsors={sponsors} />
-          </div>
-        </div>
-      </LaneSection>
-    </>
+    </LaneSection>
   );
 }

@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import Image from "next/image";
+import { Image } from "@/components/media/Image";
 import { Suspense } from "react";
 import { getTranslations, setRequestLocale } from "next-intl/server";
 

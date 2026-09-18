@@ -34,10 +34,13 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
  * der Seite herausfuehrten. Beides sind aber Veranstaltungen des Vereins —
  * sie gehoeren ins Haus.
  *
- * Die Seite bleibt bewusst knapp: Name, Termin, Ort, Strecken, und von dort
- * ein Weg zur Anmeldung. Sie tritt nicht in Konkurrenz zur
- * Veranstaltungsseite mit Ergebnislisten und Streckenplaenen, sondern sagt,
- * was die Veranstaltung ist und wann sie stattfindet.
+ * Die Seite bleibt bewusst knapp: Name, Termin, Ort, Strecken.
+ *
+ * Hier stand darunter ein Verweis auf "die Seite der Veranstaltung". Den
+ * gibt es nicht: eurocross.lu und nordstadsemi.lu zeigen beide auf die alte
+ * Vereinsseite, die diese hier ersetzt. Ein Link, der im Kreis fuehrt, ist
+ * schlechter als keiner — was es zu den beiden Laeufen zu sagen gibt, steht
+ * hier.
  *
  * Der Termin ist das Einzige, was sich jedes Jahr aendert — und genau das
  * Feld, das das Comite im Redaktionsbereich pflegt. Steht dort ein Termin
@@ -174,22 +177,6 @@ export default async function EventPage({ params }: PageProps) {
           </div>
         </div>
 
-        {/* ── Weg zur Veranstaltungsseite ──────────────────────────────── */}
-        <div className="border-hairline-on-page mt-12 border-t pt-8">
-          <p className="text-muted-on-page text-ui max-w-prose">
-            {t("officialNote", { name: event.fullName })}
-          </p>
-          <p className="mt-4">
-            <a
-              href={event.website}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-ui-lg decoration-hairline-on-page hover:decoration-motion-accent hover:text-accent-on-page underline decoration-2 underline-offset-8 transition-colors duration-200"
-            >
-              {t("officialSite")} ↗
-            </a>
-          </p>
-        </div>
       </div>
     </LaneSection>
   );

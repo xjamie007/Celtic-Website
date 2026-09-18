@@ -44,18 +44,19 @@ const nextConfig: NextConfig = {
     // §14: alle Bilder ueber next/image, moderne Formate zuerst
     formats: ["image/avif", "image/webp"],
     /*
-      Ohne Server gibt es niemanden, der die Groessen berechnet. Der eigene
-      Loader liefert deshalb die Originaldatei aus — die Bilder in public/
-      sind bereits als WebP in Zielgroesse abgelegt (tools/process-assets.mjs).
+      Ohne Server gibt es niemanden, der die Groessen berechnet. Next liefert
+      dann die Originaldatei aus — die Bilder in public/ sind bereits als
+      WebP in Zielgroesse abgelegt (tools/process-assets.mjs).
 
-      Warum ein Loader und nicht images.unoptimized: unoptimized reicht die
-      src unveraendert durch, auch das Pfad-Praefix bleibt dann weg, und
-      unter /Celtic-Website waere jedes Bild ein toter Link. Siehe
-      lib/image-loader.ts.
+      Wichtig: unoptimized erzeugt KEIN srcSet. Genau darauf kommt es an.
+      Hier stand kurz ein eigener Loader, um das Pfad-Praefix anzuhaengen —
+      und ein Loader laesst Next ein srcSet mit Breitenangaben bauen, hinter
+      denen ohne Optimierung immer dieselbe Datei steht. Der Browser glaubt
+      der Angabe und rechnet die Anzeigegroesse danach aus; die
+      Sponsorenlogos kamen so auf 22 Pixel Breite heraus. Das Praefix setzt
+      jetzt components/media/Image.tsx, wo es keine Nebenwirkung hat.
     */
-    ...(staticExport
-      ? { loader: "custom" as const, loaderFile: "./lib/image-loader.ts" }
-      : {}),
+    unoptimized: staticExport,
     /*
       Bilder liegen im Supabase-Speicher. Die Adresse steht in der Umgebung,
       damit lokale Instanz und Produktion dieselbe Konfiguration benutzen —

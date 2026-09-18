@@ -47,15 +47,11 @@
     "bandTitle": "Die Zielgerade",
     "bandAria": "Sponsoren des CELTIC Diekirch",
     "all": "Alle Sponsoren",
-    "become": "Sponsor werden",
     "empty": "Noch keine Sponsoren.",
     "visit": "{name} besuchen",
-    "jerseyTitle": "Auf unserem Trikot",
-    "jerseyNote": "Die Positionen sind noch nicht endgültig festgelegt. Im Redaktionssystem wird sie je Sponsor mit einem Klick auf das Trikot gesetzt.",
     "tierHaaptsponsor": "Hauptsponsor",
     "tierPartner": "Partner",
-    "tierSupporter": "Supporter",
-    "becomeLead": "Interessiert? Schreiben Sie uns."
+    "tierSupporter": "Supporter"
   },
   "lane": {
     "aria": "Abschnitte dieser Seite",
@@ -168,9 +164,7 @@
     "races": "Strecken",
     "place": "Ort",
     "edition": "Ausgabe",
-    "editionNumber": "{number}. Ausgabe",
-    "officialNote": "Anmeldung, Ergebnisse und Streckenplan stehen auf der Seite des {name}.",
-    "officialSite": "Zur Seite der Veranstaltung"
+    "editionNumber": "{number}. Ausgabe"
   },
   "news": {
     "empty": "Noch keine Meldungen.",

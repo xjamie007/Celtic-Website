@@ -1,4 +1,4 @@
-import Image from "next/image";
+import { Image } from "@/components/media/Image";
 
 import type { Sponsor } from "@/lib/data/sponsors";
 import { cn } from "@/lib/utils";

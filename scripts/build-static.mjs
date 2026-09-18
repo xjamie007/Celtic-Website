@@ -194,4 +194,45 @@ removeTree(work);
 hoistDefaultLocale("lb");
 fs.writeFileSync(path.join(out, ".nojekyll"), "");
 
+checkImagePaths();
+
 console.log(`\nStatischer Export: ${countHtml(out)} Seiten in out/`);
+
+/**
+ * Traegt jedes Bild das Pfad-Praefix?
+ *
+ * Next haengt es an Links und an alles unter _next von selbst an, an die src
+ * eines Bildes nicht — das macht components/media/Image.tsx. Wer dort
+ * next/image direkt benutzt, merkt davon nichts: lokal stimmt die Adresse,
+ * auf der veroeffentlichten Seite fehlt das Bild. Genau so ist es einmal
+ * passiert, und gesehen hat es niemand, bis der Verein danach gefragt hat.
+ */
+function checkImagePaths() {
+  const prefix = process.env.NEXT_PUBLIC_BASE_PATH ?? "";
+  if (!prefix) return;
+
+  const offenders = new Set();
+  const scan = (dir) => {
+    for (const entry of fs.readdirSync(dir, { withFileTypes: true })) {
+      const target = path.join(dir, entry.name);
+      if (entry.isDirectory()) scan(target);
+      else if (entry.name.endsWith(".html")) {
+        const html = fs.readFileSync(target, "utf8");
+        for (const match of html.matchAll(/<img [^>]*src="(\/[^"]*)"/g)) {
+          if (!match[1].startsWith(`${prefix}/`)) offenders.add(match[1]);
+        }
+      }
+    }
+  };
+  scan(out);
+
+  if (offenders.size > 0) {
+    console.error(`\nBilder ohne das Praefix ${prefix}:`);
+    for (const src of offenders) console.error(`  ${src}`);
+    console.error(
+      "\nSie waeren auf der veroeffentlichten Seite tot. Statt next/image " +
+        "gehoert components/media/Image.tsx benutzt.",
+    );
+    process.exit(1);
+  }
+}

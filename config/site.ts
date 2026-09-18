@@ -140,6 +140,10 @@ export const site = {
    * Waemper Triathlon fuehrt weiter auf seine eigene Adresse, weil er dort
    * mit Anmeldung, Ergebnissen und Streckenplaenen schon vollstaendig steht.
    *
+   * Nordstadsemi und Eurocross haben keine: ihre Adressen zeigen beide auf
+   * die alte Vereinsseite. Was es zu ihnen zu sagen gibt, steht auf ihrer
+   * Seite hier.
+   *
    * Das Datum steht hier nur als letzter bekannter Stand. Sobald eine
    * Datenbank hinterlegt ist, gilt der Termin aus dem Redaktionsbereich —
    * die Seite sucht dort nach einem Termin mit demselben Slug. So kann das
@@ -153,7 +157,6 @@ export const site = {
       fullName: "Foyer Nordstadlaf",
       href: "/evenementer/nordstadsemi",
       external: false,
-      website: "https://www.nordstadsemi.lu",
       city: "Dikrech",
       mapsQuery: "Diekirch, Luxembourg",
       /* Die Strecken, wie sie ausgeschrieben werden. Keine Uebersetzung:
@@ -170,7 +173,6 @@ export const site = {
       fullName: "Eurocross & Eurotail",
       href: "/evenementer/eurocross",
       external: false,
-      website: "https://www.eurocross.lu",
       city: "Dikrech",
       mapsQuery: "Diekirch, Luxembourg",
       races: ["Eurocross", "Eurotail"],
@@ -183,7 +185,6 @@ export const site = {
       fullName: "Wämper Triathlon & Wämper Lof",
       href: "https://www.triathlon.lu",
       external: true,
-      website: "https://www.triathlon.lu",
       city: "Wämperhaard",
       mapsQuery: "Weiswampach, Luxembourg",
       races: [

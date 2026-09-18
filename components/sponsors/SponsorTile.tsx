@@ -1,4 +1,4 @@
-import Image from "next/image";
+import { Image } from "@/components/media/Image";
 
 import type { Sponsor } from "@/lib/data/sponsors";
 import { cn } from "@/lib/utils";
@@ -31,10 +31,13 @@ export function SponsorTile({
       <span
         className={cn(
           "flex items-center justify-center bg-white px-6",
-          emphasis ? "h-28" : "h-24",
+          emphasis ? "h-32 lg:h-40" : "h-28 lg:h-32",
         )}
       >
       {/* Begrenzt in BEIDE Richtungen, nicht nur in der Hoehe.
+          Die Grenzen wachsen ab lg mit: auf dem Laptop ist eine Tafel rund
+          376px breit, und ein Logo, das darin auf 180px gedeckelt bleibt,
+          steht verloren in viel Weiss.
           Bei fester Hoehe belegt ein breites Logo (Zens, 609x112) das
           Fuenffache der Flaeche eines quadratischen (Pepin, 114x112) — der
           eine wirkt gross, der andere verloren, obwohl beide gleich hoch
@@ -48,7 +51,9 @@ export function SponsorTile({
           sizes="(min-width: 1024px) 300px, (min-width: 640px) 45vw, 90vw"
           className={cn(
           "h-auto w-auto object-contain",
-          emphasis ? "max-h-16 max-w-[220px]" : "max-h-14 max-w-[180px]",
+          emphasis
+            ? "max-h-20 max-w-[240px] lg:max-h-24 lg:max-w-[300px]"
+            : "max-h-16 max-w-[200px] lg:max-h-20 lg:max-w-[260px]",
         )}
         />
       </span>

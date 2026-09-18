@@ -47,15 +47,11 @@
     "bandTitle": "D'Zilgerad",
     "bandAria": "Sponsore vum CELTIC Diekirch",
     "all": "All Sponsoren",
-    "become": "Sponsor ginn",
     "empty": "Nach keng Sponsoren.",
     "visit": "{name} besichen",
-    "jerseyTitle": "Op eisem Trikot",
-    "jerseyNote": "D’Positiounen sinn nach net definitiv festgeluecht. Am Redaktiounssystem gëtt se pro Sponsor mat engem Klick op d’Trikot gesat.",
     "tierHaaptsponsor": "Haaptsponsor",
     "tierPartner": "Partner",
-    "tierSupporter": "Supporter",
-    "becomeLead": "Interesséiert? Schreift eis."
+    "tierSupporter": "Supporter"
   },
   "lane": {
     "aria": "Sektioune vun dëser Säit",
@@ -168,9 +164,7 @@
     "races": "Streck",
     "place": "Plaz",
     "edition": "Editioun",
-    "editionNumber": "{number}. Editioun",
-    "officialNote": "Umeldung, Resultater a Streckeplang stinn op der Säit vum {name}.",
-    "officialSite": "Op d’Säit vun der Veranstaltung"
+    "editionNumber": "{number}. Editioun"
   },
   "news": {
     "empty": "Nach keng Meldungen.",

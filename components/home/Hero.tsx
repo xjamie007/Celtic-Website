@@ -1,4 +1,4 @@
-import Image from "next/image";
+import { Image } from "@/components/media/Image";
 import { getTranslations } from "next-intl/server";
 
 import { ChronoNumber } from "@/components/data/ChronoNumber";

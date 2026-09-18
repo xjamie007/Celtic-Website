@@ -47,15 +47,11 @@
     "bandTitle": "The home straight",
     "bandAria": "Sponsors of CELTIC Diekirch",
     "all": "All sponsors",
-    "become": "Become a sponsor",
     "empty": "No sponsors yet.",
     "visit": "Visit {name}",
-    "jerseyTitle": "On our jersey",
-    "jerseyNote": "The positions are not final yet. In the editing system each one is set with a click on the jersey.",
     "tierHaaptsponsor": "Main sponsor",
     "tierPartner": "Partner",
-    "tierSupporter": "Supporter",
-    "becomeLead": "Interested? Get in touch."
+    "tierSupporter": "Supporter"
   },
   "lane": {
     "aria": "Sections of this page",
@@ -168,9 +164,7 @@
     "races": "Races",
     "place": "Place",
     "edition": "Edition",
-    "editionNumber": "Edition {number}",
-    "officialNote": "Entry, results and course maps are on the {name} website.",
-    "officialSite": "Go to the event website"
+    "editionNumber": "Edition {number}"
   },
   "news": {
     "empty": "No news yet.",

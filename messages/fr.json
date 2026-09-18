@@ -47,15 +47,11 @@
     "bandTitle": "La ligne droite",
     "bandAria": "Sponsors du CELTIC Diekirch",
     "all": "Tous les sponsors",
-    "become": "Devenir sponsor",
     "empty": "Pas encore de sponsors.",
     "visit": "Visiter {name}",
-    "jerseyTitle": "Sur notre maillot",
-    "jerseyNote": "Les positions ne sont pas encore définitives. Dans le système de rédaction, elles se définissent par un clic sur le maillot.",
     "tierHaaptsponsor": "Sponsor principal",
     "tierPartner": "Partenaire",
-    "tierSupporter": "Supporter",
-    "becomeLead": "Intéressé ? Écrivez-nous."
+    "tierSupporter": "Supporter"
   },
   "lane": {
     "aria": "Sections de cette page",
@@ -168,9 +164,7 @@
     "races": "Parcours",
     "place": "Lieu",
     "edition": "Édition",
-    "editionNumber": "{number}e édition",
-    "officialNote": "Inscription, résultats et plan du parcours sur le site du {name}.",
-    "officialSite": "Vers le site de l’épreuve"
+    "editionNumber": "{number}e édition"
   },
   "news": {
     "empty": "Pas encore d'actualités.",
