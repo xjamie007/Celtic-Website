@@ -223,24 +223,31 @@ export const site = {
     { key: "sponsors", href: "/sponsoren" },
   ] as const satisfies readonly NavItem[],
 
+  /*
+    Die Beschtleeschtungen haben keinen eigenen Eintrag mehr: sie stehen auf
+    derselben Seite wie die Rekorde. Zwei Eintraege auf dieselbe Adresse
+    waeren zwei Versprechen fuer eine Seite.
+
+    Training, Traineren und Comité sind aus der Spalte Veräin herueber
+    gewandert. Jeder Punkt steht damit genau einmal im Fuss — Doppelungen
+    machen eine Fussleiste laenger, aber nicht uebersichtlicher.
+  */
   footerNav: [
     {
       key: "performance",
       items: [
         { key: "records", href: "/rekorder" },
-        { key: "bestPerformances", href: "/beschtleeschtungen" },
+        { key: "clubTraining", href: "/club/training" },
+        { key: "clubCoaches", href: "/club/trainer" },
+        { key: "clubCommittee", href: "/club/comite" },
         { key: "celticsBest", href: "/celtics-best" },
         { key: "paraAthletics", href: "/para-athletics" },
-        { key: "youth", href: "/jugend" },
       ],
     },
     {
       key: "club",
       items: [
         { key: "clubAbout", href: "/club" },
-        { key: "clubTraining", href: "/club/training" },
-        { key: "clubCoaches", href: "/club/trainer" },
-        { key: "clubCommittee", href: "/club/comite" },
         { key: "clubStadium", href: "/club/stadion" },
         { key: "history", href: "/zenter-1968" },
       ],
@@ -282,7 +289,7 @@ export const site = {
     "historique",
   ] as const,
 
-  /** Kategorien fuer /beschtleeschtungen, in Reihenfolge der alten Seite. */
+  /** Kategorien der Beschtleeschtungen auf /rekorder, in Reihenfolge der alten Seite. */
   performanceCategories: [
     "espoirs",
     "juniors",

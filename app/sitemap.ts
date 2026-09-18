@@ -27,7 +27,6 @@ const PATHS = [
   "/evenementer/nordstadsemi",
   "/evenementer/eurocross",
   "/rekorder",
-  "/beschtleeschtungen",
   "/celtics-best",
   "/para-athletics",
   "/jugend",

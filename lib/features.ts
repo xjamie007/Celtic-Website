@@ -54,7 +54,6 @@ const PATH_FEATURE: readonly (readonly [string, FeatureKey])[] = [
   ["/next", "events"],
   ["/evenementer", "events"],
   ["/rekorder", "records"],
-  ["/beschtleeschtungen", "bestPerformances"],
   ["/celtics-best", "celticsBest"],
   ["/para-athletics", "paraAthletics"],
   ["/jugend", "youth"],

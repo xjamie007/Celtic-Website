@@ -14,9 +14,21 @@ import { SponsorBande } from "./SponsorBande";
  * blue-deep, oben und unten von einer duennen weissen Linie begrenzt — das
  * ist die Bahnbegrenzung, nicht ein Rahmen.
  *
- * Die Banden laufen langsam (30s pro Durchlauf). Nicht schnell, nicht
- * aufdringlich: es ist Peripherie, wie im echten Stadion. Hover auf eine
- * Bande haelt das ganze Band an.
+ * Die Banden laufen langsam. Nicht schnell, nicht aufdringlich: es ist
+ * Peripherie, wie im echten Stadion. Hover auf eine Bande haelt das ganze
+ * Band an.
+ *
+ * ── Warum die Reihe mehrfach steht ───────────────────────────────────────
+ *
+ * Der Lauf schiebt das Band um genau eine Reihe nach links und faengt dann
+ * von vorne an. Das ist nur nahtlos, solange eine Reihe mindestens so breit
+ * ist wie das Band selbst. Bei fuenf Sponsoren ist sie rund 780px breit —
+ * auf einem Laptop mit 1344px sichtbarer Breite lief also gegen Ende jeder
+ * Runde eine Luecke von ueber 500px ein, und das Band schien auszusetzen.
+ *
+ * Deshalb wird die Reihe so oft wiederholt, dass ein Durchlauf auch auf
+ * breiten Schirmen traegt. Die Dauer waechst mit: sonst liefen dieselben
+ * Logos bei vier Kopien viermal so schnell vorbei.
  *
  * Server-Komponente: kein Framer Motion, kein JavaScript. Der Lauf ist eine
  * CSS-Animation auf transform — sie laeuft im Compositor und kostet die
@@ -34,38 +46,46 @@ export async function Zilgerad() {
      danach die uebrigen Banden. */
   const lane = [...main, ...rest];
 
+  /* Eine Tafel ist rund 160px breit. 20 Tafeln tragen damit gut 3000px —
+     mehr, als ein Bildschirm zeigt, und das ist die Bedingung dafuer, dass
+     der Lauf nahtlos schliesst. Hat der Verein spaeter selbst so viele
+     Sponsoren, bleibt es bei einer Reihe. */
+  const copies = Math.max(1, Math.ceil(20 / lane.length));
+  const duration = site.sponsorMarqueeDuration * copies;
+
   return (
     <section
       id="ziel"
       data-lane-section="ziel"
       aria-label={t("bandAria")}
       className="zilgerad-band bg-deep relative isolate overflow-hidden"
-      style={{ ["--zilgerad-duration" as string]: `${site.sponsorMarqueeDuration}s` }}
+      style={{ ["--zilgerad-duration" as string]: `${duration}s` }}
     >
       {/* Bahnbegrenzung oben und unten */}
       <div aria-hidden="true" className="bg-lane-line/70 h-px w-full" />
 
       <div className="flex overflow-hidden py-5">
+        {/* Zweimal so viele Reihen wie ein Durchlauf braucht: die erste
+            Haelfte laeuft durch, die zweite schliesst nahtlos an. Nur die
+            erste Reihe ist fuer Screenreader und Tastatur da; alle weiteren
+            sind Wiederholung derselben Sponsoren. */}
         <div className="zilgerad-track flex w-max items-center">
-          {lane.map((sponsor) => (
-            <SponsorBande
-              key={sponsor.id}
-              sponsor={sponsor}
-              label={t("visit", { name: sponsor.name })}
-            />
+          {Array.from({ length: copies * 2 }, (_, pass) => (
+            <div
+              key={pass}
+              className="zilgerad-lane flex items-center"
+              aria-hidden={pass > 0 ? "true" : undefined}
+            >
+              {lane.map((sponsor) => (
+                <SponsorBande
+                  key={`${pass}-${sponsor.id}`}
+                  sponsor={sponsor}
+                  label={t("visit", { name: sponsor.name })}
+                  decorative={pass > 0}
+                />
+              ))}
+            </div>
           ))}
-          {/* Zweiter Durchlauf, damit der Lauf nahtlos schliesst. Fuer
-              Screenreader unsichtbar, bei reduced motion ausgeblendet. */}
-          <div className="zilgerad-clone flex items-center" aria-hidden="true">
-            {lane.map((sponsor) => (
-              <SponsorBande
-                key={`clone-${sponsor.id}`}
-                sponsor={sponsor}
-                label={t("visit", { name: sponsor.name })}
-                decorative
-              />
-            ))}
-          </div>
         </div>
       </div>
 

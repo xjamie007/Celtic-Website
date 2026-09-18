@@ -301,8 +301,13 @@
       justify-content: center;
       animation: none;
     }
-    .zilgerad-clone {
+    /* Statisches Raster: eine Reihe genuegt, die Wiederholungen fallen weg. */
+    .zilgerad-lane:not(:first-child) {
       display: none;
+    }
+    .zilgerad-lane {
+      flex-wrap: wrap;
+      justify-content: center;
     }
   }
 }
